@@ -117,6 +117,20 @@ footer { background-color: var(--card-bg); border-top: 1px solid var(--border-co
 .nav-links { justify-content: center; } }
 
 
+/* The container that holds the columns */
+.info-container { display: flex; flex-wrap: wrap; gap: 24px; width: 100%; max-width: 1000px; }
+
+/* The individual column cards */
+.info-card { flex: 1; min-width: 300px; background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+
+/* Typography styling inside the cards */
+.info-card h2 {color: #8b0000; margin-top: 0; margin-bottom: 20px; font-size: 1.5rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
+.info-card p { margin-bottom: 15px; font-size: 1rem; }
+.info-card p:last-child { margin-bottom: 0; }
+.info-card a { color: #0056b3; text-decoration: none; }
+.info-card a:hover { color: #003d82; text-decoration: underline; }
+.info-card strong { color: #111; }
+
 
 
 
