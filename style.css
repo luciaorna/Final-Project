@@ -19,27 +19,22 @@ body {
     flex-direction: column;   
 }.
 nav-list {
-    display: flex;            /* Activamos el modo flexible */
-    flex-direction: column;   /* ¡ESTO ES LO IMPORTANTE! Cambia de horizontal a vertical */
-    gap: 15px;                /* Crea un espacio uniforme entre cada enlace */
-    list-style: none;         /* Quita los puntos negros de la lista */
+    display: flex;            
+    flex-direction: column;   
+    gap: 15px;               
+    list-style: none;         
     padding: 0;
     margin-top: 30px;
 }
 
 /* Estilo para los enlaces */
 .nav-list a {
-    text-decoration: none;    /* Quita el subrayado */
-    color: #5a4a3a;           /* Color café oscuro */
-    display: block;           /* Hace que el enlace ocupe todo el ancho disponible */
+    text-decoration: none;    
+    color: #5a4a3a;          
+    display: block;           
     padding: 5px 0;
 }
-
 .logo { font-size: 1.8rem; font-weight: bold; text-decoration: none; color: white; }
-.nav-list { display: flex; list-style: none; gap: 2rem; }
-.nav-list a { color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 4px; transition: background 0.3s; }
-.nav-list a:hover { background: #34495e; }
-@media (max-width: 768px) { .nav-list { display: none; } } /* Mobile: Add hamburger later if needed */
 
 /* Sentence spacing: one line between each sentence */
 .sentence { display: block; margin-bottom: 1.5em;  /* Adjust this value for more/less space */ line-height: 1.4;}
