@@ -4,34 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookshelf | Project Gutenberg</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <header class="site-header">
-    <nav class="nav container">
-      <a href="index.html" class="logo">Project Gutenberg</a>
-      
-      <form class="search-form">
-        <input type="search" placeholder="Quick search">
-        <button type="submit">Go!</button>
-      </form>
-      
-      <ul class="nav-list">
-        <li><a href="about.html">About</a></li>
-        <li><a href="FrequentlyDownloaded.html">Frequently Downloaded</a></li>
-        <li><a href="maincat.html">Main Categories</a></li>
-        <li><a href="readinglists.html">Reading Lists</a></li>
-        <li><a href="searchoptions.html">Search Options</a></li>
-        <li><a href="individualbook.html">Individual Book</a></li>
-        <li><a href="fdpractice.html">FD practice</a></li>
-      </ul>
-    </nav>
-  </header>
+
+    <header class="site-header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">Project Gutenberg</a>
+            
+            <form class="search-form">
+                <input type="search" placeholder="Quick search">
+                <button type="submit">Go!</button>
+            </form>
+            
+            <ul class="nav-list">
+                <li><a href="about.html">About</a></li>
+                <li><a href="FrequentlyDownloaded.html">Frequently Downloaded</a></li>
+                <li><a href="maincat.html">Main Categories</a></li>
+                <li><a href="readinglists.html">Reading Lists</a></li>
+                <li><a href="searchoptions.html">Search Options</a></li>
+                <li><a href="individualbook.html">Individual Book</a></li>
+                <li><a href="fdpractice.html">FD practice</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-        <div class="page-header">
+        <div class="page-header" style="margin-bottom: 40px;">
             <h1>Main Categories</h1>
-            <p>These categories are the categories you may find in a large physical bookstore. They have been automatically assigned.</p>
+            <p style="font-size: 1.1rem; color: #5a4a3a;">These categories are the categories you may find in a large physical bookstore. They have been automatically assigned.</p>
         </div>
+        
         <div class="category-grid">
             
             <div class="category-card">
@@ -160,18 +163,19 @@
             </div>
 
         </div>
-    </main>
 
-    <footer>
-        <div class="footer-links">
-            <a href="#">About Project Gutenberg</a>
-            <a href="#">Privacy policy</a>
-            <a href="#">Permissions</a>
-            <a href="#">Terms of Use</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Help</a>
-        </div>
-    </footer>
+        <footer class="site-footer" style="background: #2c3e50; padding: 2rem; color: white; text-align: center; border-radius: 8px; margin-top: 40px;">
+            <nav class="footer-nav" style="margin-bottom: 15px;">
+                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">About</a> |
+                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Privacy policy</a> |
+                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Permissions</a> |
+                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Terms of Use</a> |
+                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Contact Us</a>
+            </nav>
+            <p>&copy; 2026 Project Gutenberg</p>
+        </footer>
+
+    </main>
 
 </body>
 </html>
