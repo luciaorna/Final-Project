@@ -1,159 +1,104 @@
-/* ===== RESET & BASE ===== */
+/* ===== 1. RESET & BASE STYLES ===== */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
 body {
-    margin: 0;             
-    display: flex;            
-    background-color: #f4ece1; 
-    font-family: 'Georgia', serif; /
+    font-family: 'Georgia', serif;
+    background-color: #f4ece1; /* Vintage paper color */
+    color: #333;
+    display: flex;             /* Creates the two-column layout (Sidebar | Content) */
+    min-height: 100vh;
 }
-/* ===== HEADER & NAVBAR ===== */
-/* CHANGE: Original has complex menus; simplified to single responsive bar */
+
+/* ===== 2. SIDEBAR HEADER ===== */
 .site-header {
-    width: 260px;             
-    height: 100vh;            
-    position: sticky;         
-    top: 0;                   
-    background-color: #e8dfd0; 
-    border-right: 2px solid #dcd0b9; 
-    padding: 20px;            
+    width: 260px;
+    height: 100vh;            /* Full viewport height */
+    position: sticky;         /* Stays fixed while scrolling */
+    top: 0;
+    background-color: #e8dfd0; /* Slightly darker cream */
+    border-right: 2px solid #dcd0b9;
+    padding: 30px 20px;
     display: flex;
-    flex-direction: column;   
-}.
-nav-list {
-    display: flex;            
-    flex-direction: column;   
-    gap: 15px;               
-    list-style: none;         
+    flex-direction: column;   /* Elements stack vertically */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #5a4a3a;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* ===== 3. NAVIGATION MENU (The fix) ===== */
+.nav-list {
+    display: flex;
+    flex-direction: column;   /* FORCES links to stack vertically */
+    gap: 15px;                /* Equal spacing between links */
+    list-style: none;
     padding: 0;
-    margin-top: 30px;
 }
 
-/* Estilo para los enlaces */
 .nav-list a {
-    text-decoration: none;    
-    color: #5a4a3a;          
-    display: block;           
-    padding: 5px 0;
+    text-decoration: none;
+    color: #5a4a3a;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: block;           /* Makes the link act like a full-width bar */
+    transition: 0.3s ease;
 }
-.logo { font-size: 1.8rem; font-weight: bold; text-decoration: none; color: white; }
 
-/* Sentence spacing: one line between each sentence */
-.sentence { display: block; margin-bottom: 1.5em;  /* Adjust this value for more/less space */ line-height: 1.4;}
+.nav-list a:hover {
+    color: #a67c52;
+    padding-left: 10px;       /* Subtle slide effect on hover */
+}
 
-/* ===== HERO/MAIN SECTIONS ===== */
-.hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 4rem 0; }
-.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-.search-form { max-width: 500px; margin: 2rem auto; display: flex; }
-.search-form input { flex: 1; padding: 1rem; border: none; border-radius: 4px 0 0 4px; font-size: 1.1rem; }
-.search-form button { padding: 1rem 2rem; background: #e74c3c; color: white; border: none; border-radius: 0 4px 4px 0; cursor: pointer; }
+/* ===== 4. SEARCH FORM ===== */
+.search-form {
+    margin-top: auto;         /* Pushes search to the bottom of the sidebar */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-/* ===== CARDS & GRIDS ===== */
-/* CHANGE: Original lists books vertically; use cards in responsive grid */
-.books-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 3rem 0; }
-.book-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
-.book-card:hover { transform: translateY(-5px); }
-.book-card img { width: 100%; height: 200px; object-fit: cover; background: #ddd; } /* Placeholder */
-.book-card h3 { padding: 1rem; font-size: 1.2rem; }
+.search-form input {
+    padding: 10px;
+    border: 1px solid #c5b8a5;
+    background-color: #fff9f0;
+    border-radius: 4px;
+}
 
-/* Base page styling for context */
-        body { font-family: "Open Sans", Arial, sans-serif; background-color: #fdfdfd; padding: 2rem; margin: 0; }
+.search-form button {
+    background-color: #5a4a3a;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
 
-        /* --- Newest Releases Section --- */
-        .releases-section { background-color: #e6eff3; /* Light blue-gray background */ border-radius: 12px; padding: 2rem; max-width: 1200px; margin: 0 auto; box-sizing: border-box; }
+.search-form button:hover {
+    background-color: #7a634d;
+}
 
-        /* Header Area */
-        .releases-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
-.releases-header h2 { margin: 0; font-size: 1.8rem; color: #222; font-weight: normal; }
+/* ===== 5. MAIN CONTENT AREA ===== */
+main, .page_content {
+    flex: 1;                  /* Takes up the remaining horizontal space */
+    padding: 40px;
+    max-width: 1000px;        /* Keeps text readable */
+    line-height: 1.6;
+}
 
-        /* "find more" button */
-        .btn-find-more { background-color: #d1e0e8; color: #004060; text-decoration: none; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 1rem; border: 1px solid #c0d4de; transition: background-color 0.2s; }
-        .btn-find-more:hover { background-color: #b8cedb; text-decoration: underline; }
-/* Horizontal Scroll Container */
-        .carousel-track { display: flex; gap: 1.5rem; overflow-x: auto; padding-bottom: 1.5rem; /* Space for the scrollbar */ padding-top: 10px; /* Space for the hover jump effect */ scroll-behavior: smooth; }
-
-        /* Custom Scrollbar Styling to match the image */
-        .carousel-track::-webkit-scrollbar { height: 12px; }
-        .carousel-track::-webkit-scrollbar-track { background: #f4f7f8; border-radius: 10px; }
-        .carousel-track::-webkit-scrollbar-thumb { background: #babbbc; border-radius: 10px; }
-        .carousel-track::-webkit-scrollbar-thumb:hover { background: #a0a0a0; }
-/* Individual Book Card */
-        .book-card { flex: 0 0 160px; /* Fixed width for each book */ display: flex; flex-direction: column; text-decoration: none; color: #444; /* This transition creates the smooth jump effect */ transition: transform 0.3s ease; }
-
-        /* The Hover "Jump" Effect */
-        .book-card:hover { transform: translateY(-12px); /* Moves the card up by 12 pixels */ }
-        .book-cover { width: 100%; height: 240px; border-radius: 6px; box-shadow: 2px 4px 8px rgba(0,0,0,0.15); margin-bottom: 1rem; object-fit: cover; background-color: #ccc; /* Fallback color */ }
-.book-title { text-align: center; font-size: 0.9rem; line-height: 1.4; margin: 0; }
-
-/* Social Media Icons Specific Styles */
-        .social-section { margin-bottom: 2.5rem; }
-        .social-icons { display: flex; gap: 2.5rem; align-items: flex-start; }
-        .social-link { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #3b82f6; /* Base blue for icons */ transition: opacity 0.2s; }
-        .social-link:hover { opacity: 0.8; text-decoration: none; }
-        .social-link svg { width: 36px; height: 36px; fill: currentColor; }
-        .social-link.dark-blue { color: #1877f2; /* Facebook blue */ }
-        .social-link.light-blue { color: #4a99e9; /* Mastodon/Bluesky blue */ }
-        .news-label { font-size: 0.8rem; font-weight: bold; margin-top: 0.3rem; color: #1877f2;}
-
-/* ===== BOOK PAGE SPECIFIC ===== */
-.download-table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
-.download-table th, .download-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #ddd; }
-.download-table th { background: #ecf0f1; }
-
-/* ===== FOOTER ===== */
-.footer { background: #34495e; color: white; text-align: center; padding: 2rem 0; margin-top: 4rem; }
-
-/* FOOTER LINKS: Exact spacing and hover */
-.footer-nav a:hover { color: #3498db; text-decoration: underline; }
-.footer-nav { font-family: Georgia, serif; }
-
-/* Header Navigation */
-header { background-color: var(--card-bg); border-bottom: 1px solid var(--border-color); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-.logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); text-decoration: none; }
-.logo:hover { text-decoration: none; color: #660000; }
-.nav-links { display: flex; gap: 20px; font-size: 0.95rem; align-items: center; flex-wrap: wrap; }
-.search-box { display: flex; gap: 5px; }
-.search-box input { padding: 5px 10px; border: 1px solid var(--border-color); border-radius: 4px; }
-.search-box button { background-color: var(--primary-color); color: white; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer; }
-.search-box button:hover { background-color: #660000; }
-
-/* Main Content Area */
-main { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-.page-header { margin-bottom: 40px; text-align: center; }
-.page-header h1 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 10px; }
-.page-header p { font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; }
-
-/* Category Grid */
-.category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
-.category-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s; }
-.category-card:hover { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-.category-card h2 { font-size: 1.25rem; color: var(--primary-color); margin-top: 0; margin-bottom: 15px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
-.category-list { list-style: none; padding: 0; margin: 0; }
-.category-list li { margin-bottom: 8px; font-size: 0.95rem; }
-.category-list li::before { content: "•"; color: var(--text-muted); margin-right: 8px;}
-
-/* Footer */
-footer { background-color: var(--card-bg); border-top: 1px solid var(--border-color); padding: 30px 20px; text-align: center; margin-top: 60px; }
-.footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; font-size: 0.9rem; }
-.footer-copy { color: var(--text-muted); font-size: 0.85rem; }
-
-/* Responsive adjustments */
-@media (max-width: 768px) { header { flex-direction: column; text-align: center; }
-.nav-links { justify-content: center; } }
-
-
-/* The container that holds the columns */
-.info-container { display: flex; flex-wrap: wrap; gap: 24px; width: 100%; max-width: 1000px; }
-
-/* The individual column cards */
-.info-card { flex: 1; min-width: 300px; background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-
-/* Typography styling inside the cards */
-.info-card h2 {color: #8b0000; margin-top: 0; margin-bottom: 20px; font-size: 1.5rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
-.info-card p { margin-bottom: 15px; font-size: 1rem; }
-.info-card p:last-child { margin-bottom: 0; }
-.info-card a { color: #0056b3; text-decoration: none; }
-.info-card a:hover { color: #003d82; text-decoration: underline; }
-.info-card strong { color: #111; }
-
-
-
-
+h1 {
+    color: #4a3b2b;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dcd0b9;
+    padding-bottom: 10px;
+}
