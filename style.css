@@ -34,7 +34,7 @@ nav-list {
     display: block;           /* Hace que el enlace ocupe todo el ancho disponible */
     padding: 5px 0;
 }
-.nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+
 .logo { font-size: 1.8rem; font-weight: bold; text-decoration: none; color: white; }
 .nav-list { display: flex; list-style: none; gap: 2rem; }
 .nav-list a { color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 4px; transition: background 0.3s; }
