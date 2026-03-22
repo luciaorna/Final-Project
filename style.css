@@ -18,6 +18,22 @@ body {
     display: flex;
     flex-direction: column;   
 }.
+nav-list {
+    display: flex;            /* Activamos el modo flexible */
+    flex-direction: column;   /* ¡ESTO ES LO IMPORTANTE! Cambia de horizontal a vertical */
+    gap: 15px;                /* Crea un espacio uniforme entre cada enlace */
+    list-style: none;         /* Quita los puntos negros de la lista */
+    padding: 0;
+    margin-top: 30px;
+}
+
+/* Estilo para los enlaces */
+.nav-list a {
+    text-decoration: none;    /* Quita el subrayado */
+    color: #5a4a3a;           /* Color café oscuro */
+    display: block;           /* Hace que el enlace ocupe todo el ancho disponible */
+    padding: 5px 0;
+}
 .nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
 .logo { font-size: 1.8rem; font-weight: bold; text-decoration: none; color: white; }
 .nav-list { display: flex; list-style: none; gap: 2rem; }
