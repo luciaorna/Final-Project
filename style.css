@@ -94,6 +94,7 @@ main, .page_content {
     padding: 40px;
     max-width: 1000px;        /* Keeps text readable */
     line-height: 1.6;
+    display:block;
 }
 
 h1 {
@@ -101,4 +102,5 @@ h1 {
     margin-bottom: 20px;
     border-bottom: 1px solid #dcd0b9;
     padding-bottom: 10px;
+    display:block;
 }
