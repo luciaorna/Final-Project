@@ -538,3 +538,56 @@ h1 {
     color: #ffffff;
     transform: translateX(3px); 
 }
+/* =========================================
+   12. PAGE: MAIN CATEGORIES
+   ========================================= */
+
+/* Grid that makes all boxes the exact same height automatically */
+.categories-grid {
+    display: grid;
+    /* Creates responsive columns. Minimum 280px wide */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* The "soft" box */
+.category-soft-box {
+    background: #faf6f0; /* A much warmer and softer white */
+    border: 1px solid #e8dfd0; /* Very subtle, almost invisible border */
+    border-radius: 8px; /* Slightly rounder corners */
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(90, 74, 58, 0.04); /* Diffused and elegant shadow */
+    
+    display: flex;
+    flex-direction: column; /* Allows us to push content neatly */
+    height: 100%; /* THIS IS THE MAGIC! Forces the box to match its neighbors' height */
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect to make it feel interactive */
+.category-soft-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(90, 74, 58, 0.08);
+}
+
+.category-soft-box h2 {
+    color: #4a3b2b;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #e8dfd0; /* Soft dividing line */
+    padding-bottom: 10px;
+}
+
+.category-soft-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Takes up the remaining space to even out the content */
+}
+
+.category-soft-box li {
+    margin-bottom: 12px;
+}

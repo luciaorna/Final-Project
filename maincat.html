@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookshelf | Project Gutenberg</title>
+    <title>Main Categories | Project Gutenberg</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
    <header class="site-header">
     <nav class="nav container">
-      <a href="index.html" class="logo"><img src="images/projectgutenberg logo.png" alt="Project Gutenberg Logo" class="logo-img"></a>
+      <a href="index.html" class="logo">
+          <img src="images/projectgutenberg logo.png" alt="Project Gutenberg Logo" class="logo-img">
+      </a>
       
-      <form class="search-form">
-        <input type="search" placeholder="Quick search">
-        <button type="submit">Go!</button>
+      <form class="search-form" method="get" action="https://www.gutenberg.org/ebooks/search/">
+        <input type="search" name="query" placeholder="Quick search" class="vintage-input">
+        <button type="submit" class="vintage-submit">Go!</button>
       </form>
       
       <ul class="nav-list">
@@ -27,148 +30,148 @@
     </nav>
   </header>
 
-    <main>
-        <div class="page-header" style="margin-bottom: 40px;">
-            <h1>Main Categories</h1>
-            <p style="font-size: 1.1rem; color: #5a4a3a;">These categories are the categories you may find in a large physical bookstore. They have been automatically assigned.</p>
-        </div>
-        
-        <div class="category-grid">
+    <main class="page-layout">
+        <div class="content-wrapper">
             
-            <div class="category-card">
-                <h2>Literature</h2>
-                <ul class="category-list">
-                    <li><a href="#">Adventure</a></li>
-                    <li><a href="#">American Literature</a></li>
-                    <li><a href="#">British Literature</a></li>
-                    <li><a href="#">French Literature</a></li>
-                    <li><a href="#">German Literature</a></li>
-                    <li><a href="#">Russian Literature</a></li>
-                    <li><a href="#">Classics of Literature</a></li>
-                    <li><a href="#">Biographies</a></li>
-                    <li><a href="#">Novels</a></li>
-                    <li><a href="#">Short Stories</a></li>
-                    <li><a href="#">Poetry</a></li>
-                    <li><a href="#">Plays/Films/Dramas</a></li>
-                    <li><a href="#">Romance</a></li>
-                    <li><a href="#">Science-Fiction & Fantasy</a></li>
-                    <li><a href="#">Crime, Thrillers & Mystery</a></li>
-                    <li><a href="#">Mythology, Legends & Folklore</a></li>
-                    <li><a href="#">Humour</a></li>
-                    <li><a href="#">Children & Young Adult Reading</a></li>
-                    <li><a href="#">Literature - Other</a></li>
-                </ul>
+            <h1 class="section-title mt-0">Main Categories</h1>
+            <p class="intro-text">These categories are the categories you may find in a large physical bookstore. They have been automatically assigned.</p>
+
+            <div class="categories-grid">
+                
+                <div class="category-soft-box">
+                    <h2>Literature</h2>
+                    <ul>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/644" class="vintage-link">Adventure</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/654" class="vintage-link">American Literature</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/653" class="vintage-link">British Literature</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/652" class="vintage-link">French Literature</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/651" class="vintage-link">German Literature</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/650" class="vintage-link">Russian Literature</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/649" class="vintage-link">Classics of Literature</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/643" class="vintage-link">Biographies</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/645" class="vintage-link">Novels</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/634" class="vintage-link">Short Stories</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/637" class="vintage-link">Poetry</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/642" class="vintage-link">Plays/Films/Dramas</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/639" class="vintage-link">Romance</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/638" class="vintage-link">Science-Fiction &amp; Fantasy</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/640" class="vintage-link">Crime, Thrillers &amp; Mystery</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/646" class="vintage-link">Mythology, Legends &amp; Folklore</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/641" class="vintage-link">Humour</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/636" class="vintage-link">Children &amp; Young Adult Reading</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/633" class="vintage-link">Literature - Other</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-soft-box">
+                    <h2>Science &amp; Technology</h2>
+                    <ul>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/671" class="vintage-link">Engineering &amp; Technology</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/672" class="vintage-link">Mathematics</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/667" class="vintage-link">Science - Physics</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/668" class="vintage-link">Science - Chemistry/Biochemistry</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/669" class="vintage-link">Science - Biology</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/670" class="vintage-link">Science - Earth/Agricultural/Farming</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/673" class="vintage-link">Research Methods/Statistics/Information Sys</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/685" class="vintage-link">Environmental Issues</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-soft-box">
+                    <h2>History</h2>
+                    <ul>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/656" class="vintage-link">History - American</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/657" class="vintage-link">History - British</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/658" class="vintage-link">History - European</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/659" class="vintage-link">History - Ancient</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/660" class="vintage-link">History - Medieval/Middle Ages</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/661" class="vintage-link">History - Early Modern (c. 1450-1750)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/662" class="vintage-link">History - Modern (1750+)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/663" class="vintage-link">History - Religious</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/664" class="vintage-link">History - Royalty</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/665" class="vintage-link">History - Warfare</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/666" class="vintage-link">History - Schools &amp; Universities</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/655" class="vintage-link">History - Other</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/686" class="vintage-link">Archaeology &amp; Anthropology</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-soft-box">
+                    <h2>Social Sciences &amp; Society</h2>
+                    <ul>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/695" class="vintage-link">Business/Management</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/696" class="vintage-link">Economics</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/689" class="vintage-link">Law &amp; Criminology</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/690" class="vintage-link">Gender &amp; Sexuality Studies</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/688" class="vintage-link">Psychiatry/Psychology</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/693" class="vintage-link">Sociology</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/694" class="vintage-link">Politics</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/701" class="vintage-link">Parenthood &amp; Family Relations</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/700" class="vintage-link">Old Age &amp; the Elderly</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-soft-box">
+                    <h2>Arts &amp; Culture</h2>
+                    <ul>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/675" class="vintage-link">Art</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/674" class="vintage-link">Architecture</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/677" class="vintage-link">Music</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/676" class="vintage-link">Fashion</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/698" class="vintage-link">Journalism/Media/Writing</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/687" class="vintage-link">Language &amp; Communication</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/647" class="vintage-link">Essays, Letters &amp; Speeches</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-soft-box">
+                    <h2>Religion &amp; Philosophy</h2>
+                    <ul>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/692" class="vintage-link">Religion/Spirituality</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/691" class="vintage-link">Philosophy &amp; Ethics</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-soft-box">
+                    <h2>Lifestyle &amp; Hobbies</h2>
+                    <ul>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/678" class="vintage-link">Cooking &amp; Drinking</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/680" class="vintage-link">Sports/Hobbies</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/679" class="vintage-link">How To ...</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/648" class="vintage-link">Travel Writing</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/683" class="vintage-link">Nature/Gardening/Animals</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/703" class="vintage-link">Sexuality &amp; Erotica</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-soft-box">
+                    <h2>Health &amp; Medicine</h2>
+                    <ul>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/681" class="vintage-link">Health &amp; Medicine</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/682" class="vintage-link">Drugs/Alcohol/Pharmacology</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/684" class="vintage-link">Nutrition</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-soft-box">
+                    <h2>Education &amp; Reference</h2>
+                    <ul>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/697" class="vintage-link">Encyclopedias/Dictionaries/Reference</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/704" class="vintage-link">Teaching &amp; Education</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/702" class="vintage-link">Reports &amp; Conference Proceedings</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/bookshelf/699" class="vintage-link">Journals</a></li>
+                    </ul>
+                </div>
+
             </div>
 
-            <div class="category-card">
-                <h2>Science & Technology</h2>
-                <ul class="category-list">
-                    <li><a href="#">Engineering & Technology</a></li>
-                    <li><a href="#">Mathematics</a></li>
-                    <li><a href="#">Science - Physics</a></li>
-                    <li><a href="#">Science - Chemistry/Biochemistry</a></li>
-                    <li><a href="#">Science - Biology</a></li>
-                    <li><a href="#">Science - Earth/Agricultural/Farming</a></li>
-                    <li><a href="#">Research Methods/Statistics/Information Sys</a></li>
-                    <li><a href="#">Environmental Issues</a></li>
-                </ul>
-            </div>
-
-            <div class="category-card">
-                <h2>History</h2>
-                <ul class="category-list">
-                    <li><a href="#">History - American</a></li>
-                    <li><a href="#">History - British</a></li>
-                    <li><a href="#">History - European</a></li>
-                    <li><a href="#">History - Ancient</a></li>
-                    <li><a href="#">History - Medieval/Middle Ages</a></li>
-                    <li><a href="#">History - Early Modern (c. 1450-1750)</a></li>
-                    <li><a href="#">History - Modern (1750+)</a></li>
-                    <li><a href="#">History - Religious</a></li>
-                    <li><a href="#">History - Royalty</a></li>
-                    <li><a href="#">History - Warfare</a></li>
-                    <li><a href="#">History - Schools & Universities</a></li>
-                    <li><a href="#">History - Other</a></li>
-                    <li><a href="#">Archaeology & Anthropology</a></li>
-                </ul>
-            </div>
-            
-            <div class="category-card">
-                <h2>Social Sciences & Society</h2>
-                <ul class="category-list">
-                    <li><a href="#">Business/Management</a></li>
-                    <li><a href="#">Economics</a></li>
-                    <li><a href="#">Law & Criminology</a></li>
-                    <li><a href="#">Gender & Sexuality Studies</a></li>
-                    <li><a href="#">Psychiatry/Psychology</a></li>
-                    <li><a href="#">Sociology</a></li>
-                    <li><a href="#">Politics</a></li>
-                    <li><a href="#">Parenthood & Family Relations</a></li>
-                    <li><a href="#">Old Age & the Elderly</a></li>
-                </ul>
-            </div>
-
-            <div class="category-card">
-                <h2>Arts & Culture</h2>
-                <ul class="category-list">
-                    <li><a href="#">Art</a></li>
-                    <li><a href="#">Architecture</a></li>
-                    <li><a href="#">Music</a></li>
-                    <li><a href="#">Fashion</a></li>
-                    <li><a href="#">Journalism/Media/Writing</a></li>
-                    <li><a href="#">Language & Communication</a></li>
-                    <li><a href="#">Essays, Letters & Speeches</a></li>
-                </ul>
-            </div>
-
-            <div class="category-card">
-                <h2>Religion & Philosophy</h2>
-                <ul class="category-list">
-                    <li><a href="#">Religion/Spirituality</a></li>
-                    <li><a href="#">Philosophy & Ethics</a></li>
-                </ul>
-            </div>
-
-            <div class="category-card">
-                <h2>Lifestyle & Hobbies</h2>
-                <ul class="category-list">
-                    <li><a href="#">Cooking & Drinking</a></li>
-                    <li><a href="#">Sports/Hobbies</a></li>
-                    <li><a href="#">How To ...</a></li>
-                    <li><a href="#">Travel Writing</a></li>
-                    <li><a href="#">Nature/Gardening/Animals</a></li>
-                    <li><a href="#">Sexuality & Erotica</a></li>
-                </ul>
-            </div>
-
-            <div class="category-card">
-                <h2>Health & Medicine</h2>
-                <ul class="category-list">
-                    <li><a href="#">Health & Medicine</a></li>
-                    <li><a href="#">Drugs/Alcohol/Pharmacology</a></li>
-                    <li><a href="#">Nutrition</a></li>
-                </ul>
-            </div>
-
-            <div class="category-card">
-                <h2>Education & Reference</h2>
-                <ul class="category-list">
-                    <li><a href="#">Encyclopedias/Dictionaries/Reference</a></li>
-                    <li><a href="#">Teaching & Education</a></li>
-                    <li><a href="#">Reports & Conference Proceedings</a></li>
-                    <li><a href="#">Journals</a></li>
-                </ul>
-            </div>
-
-        </div>
-
-        <footer class="site-footer" style="background: #2c3e50; padding: 2rem; color: white; text-align: center; border-radius: 8px; margin-top: 40px;">
-            <nav class="footer-nav" style="margin-bottom: 15px;">
-                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">About</a> |
-                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Privacy policy</a> |
-                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Permissions</a> |
-                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Terms of Use</a> |
-                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Contact Us</a>
+        </div> <footer class="site-footer">
+            <nav class="footer-nav">
+                <a href="about.html">About</a> |
+                <a href="https://www.gutenberg.org/policy/privacy_policy.html">Privacy policy</a> |
+                <a href="https://www.gutenberg.org/policy/permission.html">Permissions</a> |
+                <a href="https://www.gutenberg.org/policy/terms_of_use.html">Terms of Use</a> |
+                <a href="https://www.gutenberg.org/about/contact_information.html">Contact Us</a>
             </nav>
             <p>&copy; 2026 Project Gutenberg</p>
         </footer>
