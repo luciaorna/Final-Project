@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 2. FOOLPROOF BUTTON FINDER (No IDs required in your HTML)
+    // 1. FOOLPROOF BUTTON FINDER (No IDs required in your HTML)
     const allLinks = document.querySelectorAll("a");
 
     allLinks.forEach(link => {
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 3. CHECK SAVED PREFERENCES ON PAGE LOAD
+    // 2. CHECK SAVED PREFERENCES ON PAGE LOAD
     try {
         if (localStorage.getItem("darkMode") === "enabled") {
             document.body.classList.add("dark-mode");
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     } catch(err) {}
 
-    // 4. HIGHLIGHT CURRENT PAGE IN SIDEBAR
+    // 3. HIGHLIGHT CURRENT PAGE IN SIDEBAR
     const currentPage = window.location.pathname.split("/").pop() || "index.html";
     const navLinks = document.querySelectorAll(".nav-list a");
     
