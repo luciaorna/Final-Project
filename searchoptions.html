@@ -46,21 +46,21 @@
             <div class="info-box">
                 <h2 class="section-title mt-0 border-none">Advanced Search</h2>
                 <form class="advanced-search-form" method="get" action="https://www.gutenberg.org/ebooks/search/">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
                         <div class="form-group">
-                            <label>Author Name:</label>
+                            <label style="font-weight: bold; display: block; margin-bottom: 5px;">Author Name:</label>
                             <input type="text" name="author" class="vintage-input" placeholder="e.g. Jane Austen">
                         </div>
                         <div class="form-group">
-                            <label>Book Title:</label>
+                            <label style="font-weight: bold; display: block; margin-bottom: 5px;">Book Title:</label>
                             <input type="text" name="title" class="vintage-input" placeholder="e.g. Pride and Prejudice">
                         </div>
                         <div class="form-group">
-                            <label>Subject:</label>
+                            <label style="font-weight: bold; display: block; margin-bottom: 5px;">Subject:</label>
                             <input type="text" name="subject" class="vintage-input" placeholder="e.g. Fiction">
                         </div>
                         <div class="form-group">
-                            <label>Language:</label>
+                            <label style="font-weight: bold; display: block; margin-bottom: 5px;">Language:</label>
                             <select name="lang" class="vintage-input">
                                 <option value="en">English</option>
                                 <option value="es">Spanish</option>
@@ -69,36 +69,38 @@
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="vintage-submit" style="width: 100%; margin-top: 20px;">Search Catalog</button>
+                    <button type="submit" class="vintage-submit" style="width: 100%; margin-top: 25px;">Search Catalog</button>
                 </form>
             </div>
 
             <h2 class="section-title">Alternative Search Engines</h2>
-            <div class="categories-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            <div class="categories-grid">
+                
                 <div class="category-soft-box text-center">
                     <h3>Google Search</h3>
                     <p style="margin-bottom: 15px; font-size: 0.9rem;">Search Gutenberg using Google's engine.</p>
-                    <form method="get" action="https://www.google.com/search" class="engine-form">
+                    <form method="get" action="https://www.google.com/search" style="display: flex; justify-content: center;">
                         <input type="hidden" name="as_sitesearch" value="gutenberg.org">
-                        <input type="text" name="q" class="engine-input" style="width: 70%;" placeholder="Search...">
-                        <button type="submit" class="vintage-submit" style="padding: 10px;">Go</button>
+                        <input type="text" name="q" class="vintage-input" style="width: 70%; border-radius: 4px 0 0 4px;" placeholder="Search...">
+                        <button type="submit" class="vintage-submit" style="border-radius: 0 4px 4px 0; padding: 10px 15px;">Go</button>
                     </form>
                 </div>
 
                 <div class="category-soft-box text-center">
                     <h3>Bing Search</h3>
                     <p style="margin-bottom: 15px; font-size: 0.9rem;">Search Gutenberg using Bing's engine.</p>
-                    <form method="get" action="https://www.bing.com/search" class="engine-form">
+                    <form method="get" action="https://www.bing.com/search" style="display: flex; justify-content: center;">
                         <input type="hidden" name="q1" value="site:gutenberg.org">
-                        <input type="text" name="q" class="engine-input" style="width: 70%;" placeholder="Search...">
-                        <button type="submit" class="vintage-submit" style="padding: 10px;">Go</button>
+                        <input type="text" name="q" class="vintage-input" style="width: 70%; border-radius: 4px 0 0 4px;" placeholder="Search...">
+                        <button type="submit" class="vintage-submit" style="border-radius: 0 4px 4px 0; padding: 10px 15px;">Go</button>
                     </form>
                 </div>
+
             </div>
 
             <div class="info-box text-center">
                 <h2 class="section-title mt-0 border-none">Browse Catalog by Letter</h2>
-                <div class="catalog-letters">
+                <div class="catalog-letters" style="font-size: 1.2rem; letter-spacing: 4px; line-height: 2.5;">
                     <a href="https://www.gutenberg.org/browse/authors/a" class="vintage-link">A</a>
                     <a href="https://www.gutenberg.org/browse/authors/b" class="vintage-link">B</a>
                     <a href="https://www.gutenberg.org/browse/authors/c" class="vintage-link">C</a>
@@ -128,9 +130,7 @@
                 </div>
             </div>
 
-        </div>
-
-        <footer class="site-footer">
+        </div> <footer class="site-footer">
             <nav class="footer-nav">
                 <a href="about.html">About</a> |
                 <a href="https://www.gutenberg.org/policy/privacy_policy.html">Privacy policy</a> |
@@ -143,5 +143,6 @@
     </main>
 
     <div id="backToTop">↑ Top</div>
-    <script src="script.js"></script> </body>
+    <script src="script.js"></script> 
+</body>
 </html>
