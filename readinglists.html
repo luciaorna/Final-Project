@@ -12,8 +12,8 @@
     <nav class="nav container">
       <a href="index.html" class="logo"><img src="images/projectgutenberg logo.png" alt="Project Gutenberg Logo" class="logo-img"></a>
       
-      <form class="search-form">
-        <input type="search" placeholder="Quick search">
+      <form class="search-form" method="get" action="https://www.gutenberg.org/ebooks/search/">
+        <input type="search" name="query" placeholder="Quick search">
         <button type="submit">Go!</button>
       </form>
       
@@ -28,530 +28,532 @@
     </nav>
   </header>
 
-    <main>
+    <main style="flex: 1; padding: 40px; max-width: 1000px; margin: 0 auto;">
         <div class="page-header" style="margin-bottom: 40px;">
-            <h1 id="reading-lists" style="color: #4a3b2b; border-bottom: 1px solid #dcd0b9; padding-bottom: 10px;">Reading Lists</h1>
-            <p style="font-size: 1.1rem; line-height: 1.6;">Reading Lists are relatively small selections that have been hand-curated by individual volunteers. <br><br>For the more common, large categories you may find in physical bookstores check out <a href="maincat.html" style="color: #5a4a3a; font-weight: bold;">Main Categories</a>.</p>
+            <h1 id="reading-lists" style="color: #4a3b2b; border-bottom: 1px solid #dcd0b9; padding-bottom: 10px; text-align: center;">Reading Lists</h1>
+            <p style="font-size: 1.1rem; line-height: 1.6; text-align: center;">Reading Lists are relatively small selections that have been hand-curated by individual volunteers. <br><br>For the more common, large categories you may find in physical bookstores check out <a href="maincat.html" style="color: #5a4a3a; font-weight: bold;">Main Categories</a>.</p>
         </div>
 
-        <h2 style="color: #4a3b2b; margin-bottom: 15px;">Collections</h2>
-        <div class="bookshelves" style="margin-bottom: 40px;">
-            <ul>
-                <li><a href="#">"Animals" Reading Lists</a></li>
+        <h2 style="color: #4a3b2b; margin-bottom: 15px; text-align: center;">Collections</h2>
+        <div class="bookshelves" style="margin-bottom: 40px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="https://www.gutenberg.org/ebooks/search/?query=Animals" class="archive-tag">"Animals" Reading Lists</a></li>
             </ul>
-            <ul>
-                <li><a href="#">"For Children" Reading Lists</a></li>
-                <li><a href="#">"Countries" Reading Lists</a></li>
-                <li><a href="#">"Crime" Reading Lists</a></li>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="https://www.gutenberg.org/ebooks/search/?query=Children" class="archive-tag">"For Children"</a></li>
+                <li><a href="https://www.gutenberg.org/ebooks/search/?query=Countries" class="archive-tag">"Countries"</a></li>
+                <li><a href="https://www.gutenberg.org/ebooks/search/?query=Crime" class="archive-tag">"Crime"</a></li>
             </ul>
-            <ul>
-                <li><a href="#">"Education" Reading Lists</a></li>
-                <li><a href="#">"Emmy's Picks"</a></li>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="https://www.gutenberg.org/ebooks/search/?query=Education" class="archive-tag">"Education"</a></li>
+                <li><a href="https://www.gutenberg.org/ebooks/search/?query=Emmy" class="archive-tag">"Emmy's Picks"</a></li>
             </ul>
-            <ul>
-                <li><a href="#">"Fiction" Reading Lists</a></li>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="https://www.gutenberg.org/ebooks/search/?query=Fiction" class="archive-tag">"Fiction"</a></li>
             </ul>
-            <ul>
-                <li><a href="#">"Law" Reading Lists</a></li>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="https://www.gutenberg.org/ebooks/search/?query=Law" class="archive-tag">"Law"</a></li>
             </ul> 
-            <ul>
-                <li><a href="#">"Music" Reading Lists</a></li>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="https://www.gutenberg.org/ebooks/search/?query=Music" class="archive-tag">"Music"</a></li>
             </ul> 
-            <ul>
-                <li><a href="#">"Religion" Reading Lists</a></li>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="https://www.gutenberg.org/ebooks/search/?query=Religion" class="archive-tag">"Religion"</a></li>
             </ul>
-            <ul>
-                <li><a href="#">"Science" Reading Lists</a></li>
-                <li><a href="#">"Social Sciences" Reading Lists</a></li>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="https://www.gutenberg.org/ebooks/search/?query=Science" class="archive-tag">"Science"</a></li>
+                <li><a href="https://www.gutenberg.org/ebooks/search/?query=Social+Sciences" class="archive-tag">"Social Sciences"</a></li>
             </ul> 
-            <ul>
-                <li><a href="#">"Technology" Reading Lists</a></li>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="https://www.gutenberg.org/ebooks/search/?query=Technology" class="archive-tag">"Technology"</a></li>
             </ul>
-            <ul>
-                <li><a href="#">"Wars" Reading Lists</a></li>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="https://www.gutenberg.org/ebooks/search/?query=Wars" class="archive-tag">"Wars"</a></li>
             </ul>
         </div>
 
-        <h2 style="color: #4a3b2b; border-bottom: 1px solid #dcd0b9; padding-bottom: 10px; margin-bottom: 20px;">All Reading Lists</h2>
+        <h2 style="color: #4a3b2b; border-bottom: 1px solid #dcd0b9; padding-bottom: 10px; margin-bottom: 20px; text-align: center;">All Reading Lists</h2>
         
-        <div class="category-grid">
+        <div class="categories-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
             
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">A</h2>
-                <ul class="category-list">
-                    <li><a href="#">Adventure</a></li>
-                    <li><a href="#">Africa</a></li>
-                    <li><a href="#">African American Writers</a></li>
-                    <li><a href="#">Ainslee's</a></li>
-                    <li><a href="#">American Revolutionary War</a></li>
-                    <li><a href="#">Anarchism</a></li>
-                    <li><a href="#">Animal</a></li>
-                    <li><a href="#">Animals-Domestic</a></li>
-                    <li><a href="#">Animals-Wild-Birds</a></li>
-                    <li><a href="#">Animals-Wild-Insects</a></li>
-                    <li><a href="#">Animals-Wild-Mammals</a></li>
-                    <li><a href="#">Animals-Wild-Reptiles and Amphibians</a></li>
-                    <li><a href="#">Animals-Wild-Trapping</a></li>
-                    <li><a href="#">Animals-Wild</a></li>
-                    <li><a href="#">Anthropology</a></li>
-                    <li><a href="#">Archaeology</a></li>
-                    <li><a href="#">Architecture</a></li>
-                    <li><a href="#">Argentina</a></li>
-                    <li><a href="#">Armour's Monthly Cook Book</a></li>
-                    <li><a href="#">Art</a></li>
-                    <li><a href="#">Arthurian Legends</a></li>
-                    <li><a href="#">Astounding Stories</a></li>
-                    <li><a href="#">Astronomy</a></li>
-                    <li><a href="#">Atheism</a></li>
-                    <li><a href="#">Australia</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">A</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Adventure" class="vintage-link">Adventure</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Africa" class="vintage-link">Africa</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=African+American+Writers" class="vintage-link">African American Writers</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/195" class="vintage-link">Ainslee's</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=American+Revolutionary+War" class="vintage-link">American Revolutionary War</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Anarchism" class="vintage-link">Anarchism</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/140" class="vintage-link">Animal</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/411" class="vintage-link">Animals-Domestic</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/143" class="vintage-link">Animals-Wild-Birds</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/141" class="vintage-link">Animals-Wild-Insects</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/144" class="vintage-link">Animals-Wild-Mammals</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/145" class="vintage-link">Animals-Wild-Reptiles and Amphibians</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/142" class="vintage-link">Animals-Wild-Trapping</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/412" class="vintage-link">Animals-Wild</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Anthropology" class="vintage-link">Anthropology</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Archaeology" class="vintage-link">Archaeology</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/137" class="vintage-link">Architecture</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/203" class="vintage-link">Argentina</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Armour%27s+Monthly+Cook+Book" class="vintage-link">Armour's Monthly Cook Book</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/212" class="vintage-link">Art</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Arthurian+Legends" class="vintage-link">Arthurian Legends</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Astounding+Stories" class="vintage-link">Astounding Stories</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/34" class="vintage-link">Astronomy</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/92" class="vintage-link">Atheism</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/277" class="vintage-link">Australia</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">B</h2>
-                <ul class="category-list">
-                    <li><a href="#">Bahá'í Faith</a></li>
-                    <li><a href="#">Banned Books List from the American Library Association</a></li>
-                    <li><a href="#">Banned Books from Anne Haight's list</a></li>
-                    <li><a href="#">Barnavännen</a></li>
-                    <li><a href="#">Bestsellers, American, 1895-1923</a></li>
-                    <li><a href="#">Best Books Ever Listings</a></li>
-                    <li><a href="#">Best Loved Spanish Literary Classics</a></li>
-                    <li><a href="#">Bibliomania</a></li>
-                    <li><a href="#">Biographies</a></li>
-                    <li><a href="#">Biology</a></li>
-                    <li><a href="#">Bird-Lore</a></li>
-                    <li><a href="#">Birds, Illustrated by Color Photography</a></li>
-                    <li><a href="#">Blackwood's Edinburgh Magazine</a></li>
-                    <li><a href="#">Boer War</a></li>
-                    <li><a href="#">Botany</a></li>
-                    <li><a href="#">British Law</a></li>
-                    <li><a href="#">Buchanan's Journal of Man</a></li>
-                    <li><a href="#">Buddhism</a></li>
-                    <li><a href="#">Bulgaria</a></li>
-                    <li><a href="#">Bulletin de Lille</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">B</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Baha%27i+Faith" class="vintage-link">Bahá'í Faith</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Banned+Books+List+from+the+American+Library+Association" class="vintage-link">Banned Books List from the American Library Association</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Banned+Books+from+Anne+Haight%27s+list" class="vintage-link">Banned Books from Anne Haight's list</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Barnavannen" class="vintage-link">Barnavännen</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/384" class="vintage-link">Bestsellers, American, 1895-1923</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Best+Books+Ever+Listings" class="vintage-link">Best Books Ever Listings</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Best+Loved+Spanish+Literary+Classics" class="vintage-link">Best Loved Spanish Literary Classics</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/81" class="vintage-link">Bibliomania</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/388" class="vintage-link">Biographies</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/35" class="vintage-link">Biology</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Bird-Lore" class="vintage-link">Bird-Lore</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Birds+Illustrated+by+Color+Photography" class="vintage-link">Birds, Illustrated by Color Photography</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/103" class="vintage-link">Blackwood's Edinburgh Magazine</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Boer+War" class="vintage-link">Boer War</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/36" class="vintage-link">Botany</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=British+Law" class="vintage-link">British Law</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Buchanan%27s+Journal+of+Man" class="vintage-link">Buchanan's Journal of Man</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/55" class="vintage-link">Buddhism</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Bulgaria" class="vintage-link">Bulgaria</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Bulletin+de+Lille" class="vintage-link">Bulletin de Lille</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">C</h2>
-                <ul class="category-list">
-                    <li><a href="#">CIA World Factbooks</a></li>
-                    <li><a href="#">Camping</a></li>
-                    <li><a href="#">Canada</a></li>
-                    <li><a href="#">Canon Law</a></li>
-                    <li><a href="#">Celtic Magazine</a></li>
-                    <li><a href="#">Chambers's Edinburgh Journal</a></li>
-                    <li><a href="#">Chemistry</a></li>
-                    <li><a href="#">Child's Own Book of Great Musicians</a></li>
-                    <li><a href="#">Children's Anthologies</a></li>
-                    <li><a href="#">Children's Biography</a></li>
-                    <li><a href="#">Children's Book Series</a></li>
-                    <li><a href="#">Children's Fiction</a></li>
-                    <li><a href="#">Children's History</a></li>
-                    <li><a href="#">Children's Instructional Books</a></li>
-                    <li><a href="#">Children's Literature</a></li>
-                    <li><a href="#">Children's Myths, Fairy Tales, etc.</a></li>
-                    <li><a href="#">Children's Picture Books</a></li>
-                    <li><a href="#">Children's Religion</a></li>
-                    <li><a href="#">Children's Verse</a></li>
-                    <li><a href="#">Christianity</a></li>
-                    <li><a href="#">Christmas</a></li>
-                    <li><a href="#">Classical Antiquity</a></li>
-                    <li><a href="#">Contemporary Reviews</a></li>
-                    <li><a href="#">Continental Monthly</a></li>
-                    <li><a href="#">Cookbooks and Cooking</a></li>
-                    <li><a href="#">Crafts</a></li>
-                    <li><a href="#">Crime Fiction</a></li>
-                    <li><a href="#">Crime Nonfiction</a></li>
-                    <li><a href="#">Current History</a></li>
-                    <li><a href="#">Czech</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">C</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=CIA+World+Factbooks" class="vintage-link">CIA World Factbooks</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Camping" class="vintage-link">Camping</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/390" class="vintage-link">Canada</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Canon+Law" class="vintage-link">Canon Law</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Celtic+Magazine" class="vintage-link">Celtic Magazine</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Chambers%27s+Edinburgh+Journal" class="vintage-link">Chambers's Edinburgh Journal</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/37" class="vintage-link">Chemistry</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Child%27s+Own+Book+of+Great+Musicians" class="vintage-link">Child's Own Book of Great Musicians</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/16" class="vintage-link">Children's Anthologies</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/17" class="vintage-link">Children's Biography</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/18" class="vintage-link">Children's Book Series</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/19" class="vintage-link">Children's Fiction</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/20" class="vintage-link">Children's History</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/21" class="vintage-link">Children's Instructional Books</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/22" class="vintage-link">Children's Literature</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/23" class="vintage-link">Children's Myths, Fairy Tales, etc.</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/24" class="vintage-link">Children's Picture Books</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/25" class="vintage-link">Children's Religion</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Children%27s+Verse" class="vintage-link">Children's Verse</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/94" class="vintage-link">Christianity</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Christmas" class="vintage-link">Christmas</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/69" class="vintage-link">Classical Antiquity</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Contemporary+Reviews" class="vintage-link">Contemporary Reviews</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Continental+Monthly" class="vintage-link">Continental Monthly</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Cookbooks+and+Cooking" class="vintage-link">Cookbooks and Cooking</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/400" class="vintage-link">Crafts</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Crime+Fiction" class="vintage-link">Crime Fiction</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Crime+Nonfiction" class="vintage-link">Crime Nonfiction</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Current+History" class="vintage-link">Current History</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Czech" class="vintage-link">Czech</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">D</h2>
-                <ul class="category-list">
-                    <li><a href="#">Detective Fiction</a></li>
-                    <li><a href="#">Dew Drops</a></li>
-                    <li><a href="#">De Aarde en haar Volken</a></li>
-                    <li><a href="#">Donahoe's Magazine</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">D</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/299" class="vintage-link">Detective Fiction</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Dew+Drops" class="vintage-link">Dew Drops</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=De+Aarde+en+haar+Volken" class="vintage-link">De Aarde en haar Volken</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Donahoe%27s+Magazine" class="vintage-link">Donahoe's Magazine</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">E</h2>
-                <ul class="category-list">
-                    <li><a href="#">Early English Text Society</a></li>
-                    <li><a href="#">Ecology</a></li>
-                    <li><a href="#">Education</a></li>
-                    <li><a href="#">Egypt</a></li>
-                    <li><a href="#">Engineering</a></li>
-                    <li><a href="#">English Civil War</a></li>
-                    <li><a href="#">Erotic Fiction</a></li>
-                    <li><a href="#">Esperanto</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">E</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Early+English+Text+Society" class="vintage-link">Early English Text Society</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/157" class="vintage-link">Ecology</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/70" class="vintage-link">Education</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/394" class="vintage-link">Egypt</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Engineering" class="vintage-link">Engineering</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=English+Civil+War" class="vintage-link">English Civil War</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Erotic+Fiction" class="vintage-link">Erotic Fiction</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/68" class="vintage-link">Esperanto</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">F</h2>
-                <ul class="category-list">
-                    <li><a href="#">French - Beaux-Arts</a></li>
-                    <li><a href="#">French - Biographie, Mémoires, Journal intime, Correspondance</a></li>
-                    <li><a href="#">French - Chansons</a></li>
-                    <li><a href="#">French - Chroniques</a></li>
-                    <li><a href="#">French - Contes</a></li>
-                    <li><a href="#">French - Droit et Justice</a></li>
-                    <li><a href="#">French - Education et Enseignement</a></li>
-                    <li><a href="#">French - Femmes</a></li>
-                    <li><a href="#">French - Guerres</a></li>
-                    <li><a href="#">French - Histoire</a></li>
-                    <li><a href="#">French - Humour</a></li>
-                    <li><a href="#">French - Illustrateurs</a></li>
-                    <li><a href="#">French - Jeunesse</a></li>
-                    <li><a href="#">French - Langues</a></li>
-                    <li><a href="#">French - La Première Guerre Mondiale, 1914-1918</a></li>
-                    <li><a href="#">French - Littérature</a></li>
-                    <li><a href="#">French - Littérature francophone</a></li>
-                    <li><a href="#">French - Livres, Collections et Bibliophilie</a></li>
-                    <li><a href="#">French - Musique</a></li>
-                    <li><a href="#">French - Métiers et Artisanat</a></li>
-                    <li><a href="#">French - Nouveautés</a></li>
-                    <li><a href="#">French - Nouvelles</a></li>
-                    <li><a href="#">French - Occultisme</a></li>
-                    <li><a href="#">French - Peinture</a></li>
-                    <li><a href="#">French - Peuples et Sociétés</a></li>
-                    <li><a href="#">French - Philosophie, Religion et Morale</a></li>
-                    <li><a href="#">French - Politique</a></li>
-                    <li><a href="#">French - Poésie</a></li>
-                    <li><a href="#">French - Presse</a></li>
-                    <li><a href="#">French - Prix Nobel</a></li>
-                    <li><a href="#">French - Sciences et Techniques</a></li>
-                    <li><a href="#">French - Science fiction</a></li>
-                    <li><a href="#">French - Services publics</a></li>
-                    <li><a href="#">French - Sports et loisirs</a></li>
-                    <li><a href="#">French - Séduction et libertinage</a></li>
-                    <li><a href="#">French - Théâtre</a></li>
-                    <li><a href="#">French - Villes</a></li>
-                    <li><a href="#">French - Voyages et pays</a></li>
-                    <li><a href="#">Famous Scots Series</a></li>
-                    <li><a href="#">Fantasy</a></li>
-                    <li><a href="#">Folklore</a></li>
-                    <li><a href="#">Forestry</a></li>
-                    <li><a href="#">France</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">F</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Beaux-Arts" class="vintage-link">French - Beaux-Arts</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Biographie+Memoires" class="vintage-link">French - Biographie, Mémoires, Journal intime, Correspondance</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Chansons" class="vintage-link">French - Chansons</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Chroniques" class="vintage-link">French - Chroniques</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Contes" class="vintage-link">French - Contes</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Droit+et+Justice" class="vintage-link">French - Droit et Justice</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Education" class="vintage-link">French - Education et Enseignement</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Femmes" class="vintage-link">French - Femmes</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Guerres" class="vintage-link">French - Guerres</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Histoire" class="vintage-link">French - Histoire</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Humour" class="vintage-link">French - Humour</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Illustrateurs" class="vintage-link">French - Illustrateurs</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Jeunesse" class="vintage-link">French - Jeunesse</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Langues" class="vintage-link">French - Langues</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Premiere+Guerre+Mondiale" class="vintage-link">French - La Première Guerre Mondiale, 1914-1918</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Litterature" class="vintage-link">French - Littérature</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Litterature+francophone" class="vintage-link">French - Littérature francophone</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Livres" class="vintage-link">French - Livres, Collections et Bibliophilie</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Musique" class="vintage-link">French - Musique</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Metiers" class="vintage-link">French - Métiers et Artisanat</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Nouveautes" class="vintage-link">French - Nouveautés</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Nouvelles" class="vintage-link">French - Nouvelles</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Occultisme" class="vintage-link">French - Occultisme</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Peinture" class="vintage-link">French - Peinture</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Peuples" class="vintage-link">French - Peuples et Sociétés</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Philosophie" class="vintage-link">French - Philosophie, Religion et Morale</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Politique" class="vintage-link">French - Politique</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Poesie" class="vintage-link">French - Poésie</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Presse" class="vintage-link">French - Presse</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Prix+Nobel" class="vintage-link">French - Prix Nobel</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Sciences" class="vintage-link">French - Sciences et Techniques</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Science+fiction" class="vintage-link">French - Science fiction</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Services+publics" class="vintage-link">French - Services publics</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Sports" class="vintage-link">French - Sports et loisirs</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Seduction" class="vintage-link">French - Séduction et libertinage</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Theatre" class="vintage-link">French - Théâtre</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Villes" class="vintage-link">French - Villes</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=French+Voyages" class="vintage-link">French - Voyages et pays</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Famous+Scots+Series" class="vintage-link">Famous Scots Series</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/251" class="vintage-link">Fantasy</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Folklore" class="vintage-link">Folklore</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Forestry" class="vintage-link">Forestry</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/211" class="vintage-link">France</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">G</h2>
-                <ul class="category-list">
-                    <li><a href="#">Garden and Forest</a></li>
-                    <li><a href="#">General Fiction</a></li>
-                    <li><a href="#">Geology</a></li>
-                    <li><a href="#">German - Drama</a></li>
-                    <li><a href="#">German - Kinderbuch</a></li>
-                    <li><a href="#">German - Lyrik</a></li>
-                    <li><a href="#">German - Prosa</a></li>
-                    <li><a href="#">German - Sachbuch</a></li>
-                    <li><a href="#">Germany</a></li>
-                    <li><a href="#">German Language Books</a></li>
-                    <li><a href="#">Godey's Lady's Book</a></li>
-                    <li><a href="#">Golden Days for Boys and Girls</a></li>
-                    <li><a href="#">Gothic Fiction</a></li>
-                    <li><a href="#">Graham's Magazine</a></li>
-                    <li><a href="#">Greece</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">G</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Garden+and+Forest" class="vintage-link">Garden and Forest</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=General+Fiction" class="vintage-link">General Fiction</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/159" class="vintage-link">Geology</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=German+Drama" class="vintage-link">German - Drama</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=German+Kinderbuch" class="vintage-link">German - Kinderbuch</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=German+Lyrik" class="vintage-link">German - Lyrik</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=German+Prosa" class="vintage-link">German - Prosa</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=German+Sachbuch" class="vintage-link">German - Sachbuch</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/108" class="vintage-link">Germany</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=German+Language+Books" class="vintage-link">German Language Books</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Godey%27s+Lady%27s+Book" class="vintage-link">Godey's Lady's Book</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Golden+Days+for+Boys+and+Girls" class="vintage-link">Golden Days for Boys and Girls</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Gothic+Fiction" class="vintage-link">Gothic Fiction</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Graham%27s+Magazine" class="vintage-link">Graham's Magazine</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Greece" class="vintage-link">Greece</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">H</h2>
-                <ul class="category-list">
-                    <li><a href="#">Harper's New Monthly Magazine</a></li>
-                    <li><a href="#">Harper's Young People</a></li>
-                    <li><a href="#">Harvard Classics</a></li>
-                    <li><a href="#">Hinduism</a></li>
-                    <li><a href="#">Historical Fiction</a></li>
-                    <li><a href="#">Horror</a></li>
-                    <li><a href="#">Horticulture</a></li>
-                    <li><a href="#">Humor</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">H</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Harper%27s+New+Monthly+Magazine" class="vintage-link">Harper's New Monthly Magazine</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Harper%27s+Young+People" class="vintage-link">Harper's Young People</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Harvard+Classics" class="vintage-link">Harvard Classics</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/126" class="vintage-link">Hinduism</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/30" class="vintage-link">Historical Fiction</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/122" class="vintage-link">Horror</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Horticulture" class="vintage-link">Horticulture</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Humor" class="vintage-link">Humor</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">I</h2>
-                <ul class="category-list">
-                    <li><a href="#">Italian - Agraria</a></li>
-                    <li><a href="#">Italian - Archeologia e Storia dell'arte</a></li>
-                    <li><a href="#">Italian - Architettura</a></li>
-                    <li><a href="#">Italian - Arte varia</a></li>
-                    <li><a href="#">Italian - Biografie</a></li>
-                    <li><a href="#">Italian - Botanica</a></li>
-                    <li><a href="#">Italian - Cucina</a></li>
-                    <li><a href="#">Italian - Discorsi e Orazioni</a></li>
-                    <li><a href="#">Italian - Economia</a></li>
-                    <li><a href="#">Italian - Filosofia</a></li>
-                    <li><a href="#">Italian - Folklore</a></li>
-                    <li><a href="#">Italian - Geografia</a></li>
-                    <li><a href="#">Italian - Legge</a></li>
-                    <li><a href="#">Italian - Letteratura</a></li>
-                    <li><a href="#">Italian - Letteratura per ragazzi</a></li>
-                    <li><a href="#">Italian - Linguistica</a></li>
-                    <li><a href="#">Italian - Miscellanea</a></li>
-                    <li><a href="#">Italian - Musica</a></li>
-                    <li><a href="#">Italian - Narrativa varia</a></li>
-                    <li><a href="#">Italian - Numismatica</a></li>
-                    <li><a href="#">Italian - Poesia</a></li>
-                    <li><a href="#">Italian - Psicologia e Sociologia</a></li>
-                    <li><a href="#">Italian - Racconti</a></li>
-                    <li><a href="#">Italian - Religione e Spiritualità</a></li>
-                    <li><a href="#">Italian - Romanzi</a></li>
-                    <li><a href="#">Italian - Romanzi storici</a></li>
-                    <li><a href="#">Italian - Salute</a></li>
-                    <li><a href="#">Italian - Scienza</a></li>
-                    <li><a href="#">Italian - Scienze militari</a></li>
-                    <li><a href="#">Italian - Scienze politiche</a></li>
-                    <li><a href="#">Italian - Storia</a></li>
-                    <li><a href="#">Italian - Teatro dialettale</a></li>
-                    <li><a href="#">Italian - Teatro in prosa</a></li>
-                    <li><a href="#">Italian - Teatro in versi</a></li>
-                    <li><a href="#">Italian - Tecnologia</a></li>
-                    <li><a href="#">Italian - Umorismo</a></li>
-                    <li><a href="#">Italian - Viaggi</a></li>
-                    <li><a href="#">Illustrators</a></li>
-                    <li><a href="#">India</a></li>
-                    <li><a href="#">Islam</a></li>
-                    <li><a href="#">Italy</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">I</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Agraria" class="vintage-link">Italian - Agraria</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Archeologia" class="vintage-link">Italian - Archeologia e Storia dell'arte</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Architettura" class="vintage-link">Italian - Architettura</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Arte+varia" class="vintage-link">Italian - Arte varia</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Biografie" class="vintage-link">Italian - Biografie</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Botanica" class="vintage-link">Italian - Botanica</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Cucina" class="vintage-link">Italian - Cucina</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Discorsi" class="vintage-link">Italian - Discorsi e Orazioni</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Economia" class="vintage-link">Italian - Economia</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Filosofia" class="vintage-link">Italian - Filosofia</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Folklore" class="vintage-link">Italian - Folklore</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Geografia" class="vintage-link">Italian - Geografia</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Legge" class="vintage-link">Italian - Legge</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Letteratura" class="vintage-link">Italian - Letteratura</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Letteratura+per+ragazzi" class="vintage-link">Italian - Letteratura per ragazzi</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Linguistica" class="vintage-link">Italian - Linguistica</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Miscellanea" class="vintage-link">Italian - Miscellanea</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Musica" class="vintage-link">Italian - Musica</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Narrativa+varia" class="vintage-link">Italian - Narrativa varia</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Numismatica" class="vintage-link">Italian - Numismatica</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Poesia" class="vintage-link">Italian - Poesia</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Psicologia" class="vintage-link">Italian - Psicologia e Sociologia</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Racconti" class="vintage-link">Italian - Racconti</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Religione" class="vintage-link">Italian - Religione e Spiritualità</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Romanzi" class="vintage-link">Italian - Romanzi</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Romanzi+storici" class="vintage-link">Italian - Romanzi storici</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Salute" class="vintage-link">Italian - Salute</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Scienza" class="vintage-link">Italian - Scienza</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Scienze+militari" class="vintage-link">Italian - Scienze militari</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Scienze+politiche" class="vintage-link">Italian - Scienze politiche</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Storia" class="vintage-link">Italian - Storia</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Teatro+dialettale" class="vintage-link">Italian - Teatro dialettale</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Teatro+in+prosa" class="vintage-link">Italian - Teatro in prosa</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Teatro+in+versi" class="vintage-link">Italian - Teatro in versi</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Tecnologia" class="vintage-link">Italian - Tecnologia</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Umorismo" class="vintage-link">Italian - Umorismo</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Italian+Viaggi" class="vintage-link">Italian - Viaggi</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Illustrators" class="vintage-link">Illustrators</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/298" class="vintage-link">India</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/96" class="vintage-link">Islam</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/216" class="vintage-link">Italy</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">J</h2>
-                <ul class="category-list">
-                    <li><a href="#">Judaism</a></li>
-                    <li><a href="#">Journal of Entomology and Zoology</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">J</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/97" class="vintage-link">Judaism</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Journal+of+Entomology+and+Zoology" class="vintage-link">Journal of Entomology and Zoology</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">L</h2>
-                <ul class="category-list">
-                    <li><a href="#">L'Illustration</a></li>
-                    <li><a href="#">Language Education</a></li>
-                    <li><a href="#">Latter Day Saints</a></li>
-                    <li><a href="#">Lippincott's Magazine</a></li>
-                    <li><a href="#">Little Folks</a></li>
-                    <li><a href="#">London Medical Gazette</a></li>
-                    <li><a href="#">Love</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">L</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/314" class="vintage-link">L'Illustration</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/67" class="vintage-link">Language Education</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Latter+Day+Saints" class="vintage-link">Latter Day Saints</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Lippincott%27s+Magazine" class="vintage-link">Lippincott's Magazine</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Little+Folks" class="vintage-link">Little Folks</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=London+Medical+Gazette" class="vintage-link">London Medical Gazette</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Love" class="vintage-link">Love</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">M</h2>
-                <ul class="category-list">
-                    <li><a href="#">Manufacturing</a></li>
-                    <li><a href="#">Maps and Cartography</a></li>
-                    <li><a href="#">Masterpieces in Colour</a></li>
-                    <li><a href="#">Mathematics</a></li>
-                    <li><a href="#">McClure's Magazine</a></li>
-                    <li><a href="#">Medicine</a></li>
-                    <li><a href="#">Mediæval Town Series</a></li>
-                    <li><a href="#">Microbiology</a></li>
-                    <li><a href="#">Microscopy</a></li>
-                    <li><a href="#">Mother Earth</a></li>
-                    <li><a href="#">Movie Books</a></li>
-                    <li><a href="#">Mrs Whittelsey's Magazine for Mothers and Daughters</a></li>
-                    <li><a href="#">Music</a></li>
-                    <li><a href="#">Mycology</a></li>
-                    <li><a href="#">Mystery Fiction</a></li>
-                    <li><a href="#">Mythology</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">M</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Manufacturing" class="vintage-link">Manufacturing</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Maps+and+Cartography" class="vintage-link">Maps and Cartography</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Masterpieces+in+Colour" class="vintage-link">Masterpieces in Colour</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/38" class="vintage-link">Mathematics</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=McClure%27s+Magazine" class="vintage-link">McClure's Magazine</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/168" class="vintage-link">Medicine</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Mediaeval+Town+Series" class="vintage-link">Mediæval Town Series</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/293" class="vintage-link">Microbiology</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Microscopy" class="vintage-link">Microscopy</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Mother+Earth" class="vintage-link">Mother Earth</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Movie+Books" class="vintage-link">Movie Books</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Mrs+Whittelsey%27s+Magazine" class="vintage-link">Mrs Whittelsey's Magazine for Mothers and Daughters</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/39" class="vintage-link">Music</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Mycology" class="vintage-link">Mycology</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/206" class="vintage-link">Mystery Fiction</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Mythology" class="vintage-link">Mythology</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">N</h2>
-                <ul class="category-list">
-                    <li><a href="#">Napoleonic Era</a></li>
-                    <li><a href="#">Native America</a></li>
-                    <li><a href="#">Natural History</a></li>
-                    <li><a href="#">New Zealand</a></li>
-                    <li><a href="#">Northern Nut Growers Association</a></li>
-                    <li><a href="#">Norway</a></li>
-                    <li><a href="#">Notes and Queries</a></li>
-                    <li><a href="#">Noteworthy Trials</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">N</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Napoleonic+Era" class="vintage-link">Napoleonic Era</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Native+America" class="vintage-link">Native America</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Natural+History" class="vintage-link">Natural History</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/414" class="vintage-link">New Zealand</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Northern+Nut+Growers+Association" class="vintage-link">Northern Nut Growers Association</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Norway" class="vintage-link">Norway</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Notes+and+Queries" class="vintage-link">Notes and Queries</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Noteworthy+Trials" class="vintage-link">Noteworthy Trials</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">O</h2>
-                <ul class="category-list">
-                    <li><a href="#">One Act Plays</a></li>
-                    <li><a href="#">Opera</a></li>
-                    <li><a href="#">Our Young Folks</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">O</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=One+Act+Plays" class="vintage-link">One Act Plays</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Opera" class="vintage-link">Opera</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Our+Young+Folks" class="vintage-link">Our Young Folks</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">P</h2>
-                <ul class="category-list">
-                    <li><a href="#">Portuguese - Arte</a></li>
-                    <li><a href="#">Portuguese - Biografia</a></li>
-                    <li><a href="#">Portuguese - Ciência e Técnica</a></li>
-                    <li><a href="#">Portuguese - Contos</a></li>
-                    <li><a href="#">Portuguese - História</a></li>
-                    <li><a href="#">Portuguese - Infantil e Juvenil</a></li>
-                    <li><a href="#">Portuguese - Língua Portuguesa</a></li>
-                    <li><a href="#">Portuguese - Navegações e Explorações</a></li>
-                    <li><a href="#">Portuguese - Periódicos</a></li>
-                    <li><a href="#">Portuguese - Poesia</a></li>
-                    <li><a href="#">Portuguese - Política e Sociedade</a></li>
-                    <li><a href="#">Portuguese - Romance</a></li>
-                    <li><a href="#">Portuguese - Teatro</a></li>
-                    <li><a href="#">Paganism</a></li>
-                    <li><a href="#">Philosophy</a></li>
-                    <li><a href="#">Photography</a></li>
-                    <li><a href="#">Physics</a></li>
-                    <li><a href="#">Physiology</a></li>
-                    <li><a href="#">Pirates, Buccaneers, Corsairs, etc.</a></li>
-                    <li><a href="#">Plays</a></li>
-                    <li><a href="#">Poetry, A Magazine of Verse</a></li>
-                    <li><a href="#">Poetry</a></li>
-                    <li><a href="#">Politics</a></li>
-                    <li><a href="#">Popular Science Monthly</a></li>
-                    <li><a href="#">Prairie Farmer</a></li>
-                    <li><a href="#">Precursors of Science Fiction</a></li>
-                    <li><a href="#">Project Gutenberg</a></li>
-                    <li><a href="#">Psychology</a></li>
-                    <li><a href="#">Punch</a></li>
-                    <li><a href="#">Punchinello</a></li>
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">P</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Portuguese+Arte" class="vintage-link">Portuguese - Arte</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Portuguese+Biografia" class="vintage-link">Portuguese - Biografia</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Portuguese+Ciencia" class="vintage-link">Portuguese - Ciência e Técnica</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Portuguese+Contos" class="vintage-link">Portuguese - Contos</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Portuguese+Historia" class="vintage-link">Portuguese - História</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Portuguese+Infantil" class="vintage-link">Portuguese - Infantil e Juvenil</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Portuguese+Lingua" class="vintage-link">Portuguese - Língua Portuguesa</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Portuguese+Navegacoes" class="vintage-link">Portuguese - Navegações e Explorações</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Portuguese+Periodicos" class="vintage-link">Portuguese - Periódicos</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Portuguese+Poesia" class="vintage-link">Portuguese - Poesia</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Portuguese+Politica" class="vintage-link">Portuguese - Política e Sociedade</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Portuguese+Romance" class="vintage-link">Portuguese - Romance</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Portuguese+Teatro" class="vintage-link">Portuguese - Teatro</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/111" class="vintage-link">Paganism</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/53" class="vintage-link">Philosophy</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/14" class="vintage-link">Photography</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/301" class="vintage-link">Physics</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Physiology" class="vintage-link">Physiology</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Pirates+Buccaneers" class="vintage-link">Pirates, Buccaneers, Corsairs, etc.</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Plays" class="vintage-link">Plays</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Poetry+A+Magazine" class="vintage-link">Poetry, A Magazine of Verse</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/56" class="vintage-link">Poetry</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Politics" class="vintage-link">Politics</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Popular+Science+Monthly" class="vintage-link">Popular Science Monthly</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Prairie+Farmer" class="vintage-link">Prairie Farmer</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Precursors+of+Science+Fiction" class="vintage-link">Precursors of Science Fiction</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Project+Gutenberg" class="vintage-link">Project Gutenberg</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/54" class="vintage-link">Psychology</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/381" class="vintage-link">Punch</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Punchinello" class="vintage-link">Punchinello</a></li>
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">R</h2>
-                <ul class="category-list">
-                    <li><a href="#">Racism</a></li>
-                    <li><a href="#">Reference</a></li>
-                    <li><a href="#">Romantic Fiction</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">R</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Racism" class="vintage-link">Racism</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/83" class="vintage-link">Reference</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Romantic+Fiction" class="vintage-link">Romantic Fiction</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">S</h2>
-                <ul class="category-list">
-                    <li><a href="#">School Stories</a></li>
-                    <li><a href="#">Science</a></li>
-                    <li><a href="#">Science Fiction</a></li>
-                    <li><a href="#">Science Fiction by Women</a></li>
-                    <li><a href="#">Scientific American</a></li>
-                    <li><a href="#">Scouts</a></li>
-                    <li><a href="#">Scribner's Magazine</a></li>
-                    <li><a href="#">Short Stories</a></li>
-                    <li><a href="#">Slavery</a></li>
-                    <li><a href="#">Sociology</a></li>
-                    <li><a href="#">South Africa</a></li>
-                    <li><a href="#">South America</a></li>
-                    <li><a href="#">Spanish American War</a></li>
-                    <li><a href="#">St. Nicholas Magazine for Boys and Girls</a></li>
-                    <li><a href="#">Suffrage</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">S</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=School+Stories" class="vintage-link">School Stories</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Science" class="vintage-link">Science</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/31" class="vintage-link">Science Fiction</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Science+Fiction+by+Women" class="vintage-link">Science Fiction by Women</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/86" class="vintage-link">Scientific American</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Scouts" class="vintage-link">Scouts</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Scribner%27s+Magazine" class="vintage-link">Scribner's Magazine</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/42" class="vintage-link">Short Stories</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Slavery" class="vintage-link">Slavery</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/66" class="vintage-link">Sociology</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/393" class="vintage-link">South Africa</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=South+America" class="vintage-link">South America</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Spanish+American+War" class="vintage-link">Spanish American War</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=St+Nicholas+Magazine" class="vintage-link">St. Nicholas Magazine for Boys and Girls</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Suffrage" class="vintage-link">Suffrage</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">T</h2>
-                <ul class="category-list">
-                    <li><a href="#">Technology</a></li>
-                    <li><a href="#">The Aldine</a></li>
-                    <li><a href="#">The American Architect and Building News</a></li>
-                    <li><a href="#">The American Bee Journal</a></li>
-                    <li><a href="#">The American Journal of Archaeology</a></li>
-                    <li><a href="#">The American Missionary</a></li>
-                    <li><a href="#">The American Quarterly Review</a></li>
-                    <li><a href="#">The Arena</a></li>
-                    <li><a href="#">The Argosy</a></li>
-                    <li><a href="#">The Atlantic Monthly</a></li>
-                    <li><a href="#">The Baptist Magazine</a></li>
-                    <li><a href="#">The Bay State Monthly</a></li>
-                    <li><a href="#">The Botanical Magazine</a></li>
-                    <li><a href="#">The Brochure Series of Architectural Illustration</a></li>
-                    <li><a href="#">The Catholic World</a></li>
-                    <li><a href="#">The Christian Foundation</a></li>
-                    <li><a href="#">The Church of England Magazine</a></li>
-                    <li><a href="#">The Contemporary Review</a></li>
-                    <li><a href="#">The Economist</a></li>
-                    <li><a href="#">The Esperantist</a></li>
-                    <li><a href="#">The Galaxy</a></li>
-                    <li><a href="#">The Girls Own Paper</a></li>
-                    <li><a href="#">The Great Round World And What Is Going On In It</a></li>
-                    <li><a href="#">The Haslemere Museum Gazette</a></li>
-                    <li><a href="#">The Idler</a></li>
-                    <li><a href="#">The Illustrated War News</a></li>
-                    <li><a href="#">The International Magazine of Literature, Art, and Science</a></li>
-                    <li><a href="#">The Irish Ecclesiastical Record</a></li>
-                    <li><a href="#">The Irish Penny Journal</a></li>
-                    <li><a href="#">The Journal of Negro History</a></li>
-                    <li><a href="#">The Knickerbocker</a></li>
-                    <li><a href="#">The Mayflower</a></li>
-                    <li><a href="#">The Menorah Journal</a></li>
-                    <li><a href="#">The Mentor</a></li>
-                    <li><a href="#">The Mirror of Literature, Amusement, and Instruction</a></li>
-                    <li><a href="#">The Mirror of Taste, and Dramatic Censor</a></li>
-                    <li><a href="#">The National Preacher</a></li>
-                    <li><a href="#">The North American Medical and Surgical Journal</a></li>
-                    <li><a href="#">The Nursery</a></li>
-                    <li><a href="#">The Philatelic Digital Library Project</a></li>
-                    <li><a href="#">The Scrap Book</a></li>
-                    <li><a href="#">The Speaker</a></li>
-                    <li><a href="#">The Stars and Stripes</a></li>
-                    <li><a href="#">The Strand Magazine</a></li>
-                    <li><a href="#">The Unpopular Review</a></li>
-                    <li><a href="#">The Writer</a></li>
-                    <li><a href="#">The Yellow Book</a></li>
-                    <li><a href="#">Transportation</a></li>
-                    <li><a href="#">Travel</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">T</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/71" class="vintage-link">Technology</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Aldine" class="vintage-link">The Aldine</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+American+Architect" class="vintage-link">The American Architect and Building News</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+American+Bee+Journal" class="vintage-link">The American Bee Journal</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+American+Journal+of+Archaeology" class="vintage-link">The American Journal of Archaeology</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+American+Missionary" class="vintage-link">The American Missionary</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+American+Quarterly+Review" class="vintage-link">The American Quarterly Review</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Arena" class="vintage-link">The Arena</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Argosy" class="vintage-link">The Argosy</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/417" class="vintage-link">The Atlantic Monthly</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Baptist+Magazine" class="vintage-link">The Baptist Magazine</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Bay+State+Monthly" class="vintage-link">The Bay State Monthly</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Botanical+Magazine" class="vintage-link">The Botanical Magazine</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Brochure+Series" class="vintage-link">The Brochure Series of Architectural Illustration</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Catholic+World" class="vintage-link">The Catholic World</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Christian+Foundation" class="vintage-link">The Christian Foundation</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Church+of+England+Magazine" class="vintage-link">The Church of England Magazine</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Contemporary+Review" class="vintage-link">The Contemporary Review</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Economist" class="vintage-link">The Economist</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Esperantist" class="vintage-link">The Esperantist</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Galaxy" class="vintage-link">The Galaxy</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Girls+Own+Paper" class="vintage-link">The Girls Own Paper</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Great+Round+World" class="vintage-link">The Great Round World And What Is Going On In It</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Haslemere+Museum+Gazette" class="vintage-link">The Haslemere Museum Gazette</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Idler" class="vintage-link">The Idler</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Illustrated+War+News" class="vintage-link">The Illustrated War News</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+International+Magazine" class="vintage-link">The International Magazine of Literature, Art, and Science</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Irish+Ecclesiastical+Record" class="vintage-link">The Irish Ecclesiastical Record</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Irish+Penny+Journal" class="vintage-link">The Irish Penny Journal</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Journal+of+Negro+History" class="vintage-link">The Journal of Negro History</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Knickerbocker" class="vintage-link">The Knickerbocker</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Mayflower" class="vintage-link">The Mayflower</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Menorah+Journal" class="vintage-link">The Menorah Journal</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Mentor" class="vintage-link">The Mentor</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Mirror+of+Literature" class="vintage-link">The Mirror of Literature, Amusement, and Instruction</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Mirror+of+Taste" class="vintage-link">The Mirror of Taste, and Dramatic Censor</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+National+Preacher" class="vintage-link">The National Preacher</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+North+American+Medical" class="vintage-link">The North American Medical and Surgical Journal</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Nursery" class="vintage-link">The Nursery</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Philatelic+Digital+Library" class="vintage-link">The Philatelic Digital Library Project</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Scrap+Book" class="vintage-link">The Scrap Book</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Speaker" class="vintage-link">The Speaker</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Stars+and+Stripes" class="vintage-link">The Stars and Stripes</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/91" class="vintage-link">The Strand Magazine</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Unpopular+Review" class="vintage-link">The Unpopular Review</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Writer" class="vintage-link">The Writer</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=The+Yellow+Book" class="vintage-link">The Yellow Book</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Transportation" class="vintage-link">Transportation</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Travel" class="vintage-link">Travel</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">U</h2>
-                <ul class="category-list">
-                    <li><a href="#">US Civil War</a></li>
-                    <li><a href="#">United Kingdom</a></li>
-                    <li><a href="#">United States</a></li>
-                    <li><a href="#">United States Law</a></li>
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">U</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/332" class="vintage-link">US Civil War</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/264" class="vintage-link">United Kingdom</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/33" class="vintage-link">United States</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=United+States+Law" class="vintage-link">United States Law</a></li>
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">W</h2>
-                <ul class="category-list">
-                    <li><a href="#">Western</a></li>
-                    <li><a href="#">Witchcraft</a></li>
-                    <li><a href="#">Women's Travel Journals</a></li>
-                    <li><a href="#">Woodwork</a></li>
-                    <li><a href="#">World War I</a></li>
-                    <li><a href="#">World War II</a></li>  
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">W</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/123" class="vintage-link">Western</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Witchcraft" class="vintage-link">Witchcraft</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Women%27s+Travel+Journals" class="vintage-link">Women's Travel Journals</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Woodwork" class="vintage-link">Woodwork</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/51" class="vintage-link">World War I</a></li>
+                    <li><a href="https://www.gutenberg.org/ebooks/bookshelf/106" class="vintage-link">World War II</a></li>  
                 </ul>
             </div>
 
-            <div class="category-card book-list">
-                <h2 style="margin-top: 0;">Z</h2>
-                <ul class="category-list">
-                    <li><a href="#">Zoology</a></li>
+            <div class="category-soft-box">
+                <h2 style="margin-top: 0; text-align: center;">Z</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.gutenberg.org/ebooks/search/?query=Zoology" class="vintage-link">Zoology</a></li>
                 </ul>
             </div>
 
-        </div> <footer class="site-footer" style="background: #2c3e50; padding: 2rem; color: white; text-align: center; border-radius: 8px; margin-top: 40px;">
-            <nav class="footer-nav" style="margin-bottom: 15px;">
-                <a href="about.html" style="color: white; margin: 0 10px; text-decoration: none;">About</a> |
-                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Privacy policy</a> |
-                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Permissions</a> |
-                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Terms of Use</a> |
-                <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Contact Us</a>
-            </nav>
-            <p>&copy; 2026 Project Gutenberg</p>
-        </footer>
+        </div>
 
     </main>
+
+    <footer class="site-footer" style="background: #2c3e50; padding: 2rem; color: white; text-align: center; border-radius: 8px; margin-top: 40px;">
+        <nav class="footer-nav" style="margin-bottom: 15px;">
+            <a href="about.html" style="color: white; margin: 0 10px; text-decoration: none;">About</a> |
+            <a href="https://www.gutenberg.org/policy/privacy_policy.html" style="color: white; margin: 0 10px; text-decoration: none;">Privacy policy</a> |
+            <a href="https://www.gutenberg.org/policy/permission.html" style="color: white; margin: 0 10px; text-decoration: none;">Permissions</a> |
+            <a href="https://www.gutenberg.org/policy/terms_of_use.html" style="color: white; margin: 0 10px; text-decoration: none;">Terms of Use</a> |
+            <a href="https://www.gutenberg.org/about/contact_information.html" style="color: white; margin: 0 10px; text-decoration: none;">Contact Us</a>
+        </nav>
+        <p>&copy; 2026 Project Gutenberg</p>
+    </footer>
 
 </body>
 </html>
