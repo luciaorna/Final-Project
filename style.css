@@ -620,3 +620,50 @@ h1 {
 .collection-title {
     margin-bottom: 25px;
 }
+
+/* --- Vintage Mode Styles --- */
+.sepia-filter {
+    filter: sepia(0.8) contrast(1.1);
+    transition: filter 0.5s ease;
+}
+
+.film-grain {
+    position: relative;
+}
+
+.film-grain::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Subtle noise texture */
+    background: url('https://www.transparenttextures.com/patterns/stardust.png'); 
+    opacity: 0.1;
+    pointer-events: none; /* Allows clicking through the grain */
+    z-index: 9999;
+}
+
+/* --- Dark Mode Styles --- */
+.dark-mode {
+    background-color: #1a1a1a !important;
+    color: #e8dfd0 !important;
+}
+
+.dark-mode .info-box, .dark-mode .category-soft-box {
+    background-color: #2c2c2c !important;
+    border-color: #444 !important;
+    color: #e8dfd0 !important;
+}
+
+/* --- Back to Top Button Styling --- */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Script will show it later */
+    background: #5a4a3a;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1000;
+}
