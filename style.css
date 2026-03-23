@@ -1,11 +1,5 @@
-/* ==========================================================================
-   PROJECT GUTENBERG - VINTAGE TYPEWRITER REDESIGN CSS
-   ========================================================================== */
-
 /* ===== 1. RESET & BASE STYLES ===== */
 * { 
-    /* We reset margin and padding to 0 so the browser doesn't add its own weird default spacing. 
-       'box-sizing: border-box' ensures that padding doesn't make our boxes wider than we want. */
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
@@ -387,7 +381,7 @@ h1 {
 
 /* ===== 9. FOOTER ===== */
 .site-footer {
-    background-color: #2c3e50; /* Elegant dark blue to contrast the vintage cream */
+    background-color: #2c3e50; 
     padding: 2rem;
     color: white;
     text-align: center;
