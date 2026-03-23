@@ -119,7 +119,8 @@ body {
 main, .page_content {
     flex: 1;                  /* Takes up ALL the remaining horizontal space */
     padding: 40px;
-    max-width: 100%;          
+    max-width: 1000px;
+    margin: 0 auto;          
     display: block;
 }
 
