@@ -93,6 +93,37 @@
     </main>
 
     <div id="backToTop">↑ Top</div>
-    <script src="script.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // Find only the buttons we just added
+    const modeButtons = document.querySelectorAll(".mode-btn");
+
+    modeButtons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault(); // Stop page from jumping
+            const text = btn.textContent;
+
+            // --- DARK MODE ---
+            if (text.includes("Dark Mode")) {
+                document.body.classList.toggle("dark-mode");
+                document.body.classList.remove("film-grain"); // Turn off vintage
+            }
+
+            // --- VINTAGE MODE ---
+            if (text.includes("Vintage")) {
+                document.body.classList.toggle("film-grain");
+                document.body.classList.remove("dark-mode"); // Turn off dark mode
+            }
+
+            // --- BACK TO TOP ---
+            if (text.includes("Top")) {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+        });
+    });
+
+});
+</script>
 </body>
 </html>
