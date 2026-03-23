@@ -592,3 +592,31 @@ h1 {
 .category-soft-box li {
     margin-bottom: 12px;
 }
+/* =========================================
+   14. UTILITY CLASSES (For HTML cleanup)
+   ========================================= */
+
+.text-center {
+    text-align: center !important;
+}
+
+.bold-link {
+    font-weight: bold;
+    color: #5a4a3a;
+}
+
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.border-none {
+    border-bottom: none !important;
+}
+
+.collection-title {
+    margin-bottom: 25px;
+}
