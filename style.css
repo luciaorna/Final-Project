@@ -400,3 +400,104 @@ h1 {
 .footer-nav a:hover {
     text-decoration: underline;
 }
+/* =========================================
+   11. SEARCH OPTIONS PAGE
+   ========================================= */
+
+/* Top navigation for quick options */
+.search-options-nav {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+/* Main advanced search form */
+.advanced-search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #4a3b2b;
+}
+
+/* Text boxes and dropdowns (Inputs) */
+.vintage-input {
+    padding: 10px;
+    border: 1px solid #c5b8a5;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fff9f0;
+}
+
+/* Main search button */
+.vintage-submit {
+    background-color: #5a4a3a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.vintage-submit:hover {
+    background-color: #7a634d;
+}
+
+/* Container for DuckDuckGo and Google */
+.search-engines-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.engine-form {
+    display: flex;
+}
+
+.engine-input {
+    padding: 10px;
+    border: 1px solid #c5b8a5;
+    border-radius: 4px 0 0 4px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fff9f0;
+}
+
+.engine-submit {
+    background: #e8dfd0;
+    color: #4a3b2b;
+    border: 1px solid #c5b8a5;
+    border-left: none; /* So it connects perfectly with the input */
+    border-radius: 0 4px 4px 0;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    transition: background-color 0.3s ease;
+}
+
+.engine-submit:hover {
+    background: #dcd0b9;
+}
+
+/* Spacing for alphabet letters in catalogs */
+.catalog-letters {
+    line-height: 2;
+    font-weight:
