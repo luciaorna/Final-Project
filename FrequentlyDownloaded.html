@@ -1,299 +1,714 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frequently Downloaded | Project Gutenberg</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Downloaded | Project Gutenberg</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-   <header class="site-header">
-    <nav class="nav container">
-      <a href="index.html" class="logo">
-          <img src="images/projectgutenberg logo.png" alt="Project Gutenberg Logo" class="logo-img">
-      </a>
-      
-      <form class="search-form" method="get" action="https://www.gutenberg.org/ebooks/search/">
-        <input type="search" name="query" placeholder="Quick search" class="vintage-input">
-        <button type="submit" class="vintage-submit">Go!</button>
-      </form>
-      
-      <ul class="nav-list">
-        <li><a href="about.html">About</a></li>
-        <li><a href="FrequentlyDownloaded.html">Frequently Downloaded</a></li>
-        <li><a href="maincat.html">Main Categories</a></li>
-        <li><a href="readinglists.html">Reading Lists</a></li>
-        <li><a href="searchoptions.html">Search Options</a></li>
-        <li><a href="individualbook.html">Individual Book</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="page-layout">
-    
-    <div class="content-wrapper">
-        <div class="page-header">
-            <h1 class="section-title mt-0">Frequently Viewed or Downloaded</h1>
-            
-            <div class="info-box">
-                <p class="intro-text" style="margin-bottom: 0;">Calculated from the number of times each eBook gets downloaded. (Multiple downloads from the same Internet address on the same day count as one download. Addresses that download more than 100 eBooks in a day are considered robots and are not counted.)</p>
+    <header class="site-header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">
+                <img src="images/projectgutenberg logo.png" alt="Project Gutenberg Logo" class="logo-img">
+            </a>
+            <form class="search-form" method="get" action="https://www.gutenberg.org/ebooks/search/">
+                <input type="search" name="query" placeholder="Quick search" class="vintage-input">
+                <button type="submit" class="vintage-submit">Go!</button>
+            </form>
+            <ul class="nav-list">
+                <li><a href="about.html">About</a></li>
+                <li><a href="FrequentlyDownloaded.html">Frequently Downloaded</a></li>
+                <li><a href="maincat.html">Main Categories</a></li>
+                <li><a href="readinglists.html">Reading Lists</a></li>
+                <li><a href="searchoptions.html">Search Options</a></li>
+                <li><a href="individualbook.html">Individual Book</a></li>
+            </ul>
+            <div style="padding: 10px; text-align: center; display: flex; flex-direction: column; gap: 10px;">
+                <button id="darkModeToggle" class="vintage-submit" style="font-size: 0.8rem;">🌙 Dark Mode</button>
+                <button id="vintageToggle" class="vintage-submit" onclick="toggleVintageMode()" style="font-size: 0.8rem;">📽️ Vintage Mode</button>
             </div>
-        </div>
+        </nav>
+    </header>
 
-        <table id="books-downloads-table" class="vintage-table">
-          <caption style="text-align: left; font-weight: bold; color: #4a3b2b; padding-bottom: 10px; font-size: 1.2rem;">Total Books Downloaded</caption>
-          <thead>
-              <tr>
-                  <th>Time Period</th>
-                  <th>Downloads</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td>Yesterday (2026-03-11)</td>
-                  <td>1,859,160</td>
-              </tr>
-              <tr>
-                  <td>Last 7 days</td>
-                  <td>11,126,494</td>
-              </tr>
-              <tr>
-                  <td>Last 30 days</td>
-                  <td>54,252,034</td>
-              </tr>
-          </tbody>
-        </table>
-
-        <div id="books-downloads-nav" style="margin-bottom: 40px; border-bottom: 2px dashed #dcd0b9; padding-bottom: 20px;">
-            <div style="margin-bottom: 10px;">
-                <b style="color: #4a3b2b; margin-right: 15px;">Top 100 EBooks:</b> 
-                <a href="#books-last1" class="archive-tag">Yesterday</a>
-                <a href="#books-last7" class="archive-tag">7 days</a>
-                <a href="#books-last30" class="archive-tag">30 days</a>
-            </div>
-            <div>
-                <b style="color: #4a3b2b; margin-right: 15px;">Top 100 Authors:</b> 
-                <a href="#authors-last1" class="archive-tag">Yesterday</a>
-                <a href="#authors-last7" class="archive-tag">7 days</a>
-                <a href="#authors-last30" class="archive-tag">30 days</a>
-            </div>
-        </div>
-
-        <div class="info-container">
-            
-            <div class="info-card info-box">
-                <h2 id="books-last1" class="section-title mt-0 border-none">Top 100 EBooks yesterday</h2>
-                <ol class="vintage-list" style="padding-left: 20px; font-size: 0.95rem;">
-                    <li><a href="https://www.gutenberg.org/ebooks/84" class="vintage-link">Frankenstein; or, the modern prometheus by Mary Wollstonecraft Shelley (7750)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/37683" class="vintage-link">Chambers's Twentieth Century Dictionary (part 1 of 4: A-D) (7579)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/45304" class="vintage-link">The City of God, Volume I by Saint of Hippo Augustine (5458)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/2701" class="vintage-link">Moby Dick; Or, The Whale by Herman Melville (3870)</a></li>
-                    <li><a href="individualbook.html" class="vintage-link">Pride and Prejudice by Jane Austen (3729)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/64317" class="vintage-link">The Great Gatsby by F. Scott Fitzgerald (2714)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/768" class="vintage-link">Wuthering Heights by Emily Brontë (2611)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/1513" class="vintage-link">Romeo and Juliet by William Shakespeare (2567)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/11" class="vintage-link">Alice's Adventures in Wonderland by Lewis Carroll (2375)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/1260" class="vintage-link">Jane Eyre: An Autobiography by Charlotte Brontë (2068)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/2641" class="vintage-link">A Room with a View by E. M. Forster (2033)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/174" class="vintage-link">The Picture of Dorian Gray by Oscar Wilde (1928)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/100" class="vintage-link">The Complete Works of William Shakespeare (1920)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/844" class="vintage-link">The Importance of Being Earnest by Oscar Wilde (1902)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/145" class="vintage-link">Middlemarch by George Eliot (1877)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/345" class="vintage-link">Dracula by Bram Stoker (1712)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/43" class="vintage-link">The strange case of Dr. Jekyll and Mr. Hyde (1699)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/5197" class="vintage-link">My Life — Volume 1 by Richard Wagner (1661)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/2542" class="vintage-link">A Doll's House : a play by Henrik Ibsen (1604)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/67979" class="vintage-link">The Blue Castle: a novel by L. M. Montgomery (1597)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/28054" class="vintage-link">The Brothers Karamazov by Fyodor Dostoyevsky (1593)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/1184" class="vintage-link">The Count of Monte Cristo by Alexandre Dumas (1585)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/2554" class="vintage-link">Crime and Punishment by Fyodor Dostoyevsky (1568)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/37106" class="vintage-link">Little Women by Louisa May Alcott (1541)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/26471" class="vintage-link">Spoon River Anthology by Edgar Lee Masters (1539)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/1080" class="vintage-link">A Modest Proposal by Jonathan Swift (1464)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/1661" class="vintage-link">The Adventures of Sherlock Holmes (1463)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/76" class="vintage-link">Adventures of Huckleberry Finn by Mark Twain (1389)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/71937" class="vintage-link">The writings of Clement of Alexandria (1370)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/1259" class="vintage-link">Twenty years after by Alexandre Dumas (1368)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/16389" class="vintage-link">The Enchanted April by Elizabeth Von Arnim (1336)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/1400" class="vintage-link">Great Expectations by Charles Dickens (1296)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/394" class="vintage-link">Cranford by Elizabeth Cleghorn Gaskell (1267)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/8492" class="vintage-link">The King in Yellow by Robert W. Chambers (1264)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/24141" class="vintage-link">警世通言 by Menglong Feng (1248)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/2160" class="vintage-link">The Expedition of Humphry Clinker by T. Smollett (1242)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/16328" class="vintage-link">Beowulf: An Anglo-Saxon Epic Poem (1237)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/6761" class="vintage-link">The Adventures of Ferdinand Count Fathom (1237)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/6593" class="vintage-link">History of Tom Jones, a Foundling by Henry Fielding (1234)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/4085" class="vintage-link">The Adventures of Roderick Random by T. Smollett (1220)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/1232" class="vintage-link">The Prince by Niccolò Machiavelli (1180)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/42324" class="vintage-link">Frankenstein; Or, The Modern Prometheus (1179)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/25344" class="vintage-link">The Scarlet Letter by Nathaniel Hawthorne (1152)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/98" class="vintage-link">A Tale of Two Cities by Charles Dickens (1125)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/45368" class="vintage-link">The Outline of History by H. G. Wells (1092)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/3296" class="vintage-link">The Confessions of St. Augustine (1084)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/2591" class="vintage-link">Grimms' Fairy Tales by Jacob Grimm and Wilhelm Grimm (1081)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/8800" class="vintage-link">The divine comedy by Dante Alighieri (1068)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/1998" class="vintage-link">Thus Spake Zarathustra by Friedrich Wilhelm Nietzsche (1044)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/829" class="vintage-link">Gulliver's Travels into Several Remote Nations (1039)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/27673" class="vintage-link">Oedipus King of Thebes by Sophocles (1035)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/5200" class="vintage-link">Metamorphosis by Franz Kafka (1021)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/1952" class="vintage-link">The Yellow Wallpaper by Charlotte Perkins Gilman (1007)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/2600" class="vintage-link">War and Peace by graf Leo Tolstoy (991)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/45" class="vintage-link">Anne of Green Gables by L. M. Montgomery (974)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/74" class="vintage-link">The Adventures of Tom Sawyer, Complete by Mark Twain (953)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/3207" class="vintage-link">Leviathan by Thomas Hobbes (940)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/28942" class="vintage-link">The Junior Classics: Fairy and wonder tales by Neilson (922)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/23" class="vintage-link">Narrative Frederick Douglass, American Slave (910)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/4300" class="vintage-link">Ulysses by James Joyce (902)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/408" class="vintage-link">The Souls of Black Folk by W. E. B. Du Bois (897)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/1399" class="vintage-link">Anna Karenina by graf Leo Tolstoy (884)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/2680" class="vintage-link">Meditations by Emperor Marcus Aurelius (871)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/120" class="vintage-link">Treasure Island by Robert Louis Stevenson (861)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/36034" class="vintage-link">White nights, and other stories by Fyodor Dostoyevsky (859)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/1727" class="vintage-link">The Odyssey by Homer (853)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/50285" class="vintage-link">Dr. Mabuse, der Spieler : by Norbert Jacques (849)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/7370" class="vintage-link">Second Treatise of Government by John Locke (846)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/20417" class="vintage-link">The Outline of Science, Vol. 1 by J. Arthur Thomson (836)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/24855" class="vintage-link">Concrete Construction: Methods and Costs (832)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/244" class="vintage-link">A Study in Scarlet by Arthur Conan Doyle (828)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/20228" class="vintage-link">Noli Me Tangere by José Rizal (827)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/22788" class="vintage-link">The Federalist Papers Alexander Hamilton (825)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/55" class="vintage-link">The Wonderful Wizard of Oz by L. Frank Baum (799)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/219" class="vintage-link">Heart of Darkness by Joseph Conrad (766)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/161" class="vintage-link">Sense and Sensibility by Jane Austen (747)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/135" class="vintage-link">Les Misérables by Victor Hugo (743)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/72075" class="vintage-link">The scrap book, Volume 2, No. 2 by Various (742)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/205" class="vintage-link">Walden, and On The Duty Of Civil Disobedience (739)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/26225" class="vintage-link">Fifteen Thousand Useful Phrases by Grenville Kleiser (715)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/57724" class="vintage-link">Cyclopaedia Canadian Biography (712)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/15399" class="vintage-link"> Life Olaudah Equiano, Or Gustavus Vassa (708)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/41445" class="vintage-link">Frankenstein; Or, The Modern Prometheus by Shelley (705)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/1497" class="vintage-link">The Republic by Plato (704)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/4363" class="vintage-link">Beyond Good and Evil by Friedrich Wilhelm Nietzsche (681)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/2852" class="vintage-link">The Hound of the Baskervilles by Arthur Conan Doyle (670)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/24979" class="vintage-link">A Source Book for Ancient Church History (666)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/5740" class="vintage-link">Tractatus Logico-Philosophicus by Ludwig Wittgenstein (660)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/26296" class="vintage-link">Les mille et une nuits, tome premier (658)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/23962" class="vintage-link">西遊記 by Cheng'en Wu (648)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/20203" class="vintage-link">Autobiography of Benjamin Franklin Franklin (641)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/209" class="vintage-link">The Turn of the Screw by Henry James (632)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/215" class="vintage-link">The call of the wild by Jack London (620)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/3300" class="vintage-link"> inquiries nature causes wealth of Nations by Smith (615)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/32105" class="vintage-link">Belford's Magazine, Vol 2, December 1888 by Various (607)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/26706" class="vintage-link">Manual of Military Training by James A. Moss (606)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/16" class="vintage-link">Peter Pan : by J. M. Barrie (604)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/730" class="vintage-link">Oliver Twist by Charles Dickens (593)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/41" class="vintage-link">The Legend of Sleepy Hollow by Washington Irving (585)</a></li>
-                    <li><a href="https://www.gutenberg.org/ebooks/996" class="vintage-link">Don Quixote by Miguel de Cervantes Saavedra (572)</a></li>
-                </ol>
+    <main class="page-layout">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h1 class="text-center">Frequently Viewed or Downloaded</h1>
+                <div class="info-box">
+                    <p class="intro-text" style="margin-bottom: 0;">Calculated from the number of times each eBook gets downloaded. (Multiple downloads from the same Internet address on the same day count as one download. Addresses that download more than 100 eBooks in a day are considered robots and are not counted.)</p>
+                </div>
             </div>
 
-            <div class="info-card info-box">
-                <h2 id="authors-last1" class="section-title mt-0 border-none">Top 100 Authors yesterday</h2>
-                <ol class="vintage-list" style="padding-left: 20px; font-size: 0.95rem;">
-                    <li><a href="https://www.gutenberg.org/browse/authors/s#a65" class="vintage-link">Shakespeare, William (14192)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/d#a37" class="vintage-link">Dickens, Charles (13460)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/s#a61" class="vintage-link">Shelley, Mary Wollstonecraft (10511)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/t#a53" class="vintage-link">Twain, Mark (10128)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/d#a69" class="vintage-link">Doyle, Arthur Conan (9642)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/a#a68" class="vintage-link">Austen, Jane (9615)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/d#a38990" class="vintage-link">Davidson, Thomas (7843)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/w#a1961" class="vintage-link">Widger, David (7701)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/d#a492" class="vintage-link">Dumas, Alexandre (7637)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/g#a2858" class="vintage-link">Garnett, Constance (7447)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/v#a60" class="vintage-link">Verne, Jules (7246)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/s#a35" class="vintage-link">Stevenson, Robert Louis (6982)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/d#a314" class="vintage-link">Dostoyevsky, Fyodor (6895)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/w#a111" class="vintage-link">Wilde, Oscar (6879)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/a#a1156" class="vintage-link">Augustine, Hippo, Saint (6804)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/w#a30" class="vintage-link">Wells, H. G. (Herbert George) (6707)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/m#a36" class="vintage-link">Montgomery, L. M. (Lucy Maud) (5986)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/d#a5058" class="vintage-link">Dods, Marcus (5654)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/n#a779" class="vintage-link">Nietzsche, Friedrich Wilhelm (5471)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/m#a9" class="vintage-link">Melville, Herman (5455)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/c#a80" class="vintage-link">Chesterton, G. K. (Gilbert Keith) (5153)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/b#a42" class="vintage-link">Baum, L. Frank (Lyman Frank) (5057)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/t#a136" class="vintage-link">Tolstoy, Leo, graf (4831)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/b#a251" class="vintage-link">Balzac, Honoré de (4824)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/m#a3930" class="vintage-link">Maquet, Auguste (4817)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/a#a102" class="vintage-link">Alcott, Louisa May (4735)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/c#a451" class="vintage-link">Christie, Agatha (4567)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/l#a79" class="vintage-link">Lang, Andrew (4492)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/s#a838" class="vintage-link">Smollett, T. (Tobias) (4448)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/p#a93" class="vintage-link">Plato (4363)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/c#a7" class="vintage-link">Carroll, Lewis (4231)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/d#a1896" class="vintage-link">Doré, Gustave (4111)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/b#a48" class="vintage-link">Burroughs, Edgar Rice (4063)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/s#a59" class="vintage-link">Scott, Walter (4045)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/s#a326" class="vintage-link">Swift, Jonathan (3997)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/h#a28" class="vintage-link">Hawthorne, Nathaniel (3951)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/j#a113" class="vintage-link">James, Henry (3836)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/p#a481" class="vintage-link">Poe, Edgar Allan (3742)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/k#a132" class="vintage-link">Kipling, Rudyard (3711)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/j#a94" class="vintage-link">Jowett, Benjamin (3684)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/l#a120" class="vintage-link">London, Jack (3653)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/r#a2183" class="vintage-link">Rizal, José (3473)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/a#a18" class="vintage-link">Aesop (3471)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/c#a125" class="vintage-link">Conrad, Joseph (3442)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/f#a420" class="vintage-link">Fitzgerald, F. Scott (3411)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/e#a90" class="vintage-link">Eliot, George (3386)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/g#a586" class="vintage-link">Goethe, Johann Wolfgang von (3365)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/h#a85" class="vintage-link">Hugo, Victor (3364)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/h#a23" class="vintage-link">Hardy, Thomas (3316)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/i#a861" class="vintage-link">Ibsen, Henrik (3231)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/b#a898" class="vintage-link">Burton, Richard Francis, Sir (3230)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/l#a761" class="vintage-link">Edward Bulwer Baron (3183)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/h#a705" class="vintage-link">Homer (3173)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/d#a507" class="vintage-link">Dante Alighieri (3173)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/l#a141" class="vintage-link">Copyright Office (3170)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/f#a975" class="vintage-link">Forster, E. M. (Edward Morgan) (3045)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/b#a408" class="vintage-link">Brontë, Charlotte (3012)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/c#a38191" class="vintage-link">Chambers, Robert W. (3008)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/c#a505" class="vintage-link">Cervantes Saavedra (2928)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/t#a324" class="vintage-link">Trollope, Anthony (2814)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/m#a1681" class="vintage-link">Murray, Gilbert (2759)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/d#a485" class="vintage-link">Darwin, Charles (2757)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/m#a306" class="vintage-link">Maupassant, Guy de (2700)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/b#a405" class="vintage-link">Brontë, Emily (2667)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/s#a190" class="vintage-link">Stoker, Bram (2658)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/g#a971" class="vintage-link">Grimm, Jacob (2607)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/g#a972" class="vintage-link">Grimm, Wilhelm (2607)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/b#a73" class="vintage-link">Burnett, Frances Hodgson (2468)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/d#a204" class="vintage-link">Defoe, Daniel (2423)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/m#a6202" class="vintage-link">Merrill, Frank T. (2419)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/l#a7862" class="vintage-link">Levy, Oscar (2403)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/w#a104" class="vintage-link">Wharton, Edith (2358)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/t#a9854" class="vintage-link">Townsend, F. H. (Frederick Henry) (2316)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/h#a97" class="vintage-link">Howells, William Dean (2305)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/m#a1355" class="vintage-link">Morley, Henry (2293)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/c#a5276" class="vintage-link">Chambers, Robert (2209)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/w#a993" class="vintage-link">Warner, Charles Dudley (2198)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/s#a467" class="vintage-link">Shaw, Bernard (2193)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/i#a34" class="vintage-link">Irving, Washington (2191)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/v#a913" class="vintage-link">Voltaire (2185)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/g#a220" class="vintage-link">Gaskell, Cleghorn (2169)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/a#a168" class="vintage-link">Alger, Horatio, Jr. (2158)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/h#a1032" class="vintage-link">Henty, G. A. (George Alfred) (2149)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/b#a9248" class="vintage-link">Bell, George (2146)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/m#a520" class="vintage-link">Meredith, George (2113)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/r#a355" class="vintage-link">Russell, Bertrand (2112)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/m#a127" class="vintage-link">MacDonald, George (2110)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/b#a2437" class="vintage-link">Belloc, Hilaire (2097)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/c#a98" class="vintage-link">Collins, Wilkie (2087)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/r#a2297" class="vintage-link">Robertson, James Alexander (2076)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/c#a708" class="vintage-link">Chekhov, Anton Pavlovich (2056)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/f#a3840" class="vintage-link">Fenn, George Manville (2051)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/u#a8" class="vintage-link">CIA (2030)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/k#a8659" class="vintage-link">Kingston, William Henry Giles (2026)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/r#a359" class="vintage-link">Ruskin, John (2024)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/j#a1039" class="vintage-link">Joyce, James (2001)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/w#a1325" class="vintage-link">Wagner, Richard (1994)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/w#a783" class="vintage-link">Wodehouse, P. G. (1977)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/j#a5845" class="vintage-link">Jókai, Mór (1973)</a></li>
-                    <li><a href="https://www.gutenberg.org/browse/authors/c#a5277" class="vintage-link">Chambers, William (1966)</a></li>
-                </ol>
+            <table id="books-downloads-table" class="vintage-table">
+                <caption style="text-align: left; font-weight: bold; color: #4a3b2b; padding-bottom: 10px; font-size: 1.2rem;">Total Books Downloaded</caption>
+                <thead>
+                    <tr>
+                        <th>Time Period</th>
+                        <th>Downloads</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Yesterday (2026-03-11)</td><td>1,859,160</td></tr>
+                    <tr><td>Last 7 days</td><td>11,126,494</td></tr>
+                    <tr><td>Last 30 days</td><td>54,252,034</td></tr>
+                </tbody>
+            </table>
+
+            <div id="books-downloads-nav" class="info-box" style="margin-bottom: 40px; text-align: center; background: #faf6f0;">
+                <div style="margin-bottom: 10px;">
+                    <b style="color: #4a3b2b; margin-right: 15px;">Top 100 EBooks:</b> 
+                    <a href="#books-last1" class="archive-tag">Yesterday</a>
+                    <a href="#books-last7" class="archive-tag">7 days</a>
+                    <a href="#books-last30" class="archive-tag">30 days</a>
+                </div>
+                <div>
+                    <b style="color: #4a3b2b; margin-right: 15px;">Top 100 Authors:</b> 
+                    <a href="#authors-last1" class="archive-tag">Yesterday</a>
+                    <a href="#authors-last7" class="archive-tag">7 days</a>
+                    <a href="#authors-last30" class="archive-tag">30 days</a>
+                </div>
             </div>
-        <footer class="site-footer">
+
+            <div class="categories-grid" style="grid-template-columns: 1fr 1fr; gap: 30px;">
+
+                <div class="info-box" id="books-last1">
+                    <h2 class="section-title mt-0 border-none">Top 100 EBooks yesterday</h2>
+                    <ol class="vintage-list" style="padding-left: 25px; font-size: 0.9rem;">
+                        <li><a href="https://www.gutenberg.org/ebooks/84" class="vintage-link">Frankenstein; or, the modern prometheus by Mary Wollstonecraft Shelley (7750)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/37683" class="vintage-link">Chambers's Twentieth Century Dictionary (part 1 of 4: A-D) (7579)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/45304" class="vintage-link">The City of God, Volume I by Saint of Hippo Augustine (5458)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2701" class="vintage-link">Moby Dick; Or, The Whale by Herman Melville (3870)</a></li>
+                        <li><a href="individualbook.html" class="vintage-link">Pride and Prejudice by Jane Austen (3729)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/64317" class="vintage-link">The Great Gatsby by F. Scott Fitzgerald (2714)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/768" class="vintage-link">Wuthering Heights by Emily Brontë (2611)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1513" class="vintage-link">Romeo and Juliet by William Shakespeare (2567)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/11" class="vintage-link">Alice's Adventures in Wonderland by Lewis Carroll (2375)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1260" class="vintage-link">Jane Eyre: An Autobiography by Charlotte Brontë (2068)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2641" class="vintage-link">A Room with a View by E. M. Forster (2033)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/174" class="vintage-link">The Picture of Dorian Gray by Oscar Wilde (1928)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/100" class="vintage-link">The Complete Works of William Shakespeare (1920)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/844" class="vintage-link">The Importance of Being Earnest by Oscar Wilde (1902)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/145" class="vintage-link">Middlemarch by George Eliot (1877)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/345" class="vintage-link">Dracula by Bram Stoker (1712)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/43" class="vintage-link">The strange case of Dr. Jekyll and Mr. Hyde (1699)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/5197" class="vintage-link">My Life — Volume 1 by Richard Wagner (1661)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2542" class="vintage-link">A Doll's House : a play by Henrik Ibsen (1604)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/67979" class="vintage-link">The Blue Castle: a novel by L. M. Montgomery (1597)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/28054" class="vintage-link">The Brothers Karamazov by Fyodor Dostoyevsky (1593)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1184" class="vintage-link">The Count of Monte Cristo by Alexandre Dumas (1585)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2554" class="vintage-link">Crime and Punishment by Fyodor Dostoyevsky (1568)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/37106" class="vintage-link">Little Women by Louisa May Alcott (1541)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/26471" class="vintage-link">Spoon River Anthology by Edgar Lee Masters (1539)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1080" class="vintage-link">A Modest Proposal by Jonathan Swift (1464)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1661" class="vintage-link">The Adventures of Sherlock Holmes (1463)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/76" class="vintage-link">Adventures of Huckleberry Finn by Mark Twain (1389)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/71937" class="vintage-link">The writings of Clement of Alexandria (1370)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1259" class="vintage-link">Twenty years after by Alexandre Dumas (1368)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/16389" class="vintage-link">The Enchanted April by Elizabeth Von Arnim (1336)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1400" class="vintage-link">Great Expectations by Charles Dickens (1296)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/394" class="vintage-link">Cranford by Elizabeth Cleghorn Gaskell (1267)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/8492" class="vintage-link">The King in Yellow by Robert W. Chambers (1264)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/24141" class="vintage-link">警世通言 by Menglong Feng (1248)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2160" class="vintage-link">The Expedition of Humphry Clinker by T. Smollett (1242)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/16328" class="vintage-link">Beowulf: An Anglo-Saxon Epic Poem (1237)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/6761" class="vintage-link">The Adventures of Ferdinand Count Fathom (1237)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/6593" class="vintage-link">History of Tom Jones, a Foundling by Henry Fielding (1234)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/4085" class="vintage-link">The Adventures of Roderick Random by T. Smollett (1220)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1232" class="vintage-link">The Prince by Niccolò Machiavelli (1180)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/42324" class="vintage-link">Frankenstein; Or, The Modern Prometheus (1179)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/25344" class="vintage-link">The Scarlet Letter by Nathaniel Hawthorne (1152)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/98" class="vintage-link">A Tale of Two Cities by Charles Dickens (1125)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/45368" class="vintage-link">The Outline of History by H. G. Wells (1092)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/3296" class="vintage-link">The Confessions of St. Augustine (1084)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2591" class="vintage-link">Grimms' Fairy Tales by Jacob Grimm and Wilhelm Grimm (1081)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/8800" class="vintage-link">The divine comedy by Dante Alighieri (1068)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1998" class="vintage-link">Thus Spake Zarathustra by Friedrich Wilhelm Nietzsche (1044)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/829" class="vintage-link">Gulliver's Travels into Several Remote Nations (1039)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/27673" class="vintage-link">Oedipus King of Thebes by Sophocles (1035)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/5200" class="vintage-link">Metamorphosis by Franz Kafka (1021)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1952" class="vintage-link">The Yellow Wallpaper by Charlotte Perkins Gilman (1007)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2600" class="vintage-link">War and Peace by graf Leo Tolstoy (991)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/45" class="vintage-link">Anne of Green Gables by L. M. Montgomery (974)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/74" class="vintage-link">The Adventures of Tom Sawyer, Complete by Mark Twain (953)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/3207" class="vintage-link">Leviathan by Thomas Hobbes (940)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/28942" class="vintage-link">The Junior Classics: Fairy and wonder tales by Neilson (922)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/23" class="vintage-link">Narrative Frederick Douglass, American Slave (910)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/4300" class="vintage-link">Ulysses by James Joyce (902)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/408" class="vintage-link">The Souls of Black Folk by W. E. B. Du Bois (897)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1399" class="vintage-link">Anna Karenina by graf Leo Tolstoy (884)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2680" class="vintage-link">Meditations by Emperor Marcus Aurelius (871)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/120" class="vintage-link">Treasure Island by Robert Louis Stevenson (861)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/36034" class="vintage-link">White nights, and other stories by Fyodor Dostoyevsky (859)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1727" class="vintage-link">The Odyssey by Homer (853)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/50285" class="vintage-link">Dr. Mabuse, der Spieler : by Norbert Jacques (849)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/7370" class="vintage-link">Second Treatise of Government by John Locke (846)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/20417" class="vintage-link">The Outline of Science, Vol. 1 by J. Arthur Thomson (836)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/24855" class="vintage-link">Concrete Construction: Methods and Costs (832)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/244" class="vintage-link">A Study in Scarlet by Arthur Conan Doyle (828)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/20228" class="vintage-link">Noli Me Tangere by José Rizal (827)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/22788" class="vintage-link">The Federalist Papers Alexander Hamilton (825)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/55" class="vintage-link">The Wonderful Wizard of Oz by L. Frank Baum (799)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/219" class="vintage-link">Heart of Darkness by Joseph Conrad (766)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/161" class="vintage-link">Sense and Sensibility by Jane Austen (747)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/135" class="vintage-link">Les Misérables by Victor Hugo (743)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/72075" class="vintage-link">The scrap book, Volume 2, No. 2 by Various (742)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/205" class="vintage-link">Walden, and On The Duty Of Civil Disobedience (739)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/26225" class="vintage-link">Fifteen Thousand Useful Phrases by Grenville Kleiser (715)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/57724" class="vintage-link">Cyclopaedia Canadian Biography (712)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/15399" class="vintage-link"> Life Olaudah Equiano, Or Gustavus Vassa (708)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/41445" class="vintage-link">Frankenstein; Or, The Modern Prometheus by Shelley (705)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1497" class="vintage-link">The Republic by Plato (704)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/4363" class="vintage-link">Beyond Good and Evil by Friedrich Wilhelm Nietzsche (681)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2852" class="vintage-link">The Hound of the Baskervilles by Arthur Conan Doyle (670)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/24979" class="vintage-link">A Source Book for Ancient Church History (666)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/5740" class="vintage-link">Tractatus Logico-Philosophicus by Ludwig Wittgenstein (660)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/26296" class="vintage-link">Les mille et une nuits, tome premier (658)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/23962" class="vintage-link">西遊記 by Cheng'en Wu (648)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/20203" class="vintage-link">Autobiography of Benjamin Franklin Franklin (641)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/209" class="vintage-link">The Turn of the Screw by Henry James (632)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/215" class="vintage-link">The call of the wild by Jack London (620)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/3300" class="vintage-link"> inquiries nature causes wealth of Nations by Smith (615)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/32105" class="vintage-link">Belford's Magazine, Vol 2, December 1888 by Various (607)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/26706" class="vintage-link">Manual of Military Training by James A. Moss (606)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/16" class="vintage-link">Peter Pan : by J. M. Barrie (604)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/730" class="vintage-link">Oliver Twist by Charles Dickens (593)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/41" class="vintage-link">The Legend of Sleepy Hollow by Washington Irving (585)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/996" class="vintage-link">Don Quixote by Miguel de Cervantes Saavedra (572)</a></li>
+                    </ol>
+                </div>
+
+                <div class="info-box" id="authors-last1">
+                    <h2 class="section-title mt-0 border-none">Top 100 Authors yesterday</h2>
+                    <ol class="vintage-list" style="padding-left: 25px; font-size: 0.9rem;">
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a65" class="vintage-link">Shakespeare, William (14192)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a37" class="vintage-link">Dickens, Charles (13460)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a61" class="vintage-link">Shelley, Mary Wollstonecraft (10511)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/t#a53" class="vintage-link">Twain, Mark (10128)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a69" class="vintage-link">Doyle, Arthur Conan (9642)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/a#a68" class="vintage-link">Austen, Jane (9615)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a38990" class="vintage-link">Davidson, Thomas (7843)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a1961" class="vintage-link">Widger, David (7701)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a492" class="vintage-link">Dumas, Alexandre (7637)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/g#a2858" class="vintage-link">Garnett, Constance (7447)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/v#a60" class="vintage-link">Verne, Jules (7246)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a35" class="vintage-link">Stevenson, Robert Louis (6982)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a314" class="vintage-link">Dostoyevsky, Fyodor (6895)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a111" class="vintage-link">Wilde, Oscar (6879)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/a#a1156" class="vintage-link">Augustine, Hippo, Saint (6804)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a30" class="vintage-link">Wells, H. G. (Herbert George) (6707)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a36" class="vintage-link">Montgomery, L. M. (Lucy Maud) (5986)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a5058" class="vintage-link">Dods, Marcus (5654)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/n#a779" class="vintage-link">Nietzsche, Friedrich Wilhelm (5471)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a9" class="vintage-link">Melville, Herman (5455)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a80" class="vintage-link">Chesterton, G. K. (Gilbert Keith) (5153)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a42" class="vintage-link">Baum, L. Frank (Lyman Frank) (5057)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/t#a136" class="vintage-link">Tolstoy, Leo, graf (4831)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a251" class="vintage-link">Balzac, Honoré de (4824)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a3930" class="vintage-link">Maquet, Auguste (4817)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/a#a102" class="vintage-link">Alcott, Louisa May (4735)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a451" class="vintage-link">Christie, Agatha (4567)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/l#a79" class="vintage-link">Lang, Andrew (4492)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a838" class="vintage-link">Smollett, T. (Tobias) (4448)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/p#a93" class="vintage-link">Plato (4363)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a7" class="vintage-link">Carroll, Lewis (4231)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a1896" class="vintage-link">Doré, Gustave (4111)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a48" class="vintage-link">Burroughs, Edgar Rice (4063)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a59" class="vintage-link">Scott, Walter (4045)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a326" class="vintage-link">Swift, Jonathan (3997)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a28" class="vintage-link">Hawthorne, Nathaniel (3951)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/j#a113" class="vintage-link">James, Henry (3836)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/p#a481" class="vintage-link">Poe, Edgar Allan (3742)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/k#a132" class="vintage-link">Kipling, Rudyard (3711)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/j#a94" class="vintage-link">Jowett, Benjamin (3684)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/l#a120" class="vintage-link">London, Jack (3653)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/r#a2183" class="vintage-link">Rizal, José (3473)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/a#a18" class="vintage-link">Aesop (3471)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a125" class="vintage-link">Conrad, Joseph (3442)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/f#a420" class="vintage-link">Fitzgerald, F. Scott (3411)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/e#a90" class="vintage-link">Eliot, George (3386)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/g#a586" class="vintage-link">Goethe, Johann Wolfgang von (3365)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a85" class="vintage-link">Hugo, Victor (3364)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a23" class="vintage-link">Hardy, Thomas (3316)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/i#a861" class="vintage-link">Ibsen, Henrik (3231)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a898" class="vintage-link">Burton, Richard Francis, Sir (3230)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/l#a761" class="vintage-link">Edward Bulwer Baron (3183)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a705" class="vintage-link">Homer (3173)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a507" class="vintage-link">Dante Alighieri (3173)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/l#a141" class="vintage-link">Copyright Office (3170)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/f#a975" class="vintage-link">Forster, E. M. (Edward Morgan) (3045)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a408" class="vintage-link">Brontë, Charlotte (3012)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a38191" class="vintage-link">Chambers, Robert W. (3008)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a505" class="vintage-link">Cervantes Saavedra (2928)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/t#a324" class="vintage-link">Trollope, Anthony (2814)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a1681" class="vintage-link">Murray, Gilbert (2759)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a485" class="vintage-link">Darwin, Charles (2757)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a306" class="vintage-link">Maupassant, Guy de (2700)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a405" class="vintage-link">Brontë, Emily (2667)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a190" class="vintage-link">Stoker, Bram (2658)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/g#a971" class="vintage-link">Grimm, Jacob (2607)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/g#a972" class="vintage-link">Grimm, Wilhelm (2607)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a73" class="vintage-link">Burnett, Frances Hodgson (2468)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a204" class="vintage-link">Defoe, Daniel (2423)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a6202" class="vintage-link">Merrill, Frank T. (2419)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/l#a7862" class="vintage-link">Levy, Oscar (2403)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a104" class="vintage-link">Wharton, Edith (2358)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/t#a9854" class="vintage-link">Townsend, F. H. (Frederick Henry) (2316)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a97" class="vintage-link">Howells, William Dean (2305)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a1355" class="vintage-link">Morley, Henry (2293)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a5276" class="vintage-link">Chambers, Robert (2209)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a993" class="vintage-link">Warner, Charles Dudley (2198)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a467" class="vintage-link">Shaw, Bernard (2193)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/i#a34" class="vintage-link">Irving, Washington (2191)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/v#a913" class="vintage-link">Voltaire (2185)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/g#a220" class="vintage-link">Gaskell, Cleghorn (2169)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/a#a168" class="vintage-link">Alger, Horatio, Jr. (2158)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a1032" class="vintage-link">Henty, G. A. (George Alfred) (2149)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a9248" class="vintage-link">Bell, George (2146)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a520" class="vintage-link">Meredith, George (2113)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/r#a355" class="vintage-link">Russell, Bertrand (2112)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a127" class="vintage-link">MacDonald, George (2110)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a2437" class="vintage-link">Belloc, Hilaire (2097)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a98" class="vintage-link">Collins, Wilkie (2087)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/r#a2297" class="vintage-link">Robertson, James Alexander (2076)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a708" class="vintage-link">Chekhov, Anton Pavlovich (2056)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/f#a3840" class="vintage-link">Fenn, George Manville (2051)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/u#a8" class="vintage-link">CIA (2030)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/k#a8659" class="vintage-link">Kingston, William Henry Giles (2026)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/r#a359" class="vintage-link">Ruskin, John (2024)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/j#a1039" class="vintage-link">Joyce, James (2001)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a1325" class="vintage-link">Wagner, Richard (1994)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a783" class="vintage-link">Wodehouse, P. G. (1977)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/j#a5845" class="vintage-link">Jókai, Mór (1973)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a5277" class="vintage-link">Chambers, William (1966)</a></li>
+                    </ol>
+                </div>
+
+                <div class="info-box" id="books-last7">
+                    <h2 class="section-title mt-0 border-none">Top 100 EBooks last 7 days</h2>
+                    <ol class="vintage-list" style="padding-left: 25px; font-size: 0.9rem;">
+                        <li><a href="https://www.gutenberg.org/ebooks/84" class="vintage-link">Frankenstein; or, the modern prometheus by Mary Wollstonecraft Shelley (39796)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/45304" class="vintage-link">The City of God, Volume I by Saint of Hippo Augustine (31048)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2701" class="vintage-link">Moby Dick; Or, The Whale by Herman Melville (22878)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1342" class="vintage-link">Pride and Prejudice by Jane Austen (22427)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/33170" class="vintage-link">The Itching Palm: A Study of the Habit of Tipping in America by William R. Scott (17390)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/768" class="vintage-link">Wuthering Heights by Emily Brontë (16017)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1513" class="vintage-link">Romeo and Juliet by William Shakespeare (14924)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/11" class="vintage-link">Alice's Adventures in Wonderland by Lewis Carroll (14383)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/64317" class="vintage-link">The Great Gatsby by F. Scott Fitzgerald (13178)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/37683" class="vintage-link">Chambers's Twentieth Century Dictionary (part 1 of 4: A-D) (12910)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/100" class="vintage-link">The Complete Works of William Shakespeare by William Shakespeare (12269)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2641" class="vintage-link">A Room with a View by E. M. Forster (12077)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1260" class="vintage-link">Jane Eyre: An Autobiography by Charlotte Brontë (11521)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/145" class="vintage-link">Middlemarch by George Eliot (11190)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/174" class="vintage-link">The Picture of Dorian Gray by Oscar Wilde (11129)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/37106" class="vintage-link">Little Women; Or, Meg, Jo, Beth, and Amy by Louisa May Alcott (10017)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/67979" class="vintage-link">The Blue Castle: a novel by L. M. Montgomery (9966)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2542" class="vintage-link">A Doll's House : a play by Henrik Ibsen (9846)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/43" class="vintage-link">The strange case of Dr. Jekyll and Mr. Hyde by Robert Louis Stevenson (9814)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/5197" class="vintage-link">My Life — Volume 1 by Richard Wagner (9338)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/345" class="vintage-link">Dracula by Bram Stoker (9180)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2554" class="vintage-link">Crime and Punishment by Fyodor Dostoyevsky (8895)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/16389" class="vintage-link">The Enchanted April by Elizabeth Von Arnim (8637)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1661" class="vintage-link">The Adventures of Sherlock Holmes by Arthur Conan Doyle (8474)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1259" class="vintage-link">Twenty years after by Alexandre Dumas and Auguste Maquet (8387)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/844" class="vintage-link">The Importance of Being Earnest by Oscar Wilde (8373)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1184" class="vintage-link">The Count of Monte Cristo by Alexandre Dumas and Auguste Maquet (8177)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/6761" class="vintage-link">The Adventures of Ferdinand Count Fathom — Complete by T. Smollett (8152)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/6593" class="vintage-link">History of Tom Jones, a Foundling by Henry Fielding (8151)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/394" class="vintage-link">Cranford by Elizabeth Cleghorn Gaskell (8132)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2160" class="vintage-link">The Expedition of Humphry Clinker by T. Smollett (8064)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1080" class="vintage-link">A Modest Proposal by Jonathan Swift (8049)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/4085" class="vintage-link">The Adventures of Roderick Random by T. Smollett (7863)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/76" class="vintage-link">Adventures of Huckleberry Finn by Mark Twain (7531)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/98" class="vintage-link">A Tale of Two Cities by Charles Dickens (7474)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/8492" class="vintage-link">The King in Yellow by Robert W. Chambers (7191)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/28054" class="vintage-link">The Brothers Karamazov by Fyodor Dostoyevsky (7098)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/24141" class="vintage-link">警世通言 by Menglong Feng (7032)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/26471" class="vintage-link">Spoon River Anthology by Edgar Lee Masters (6629)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1232" class="vintage-link">The Prince by Niccolò Machiavelli (6342)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/5200" class="vintage-link">Metamorphosis by Franz Kafka (6169)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1400" class="vintage-link">Great Expectations by Charles Dickens (6076)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/16328" class="vintage-link">Beowulf: An Anglo-Saxon Epic Poem (6023)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2591" class="vintage-link">Grimms' Fairy Tales by Jacob Grimm and Wilhelm Grimm (6019)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/25344" class="vintage-link">The Scarlet Letter by Nathaniel Hawthorne (6008)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/3207" class="vintage-link">Leviathan by Thomas Hobbes (6004)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1952" class="vintage-link">The Yellow Wallpaper by Charlotte Perkins Gilman (5971)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/45" class="vintage-link">Anne of Green Gables by L. M. Montgomery (5821)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/3296" class="vintage-link">The Confessions of St. Augustine by Saint of Hippo (5654)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1998" class="vintage-link">Thus Spake Zarathustra by Friedrich Wilhelm Nietzsche (5578)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/45368" class="vintage-link">The Outline of History by H. G. Wells (5315)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/4300" class="vintage-link">Ulysses by James Joyce (5279)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/8800" class="vintage-link">The divine comedy by Dante Alighieri (5248)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/74" class="vintage-link">The Adventures of Tom Sawyer by Mark Twain (5171)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/27673" class="vintage-link">Oedipus King of Thebes by Sophocles (5168)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/829" class="vintage-link">Gulliver's Travels by Jonathan Swift (5157)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2600" class="vintage-link">War and Peace by graf Leo Tolstoy (5112)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2680" class="vintage-link">Meditations by Emperor of Rome Marcus Aurelius (4964)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/36034" class="vintage-link">White nights, and other stories by Fyodor Dostoyevsky (4949)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1727" class="vintage-link">The Odyssey by Homer (4878)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/205" class="vintage-link">Walden by Henry David Thoreau (4853)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/20228" class="vintage-link">Noli Me Tangere by José Rizal (4805)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/408" class="vintage-link">The Souls of Black Folk by W. E. B. Du Bois (4788)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/120" class="vintage-link">Treasure Island by Robert Louis Stevenson (4663)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/244" class="vintage-link">A Study in Scarlet by Arthur Conan Doyle (4607)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/7370" class="vintage-link">Second Treatise of Government by John Locke (4535)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/55" class="vintage-link">The Wonderful Wizard of Oz by L. Frank Baum (4498)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/23" class="vintage-link">Narrative of the Life of Frederick Douglass (4471)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/28942" class="vintage-link">The Junior Classics, Volume 1 (4469)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1399" class="vintage-link">Anna Karenina by graf Leo Tolstoy (4419)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2852" class="vintage-link">The Hound of the Baskervilles by Arthur Conan Doyle (4315)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1023" class="vintage-link">Bleak House by Charles Dickens (4308)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/26225" class="vintage-link">Fifteen Thousand Useful Phrases by Grenville Kleiser (4287)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/20968" class="vintage-link">Three Hundred Tang Poems by Various (4175)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/72679" class="vintage-link">The lesser Key of Solomon, Goetia (4109)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/20417" class="vintage-link">The Outline of Science by J. Arthur Thomson (4063)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/219" class="vintage-link">Heart of Darkness by Joseph Conrad (4050)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1497" class="vintage-link">The Republic by Plato (3994)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/135" class="vintage-link">Les Misérables by Victor Hugo (3986)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/5740" class="vintage-link">Tractatus Logico-Philosophicus by Ludwig Wittgenstein (3916)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/161" class="vintage-link">Sense and Sensibility by Jane Austen (3899)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/42324" class="vintage-link">Frankenstein; Or, The Modern Prometheus by Mary Shelley (3897)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/26184" class="vintage-link">Simple Sabotage Field Manual (3888)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/16" class="vintage-link">Peter Pan : by J. M. Barrie (3830)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/4363" class="vintage-link">Beyond Good and Evil by Friedrich Wilhelm Nietzsche (3774)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/41445" class="vintage-link">Frankenstein by Mary Wollstonecraft Shelley (3745)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/33283" class="vintage-link">Calculus Made Easy by Silvanus P. Thompson (3683)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/29951" class="vintage-link">The Mayflower, January, 1905 by Various (3643)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/730" class="vintage-link">Oliver Twist by Charles Dickens (3514)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/26296" class="vintage-link">Les mille et une nuits (3471)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/15399" class="vintage-link">Life of Olaudah Equiano (3427)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/57724" class="vintage-link">Cyclopaedia of Canadian Biography (3385)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/215" class="vintage-link">The call of the wild by Jack London (3375)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/209" class="vintage-link">The Turn of the Screw by Henry James (3332)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/46" class="vintage-link">A Christmas Carol by Charles Dickens (3317)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/30254" class="vintage-link">The Romance of Lust: A classic Victorian erotic novel (3271)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/600" class="vintage-link">Notes from the Underground by Fyodor Dostoyevsky (3265)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/3206" class="vintage-link">Moby Multiple Language Lists of Common Words (3259)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/10" class="vintage-link">The King James Version of the Bible (3259)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/34901" class="vintage-link">On Liberty by John Stuart Mill (3188)</a></li>
+                    </ol>
+                </div>
+
+                <div class="info-box" id="authors-last7">
+                    <h2 class="section-title mt-0 border-none">Top 100 Authors last 7 days</h2>
+                    <ol class="vintage-list" style="padding-left: 25px; font-size: 0.9rem;">
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a65" class="vintage-link">Shakespeare, William (86325)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a37" class="vintage-link">Dickens, Charles (68034)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/t#a53" class="vintage-link">Twain, Mark (60063)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/a#a68" class="vintage-link">Austen, Jane (55003)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a69" class="vintage-link">Doyle, Arthur Conan (54454)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a61" class="vintage-link">Shelley, Mary Wollstonecraft (52810)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a1961" class="vintage-link">Widger, David (46595)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a492" class="vintage-link">Dumas, Alexandre (43868)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a35" class="vintage-link">Stevenson, Robert Louis (41041)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/g#a2858" class="vintage-link">Garnett, Constance (40511)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/v#a60" class="vintage-link">Verne, Jules (40430)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a30" class="vintage-link">Wells, H. G. (Herbert George) (38958)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/a#a1156" class="vintage-link">Augustine, of Hippo, Saint (38282)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a314" class="vintage-link">Dostoyevsky, Fyodor (38150)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a111" class="vintage-link">Wilde, Oscar (36915)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a36" class="vintage-link">Montgomery, L. M. (Lucy Maud) (33471)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a9" class="vintage-link">Melville, Herman (33404)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a5058" class="vintage-link">Dods, Marcus (32264)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/n#a779" class="vintage-link">Nietzsche, Friedrich Wilhelm (30551)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a251" class="vintage-link">Balzac, Honoré de (30505)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a80" class="vintage-link">Chesterton, G. K. (Gilbert Keith) (29816)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a838" class="vintage-link">Smollett, T. (Tobias) (28798)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/t#a136" class="vintage-link">Tolstoy, Leo, graf (27448)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a3930" class="vintage-link">Maquet, Auguste (27159)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/l#a79" class="vintage-link">Lang, Andrew (27095)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a7" class="vintage-link">Carroll, Lewis (25910)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/a#a102" class="vintage-link">Alcott, Louisa May (25785)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/p#a93" class="vintage-link">Plato (25251)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a48" class="vintage-link">Burroughs, Edgar Rice (25036)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a59" class="vintage-link">Scott, Walter (24577)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a1896" class="vintage-link">Doré, Gustave (23715)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/l#a120" class="vintage-link">London, Jack (23249)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a28" class="vintage-link">Hawthorne, Nathaniel (22774)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/j#a113" class="vintage-link">James, Henry (22755)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a451" class="vintage-link">Christie, Agatha (22506)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/p#a481" class="vintage-link">Poe, Edgar Allan (22306)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a326" class="vintage-link">Swift, Jonathan (22032)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/k#a132" class="vintage-link">Kipling, Rudyard (21839)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/j#a94" class="vintage-link">Jowett, Benjamin (20934)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/r#a2183" class="vintage-link">Rizal, José (20240)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/l#a761" class="vintage-link">Lytton, Edward Bulwer (20209)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/i#a861" class="vintage-link">Ibsen, Henrik (20088)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/e#a90" class="vintage-link">Eliot, George (20050)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/l#a141" class="vintage-link">Copyright Office (19752)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/g#a586" class="vintage-link">Goethe, Johann Wolfgang (19694)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a85" class="vintage-link">Hugo, Victor (19432)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a125" class="vintage-link">Conrad, Joseph (19226)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a898" class="vintage-link">Burton, Richard Francis (19064)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a507" class="vintage-link">Dante Alighieri (19036)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/a#a18" class="vintage-link">Aesop (18921)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/t#a324" class="vintage-link">Trollope, Anthony (18245)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a705" class="vintage-link">Homer (18037)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a23" class="vintage-link">Hardy, Thomas (17758)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/f#a975" class="vintage-link">Forster, E. M. (17639)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a36240" class="vintage-link">Scott, William R. (17390)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/f#a420" class="vintage-link">Fitzgerald, F. Scott (17122)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a408" class="vintage-link">Brontë, Charlotte (16902)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a38191" class="vintage-link">Chambers, Robert W. (16639)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a505" class="vintage-link">Cervantes Saavedra (16469)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a405" class="vintage-link">Brontë, Emily (16448)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a485" class="vintage-link">Darwin, Charles (16410)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a306" class="vintage-link">Maupassant, Guy de (15826)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a6202" class="vintage-link">Merrill, Frank T. (15482)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a204" class="vintage-link">Defoe, Daniel (15475)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a97" class="vintage-link">Howells, William Dean (15195)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a1681" class="vintage-link">Murray, Gilbert (15178)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a190" class="vintage-link">Stoker, Bram (14831)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a38990" class="vintage-link">Davidson, Thomas (14461)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/g#a972" class="vintage-link">Grimm, Wilhelm (14446)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/g#a971" class="vintage-link">Grimm, Jacob (14446)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a708" class="vintage-link">Chekhov, Anton Pavlovich (14106)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a73" class="vintage-link">Burnett, Frances Hodgson (14057)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/g#a220" class="vintage-link">Gaskell, Elizabeth Cleghorn (13978)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a993" class="vintage-link">Warner, Charles Dudley (13828)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a1355" class="vintage-link">Morley, Henry (13548)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a467" class="vintage-link">Shaw, Bernard (13383)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a1032" class="vintage-link">Henty, G. A. (13381)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/l#a7862" class="vintage-link">Levy, Oscar (13277)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a520" class="vintage-link">Meredith, George (13131)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a104" class="vintage-link">Wharton, Edith (13106)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a1801" class="vintage-link">Bell, Clara (13021)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/z#a528" class="vintage-link">Zola, Émile (13016)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a783" class="vintage-link">Wodehouse, P. G. (13002)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/t#a9854" class="vintage-link">Townsend, F. H. (12969)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a365" class="vintage-link">Haggard, H. Rider (12884)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a127" class="vintage-link">MacDonald, George (12881)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a10" class="vintage-link">Barrie, J. M. (12861)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/k#a8659" class="vintage-link">Kingston, William Henry Giles (12847)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/v#a913" class="vintage-link">Voltaire (12790)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/r#a355" class="vintage-link">Russell, Bertrand (12718)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/j#a5845" class="vintage-link">Jókai, Mór (12692)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/r#a2297" class="vintage-link">Robertson, James Alexander (12672)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/a#a168" class="vintage-link">Alger, Horatio, Jr. (12634)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a9248" class="vintage-link">Bell, George (12621)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a2437" class="vintage-link">Belloc, Hilaire (12496)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/i#a34" class="vintage-link">Irving, Washington (12447)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/r#a359" class="vintage-link">Ruskin, John (12422)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/f#a3840" class="vintage-link">Fenn, George Manville (12353)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a5276" class="vintage-link">Chambers, Robert (12113)</a></li>
+                    </ol>
+                </div>
+
+                <div class="info-box" id="books-last30">
+                    <h2 class="section-title mt-0 border-none">Top 100 EBooks last 30 days</h2>
+                    <ol class="vintage-list" style="padding-left: 25px; font-size: 0.9rem;">
+                        <li><a href="https://www.gutenberg.org/ebooks/84" class="vintage-link">Frankenstein; or, the modern prometheus by Mary Wollstonecraft Shelley (174761)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/45304" class="vintage-link">The City of God, Volume I by Saint of Hippo Augustine (118895)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/768" class="vintage-link">Wuthering Heights by Emily Brontë (113627)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2701" class="vintage-link">Moby Dick; Or, The Whale by Herman Melville (109608)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1342" class="vintage-link">Pride and Prejudice by Jane Austen (95138)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1513" class="vintage-link">Romeo and Juliet by William Shakespeare (71094)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/11" class="vintage-link">Alice's Adventures in Wonderland by Lewis Carroll (61161)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/100" class="vintage-link">The Complete Works of William Shakespeare by William Shakespeare (57035)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2641" class="vintage-link">A Room with a View by E. M. Forster (56830)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/64317" class="vintage-link">The Great Gatsby by F. Scott Fitzgerald (54644)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/145" class="vintage-link">Middlemarch by George Eliot (52505)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/43" class="vintage-link">The strange case of Dr. Jekyll and Mr. Hyde by Robert Louis Stevenson (51703)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1260" class="vintage-link">Jane Eyre: An Autobiography by Charlotte Brontë (50378)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/37106" class="vintage-link">Little Women by Louisa May Alcott (47927)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/67979" class="vintage-link">The Blue Castle: a novel by L. M. Montgomery (47312)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2554" class="vintage-link">Crime and Punishment by Fyodor Dostoyevsky (46150)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/174" class="vintage-link">The Picture of Dorian Gray by Oscar Wilde (45441)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2542" class="vintage-link">A Doll's House : a play by Henrik Ibsen (42468)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/16389" class="vintage-link">The Enchanted April by Elizabeth Von Arnim (41312)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/5197" class="vintage-link">My Life — Volume 1 by Richard Wagner (40669)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/345" class="vintage-link">Dracula by Bram Stoker (40177)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1080" class="vintage-link">A Modest Proposal by Jonathan Swift (40012)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1259" class="vintage-link">Twenty years after by Alexandre Dumas (39496)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/844" class="vintage-link">The Importance of Being Earnest by Oscar Wilde (38999)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/6761" class="vintage-link">The Adventures of Ferdinand Count Fathom (38895)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/394" class="vintage-link">Cranford by Elizabeth Cleghorn Gaskell (38763)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2160" class="vintage-link">The Expedition of Humphry Clinker by T. Smollett (38752)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/6593" class="vintage-link">History of Tom Jones, a Foundling by Henry Fielding (38256)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/4085" class="vintage-link">The Adventures of Roderick Random by T. Smollett (37656)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/16328" class="vintage-link">Beowulf: An Anglo-Saxon Epic Poem (37418)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/76" class="vintage-link">Adventures of Huckleberry Finn by Mark Twain (36778)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/24141" class="vintage-link">警世通言 by Menglong Feng (36545)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/28054" class="vintage-link">The Brothers Karamazov by Fyodor Dostoyevsky (36055)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1661" class="vintage-link">The Adventures of Sherlock Holmes by Arthur Conan Doyle (35288)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1184" class="vintage-link">The Count of Monte Cristo by Alexandre Dumas (34955)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/8492" class="vintage-link">The King in Yellow by Robert W. Chambers (34579)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/98" class="vintage-link">A Tale of Two Cities by Charles Dickens (33018)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/26471" class="vintage-link">Spoon River Anthology by Edgar Lee Masters (29664)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1952" class="vintage-link">The Yellow Wallpaper by Charlotte Perkins Gilman (29640)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/5200" class="vintage-link">Metamorphosis by Franz Kafka (28839)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1232" class="vintage-link">The Prince by Niccolò Machiavelli (28097)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/3207" class="vintage-link">Leviathan by Thomas Hobbes (27774)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/6271" class="vintage-link">Embers, Complete by Gilbert Parker (27418)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1400" class="vintage-link">Great Expectations by Charles Dickens (27056)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2591" class="vintage-link">Grimms' Fairy Tales by Jacob Grimm and Wilhelm Grimm (26987)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/25344" class="vintage-link">The Scarlet Letter by Nathaniel Hawthorne (26897)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/33170" class="vintage-link">The Itching Palm by William R. Scott (26657)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/165" class="vintage-link">McTeague by Frank Norris (25044)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/4300" class="vintage-link">Ulysses by James Joyce (24904)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/45" class="vintage-link">Anne of Green Gables by L. M. Montgomery (24633)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/36034" class="vintage-link">White nights by Fyodor Dostoyevsky (24324)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2600" class="vintage-link">War and Peace by graf Leo Tolstoy (24318)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/74" class="vintage-link">The Adventures of Tom Sawyer by Mark Twain (24193)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1998" class="vintage-link">Thus Spake Zarathustra by Friedrich Wilhelm Nietzsche (24169)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/3296" class="vintage-link">The Confessions of St. Augustine (23949)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/205" class="vintage-link">Walden by Henry David Thoreau (23727)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/408" class="vintage-link">The Souls of Black Folk by W. E. B. Du Bois (23459)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/26184" class="vintage-link">Simple Sabotage Field Manual (23456)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/20228" class="vintage-link">Noli Me Tangere by José Rizal (23083)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/7290" class="vintage-link">韓詩外傳, Complete (23065)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/37683" class="vintage-link">Chambers's Twentieth Century Dictionary (23058)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/7370" class="vintage-link">Second Treatise of Government by John Locke (22791)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/23" class="vintage-link">Narrative of Frederick Douglass (22357)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/829" class="vintage-link">Gulliver's Travels by Jonathan Swift (21955)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/120" class="vintage-link">Treasure Island by Robert Louis Stevenson (21897)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/28189" class="vintage-link">My Friends the Savages by Battista Cerruti (21838)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2680" class="vintage-link">Meditations by Marcus Aurelius (21186)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/26225" class="vintage-link">Fifteen Thousand Useful Phrases by Grenville Kleiser (21161)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1727" class="vintage-link">The Odyssey by Homer (21153)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/27673" class="vintage-link">Oedipus King of Thebes by Sophocles (20983)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/3206" class="vintage-link">Moby Multiple Language Lists (20528)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/8800" class="vintage-link">The divine comedy by Dante Alighieri (19995)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/244" class="vintage-link">A Study in Scarlet by Arthur Conan Doyle (19985)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/55" class="vintage-link">The Wonderful Wizard of Oz (19881)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2852" class="vintage-link">The Hound of the Baskervilles (19605)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/23908" class="vintage-link">夢中緣 by Xiuxing Li (19368)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/5740" class="vintage-link">Tractatus Logico-Philosophicus by Wittgenstein (19358)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1497" class="vintage-link">The Republic by Plato (18804)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/26296" class="vintage-link">Les mille et une nuits (18779)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/27166" class="vintage-link">吶喊 by Xun Lu (18576)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/4363" class="vintage-link">Beyond Good and Evil by Nietzsche (18553)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/72679" class="vintage-link">The lesser Key of Solomon, Goetia (18525)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/219" class="vintage-link">Heart of Darkness by Joseph Conrad (18171)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/2148" class="vintage-link">The Works of Edgar Allan Poe — Vol 2 (18091)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/161" class="vintage-link">Sense and Sensibility by Jane Austen (18026)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1399" class="vintage-link">Anna Karenina by Leo Tolstoy (17790)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/15399" class="vintage-link">Life of Olaudah Equiano (17713)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/41445" class="vintage-link">Frankenstein by Mary Shelley (17600)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/28942" class="vintage-link">The Junior Classics, Volume 1 (17110)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/7735" class="vintage-link">Paul Clifford — Complete by Bulwer Lytton (17001)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/20738" class="vintage-link">Diccionario Ingles-Español-Tagalog (16578)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/20968" class="vintage-link">Three Hundred Tang Poems, Vol 1 (16405)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1719" class="vintage-link">The Ballad of the White Horse by Chesterton (16287)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/16" class="vintage-link">Peter Pan : by J. M. Barrie (15960)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/42324" class="vintage-link">Frankenstein by Mary Shelley (15944)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/1023" class="vintage-link">Bleak House by Charles Dickens (15717)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/34901" class="vintage-link">On Liberty by John Stuart Mill (15658)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/996" class="vintage-link">Don Quixote by Miguel de Cervantes (15356)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/22788" class="vintage-link">The Federalist Papers by Hamilton/Jay (15205)</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/135" class="vintage-link">Les Misérables by Victor Hugo (15188)</a></li>
+                    </ol>
+                </div>
+
+                <div class="info-box" id="authors-last30">
+                    <h2 class="section-title mt-0 border-none">Top 100 Authors last 30 days</h2>
+                    <ol class="vintage-list" style="padding-left: 25px; font-size: 0.9rem;">
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a65" class="vintage-link">Shakespeare, William (402739)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/t#a53" class="vintage-link">Twain, Mark (282636)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a37" class="vintage-link">Dickens, Charles (281106)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/a#a68" class="vintage-link">Austen, Jane (249400)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a69" class="vintage-link">Doyle, Arthur Conan (244377)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a61" class="vintage-link">Shelley, Mary Wollstonecraft (234205)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a1961" class="vintage-link">Widger, David (216606)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a492" class="vintage-link">Dumas, Alexandre (207874)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a35" class="vintage-link">Stevenson, Robert Louis (201588)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/g#a2858" class="vintage-link">Garnett, Constance (193994)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a314" class="vintage-link">Dostoyevsky, Fyodor (187185)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/v#a60" class="vintage-link">Verne, Jules (179210)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a111" class="vintage-link">Wilde, Oscar (165958)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a30" class="vintage-link">Wells, H. G. (Herbert George) (156551)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a9" class="vintage-link">Melville, Herman (156286)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/a#a1156" class="vintage-link">Augustine, of Hippo, Saint (152325)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a36" class="vintage-link">Montgomery, L. M. (151353)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a80" class="vintage-link">Chesterton, G. K. (147690)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/n#a779" class="vintage-link">Nietzsche, Friedrich Wilhelm (138429)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a838" class="vintage-link">Smollett, T. (Tobias) (138236)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/l#a79" class="vintage-link">Lang, Andrew (137419)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a42" class="vintage-link">Baum, L. Frank (135196)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a251" class="vintage-link">Balzac, Honoré de (130201)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a3930" class="vintage-link">Maquet, Auguste (126475)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/a#a102" class="vintage-link">Alcott, Louisa May (126457)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a5058" class="vintage-link">Dods, Marcus (125960)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/t#a136" class="vintage-link">Tolstoy, Leo, graf (125643)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/p#a93" class="vintage-link">Plato (119609)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a59" class="vintage-link">Scott, Walter (116088)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a405" class="vintage-link">Brontë, Emily (115755)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a7" class="vintage-link">Carroll, Lewis (115020)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a1896" class="vintage-link">Doré, Gustave (110396)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a28" class="vintage-link">Hawthorne, Nathaniel (109013)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/l#a761" class="vintage-link">Lytton, Edward Bulwer (107743)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a451" class="vintage-link">Christie, Agatha (107122)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/k#a132" class="vintage-link">Kipling, Rudyard (106500)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/p#a481" class="vintage-link">Poe, Edgar Allan (106322)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a326" class="vintage-link">Swift, Jonathan (103399)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/j#a113" class="vintage-link">James, Henry (101881)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a898" class="vintage-link">Burton, Richard Francis (101164)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a48" class="vintage-link">Burroughs, Edgar Rice (100506)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/j#a94" class="vintage-link">Jowett, Benjamin (99899)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/l#a141" class="vintage-link">Copyright Office (99120)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/l#a120" class="vintage-link">London, Jack (98357)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/a#a18" class="vintage-link">Aesop (98125)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/r#a2183" class="vintage-link">Rizal, José (96887)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a85" class="vintage-link">Hugo, Victor (91440)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/e#a90" class="vintage-link">Eliot, George (90318)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/g#a586" class="vintage-link">Goethe, Johann Wolfgang (90181)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/i#a861" class="vintage-link">Ibsen, Henrik (87790)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a125" class="vintage-link">Conrad, Joseph (83751)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a507" class="vintage-link">Dante Alighieri (83351)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/f#a975" class="vintage-link">Forster, E. M. (Edward Morgan) (83138)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/p#a1285" class="vintage-link">Parker, Gilbert (82569)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a38191" class="vintage-link">Chambers, Robert W. (82060)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a705" class="vintage-link">Homer (81982)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a505" class="vintage-link">Cervantes Saavedra (80272)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a485" class="vintage-link">Darwin, Charles (79283)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a23" class="vintage-link">Hardy, Thomas (77599)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/t#a324" class="vintage-link">Trollope, Anthony (76910)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a408" class="vintage-link">Brontë, Charlotte (76477)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a6202" class="vintage-link">Merrill, Frank T. (76390)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a306" class="vintage-link">Maupassant, Guy de (75539)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/f#a420" class="vintage-link">Fitzgerald, F. Scott (72356)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a97" class="vintage-link">Howells, William Dean (70833)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/d#a204" class="vintage-link">Defoe, Daniel (70664)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/g#a972" class="vintage-link">Grimm, Wilhelm (69171)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/g#a971" class="vintage-link">Grimm, Jacob (69171)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a993" class="vintage-link">Warner, Charles Dudley (68511)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a1355" class="vintage-link">Morley, Henry (67087)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a708" class="vintage-link">Chekhov, Anton Pavlovich (66609)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a783" class="vintage-link">Wodehouse, P. G. (65871)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a73" class="vintage-link">Burnett, Frances Hodgson (65624)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a9248" class="vintage-link">Bell, George (64826)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/g#a220" class="vintage-link">Gaskell, Elizabeth Cleghorn (64748)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/v#a913" class="vintage-link">Voltaire (64618)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a520" class="vintage-link">Meredith, George (64582)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a190" class="vintage-link">Stoker, Bram (64522)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/e#a1800" class="vintage-link">Ebers, Georg (63521)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/i#a34" class="vintage-link">Irving, Washington (62435)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/r#a2297" class="vintage-link">Robertson, James Alexander (62254)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/j#a5845" class="vintage-link">Jókai, Mór (62138)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/k#a8659" class="vintage-link">Kingston, William Henry Giles (61866)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/c#a5276" class="vintage-link">Chambers, Robert (61492)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a1032" class="vintage-link">Henty, G. A. (61008)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a104" class="vintage-link">Wharton, Edith (60953)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/r#a359" class="vintage-link">Ruskin, John (60784)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/z#a528" class="vintage-link">Zola, Émile (60783)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/a#a168" class="vintage-link">Alger, Horatio, Jr. (60751)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/f#a3840" class="vintage-link">Fenn, George Manville (60617)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/v#a6641" class="vintage-link">Vernon Jones, V. S. (60166)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a1801" class="vintage-link">Bell, Clara (59611)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/h#a365" class="vintage-link">Haggard, H. Rider (59489)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/m#a127" class="vintage-link">MacDonald, George (58424)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/s#a467" class="vintage-link">Shaw, Bernard (58146)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/y#a945" class="vintage-link">Yonge, Charlotte M. (57937)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/t#a9854" class="vintage-link">Townsend, F. H. (57609)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/b#a2296" class="vintage-link">Blair, Emma Helen (57230)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/l#a7862" class="vintage-link">Levy, Oscar (57079)</a></li>
+                        <li><a href="https://www.gutenberg.org/browse/authors/w#a205" class="vintage-link">Wheatley, Henry B. (56729)</a></li>
+                    </ol>
+                </div>
+
+            </div> </div> <footer class="site-footer">
             <nav class="footer-nav">
                 <a href="about.html">About</a> |
                 <a href="https://www.gutenberg.org/policy/privacy_policy.html">Privacy policy</a> |
@@ -303,7 +718,9 @@
             </nav>
             <p>&copy; 2026 Project Gutenberg</p>
         </footer>
+    </main>
 
-  </main>
+    <div id="backToTop">↑ Top</div>
+    <script src="script.js"></script>
 </body>
 </html>
