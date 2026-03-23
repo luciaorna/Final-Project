@@ -1,5 +1,5 @@
-//* ==========================================================================
-   PROJECT GUTENBERG - VINTAGE TYPEWRITER REDESIGN
+/* ==========================================================================
+   PROJECT GUTENBERG - VINTAGE TYPEWRITER REDESIGN (COMPLETE)
    ========================================================================== */
 
 /* ===== 1. RESET & BASE STYLES ===== */
@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: #f4ece1; 
+    background-color: #f4ece1; /* Classic aged paper color */
     color: #333;               
     display: flex;             
     font-family: 'Courier New', Courier, monospace; 
@@ -19,17 +19,18 @@ body {
 }
 
 /* ===== 2. GLOBAL LAYOUT ===== */
-main, .page-layout {
+.page-layout {
     display: flex;
     flex-direction: column;
     flex: 1;                  
     margin: 0 auto;          
     max-width: 1000px;
     padding: 40px;
+    width: 100%;
 }
 
 .content-wrapper {
-    flex: 1; /* Pushes footer to bottom */
+    flex: 1; /* Ensures footer stays at the bottom */
 }
 
 /* ===== 3. SIDEBAR & NAVIGATION ===== */
@@ -43,21 +44,13 @@ main, .page-layout {
     position: sticky;         
     top: 0;
     width: 260px;             
-}
-
-.logo {
-    color: #5a4a3a;
-    display: block;
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 30px;
-    text-align: center;
-    text-decoration: none;    
+    z-index: 100;
 }
 
 .logo-img {
     max-width: 100%;
     height: auto;
+    margin-bottom: 20px;
 }
 
 .nav-list {
@@ -85,12 +78,12 @@ main, .page-layout {
     transform: translateY(-2px); 
 }
 
-/* ===== 4. VINTAGE COMPONENTS ===== */
+/* ===== 4. TYPOGRAPHY & LINKS ===== */
 h1, .section-title {
     color: #4a3b2b;
     margin-bottom: 20px;
     text-align: center;
-    border-bottom: 1px solid #dcd0b9;
+    border-bottom: 2px solid #dcd0b9;
     padding-bottom: 10px;
 }
 
@@ -112,170 +105,22 @@ h1, .section-title {
     text-decoration: underline;
 }
 
-/* Tables */
-.vintage-table {
-    background-color: #ffffff;
-    border-collapse: collapse; 
-    width: 100%;
-    margin-bottom: 40px;
-}
-
-.vintage-table th {
-    background-color: #e8dfd0; 
-    color: #4a3b2b;
-    padding: 15px;
-    text-align: left;
-}
-
-.vintage-table td {
-    border-bottom: 1px solid #dcd0b9;
-    padding: 15px;
-}
-
-/* ===== 5. INTERACTIVE ELEMENTS ===== */
-
-/* Back to Top */
-#backToTop {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    display: none; 
-    background-color: #5a4a3a;
-    color: #f4ece1;
-    padding: 12px 18px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    z-index: 1000;
-}
-
-/* Typewriter Cursor */
-#cursor {
-    font-weight: bold;
-    color: #a67c52;
-    margin-left: 2px;
-}
-
-@keyframes blink {
-    from, to { opacity: 1; }
-    50% { opacity: 0; }
-}
-
-.blink-animation {
-    animation: blink 1s step-end infinite;
-}
-
-/* Forms */
-.vintage-input {
-    background-color: #fff9f0;
-    border: 1px solid #c5b8a5;
-    border-radius: 4px;
-    padding: 10px;
-    font-family: inherit;
-}
-
-.vintage-submit {
-    background-color: #5a4a3a;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-/* ===== 6. CARDS & GRIDS ===== */
-.categories-grid {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    margin-bottom: 40px;
-}
-
-.category-soft-box {
-    background: #faf6f0; 
-    border: 1px solid #e8dfd0; 
-    border-radius: 8px; 
+/* ===== 5. COMPONENTS & BOXES ===== */
+.info-box {
+    background: #fffdfa;
+    border: 1px solid #dcd0b9;
     padding: 30px;
-    height: 100%;
-    overflow-wrap: break-word;
-    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+    box-shadow: 4px 4px 0px #dcd0b9; /* Hard vintage shadow */
 }
 
-.category-soft-box:hover {
-    transform: translateY(-5px);
+.mission-scroll {
+    background: #f4ece1;
+    border-left: 5px solid #5a4a3a; /* Accent bar */
+    padding: 20px;
+    font-style: italic;
+    margin-bottom: 20px;
 }
-
-.category-soft-box h2 {
-    color: #4a3b2b;
-    font-size: 1.4rem;
-    text-align: center;
-    border-bottom: 1px solid #e8dfd0;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-
-.category-soft-box ul {
-    list-style: none;
-}
-
-/* ===== 7. THEMES & FILTERS ===== */
-
-/* Dark Mode */
-.dark-mode {
-    background-color: #1a1a1a !important;
-    color: #e8dfd0 !important;
-}
-
-.dark-mode .site-header, 
-.dark-mode .category-soft-box, 
-.dark-mode .info-box {
-    background-color: #2c2c2c !important;
-    border-color: #444 !important;
-    color: #e8dfd0 !important;
-}
-
-.dark-mode h1, .dark-mode h2, .dark-mode .section-title {
-    color: #dcd0b9 !important;
-}
-
-/* Vintage Projector */
-.sepia-filter {
-    filter: sepia(0.8) contrast(1.1);
-}
-
-.film-grain::after {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: url('https://www.transparenttextures.com/patterns/stardust.png'); 
-    opacity: 0.07;
-    pointer-events: none; 
-    z-index: 9999;
-}
-
-/* ===== 8. FOOTER ===== */
-.site-footer {
-    background-color: #2c3e50; 
-    border-radius: 8px;
-    color: white;
-    margin-top: 40px;
-    padding: 2rem;
-    text-align: center;
-}
-
-.footer-nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-}
-
-/* ===== 9. UTILITIES & RESPONSIVENESS ===== */
-.text-center { text-align: center !important; }
-.mt-0 { margin-top: 0 !important; }
-.border-none { border-bottom: none !important; }
 
 .archive-tag {
     background: #e8dfd0;
@@ -294,7 +139,170 @@ h1, .section-title {
     color: white;
 }
 
+/* ===== 6. TABLES & LISTS ===== */
+.vintage-table {
+    background-color: #ffffff;
+    border-collapse: collapse; 
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.vintage-table th {
+    background-color: #e8dfd0; 
+    color: #4a3b2b;
+    padding: 15px;
+    text-align: left;
+}
+
+.vintage-table td {
+    border: 1px solid #dcd0b9;
+    padding: 12px;
+}
+
+.vintage-list {
+    list-style: decimal inside;
+    line-height: 2;
+}
+
+.vintage-list li {
+    margin-bottom: 8px;
+}
+
+/* ===== 7. FORMS & INPUTS ===== */
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.vintage-input {
+    background-color: #fff9f0;
+    border: 1px solid #c5b8a5;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: inherit;
+    width: 100%;
+}
+
+.vintage-submit {
+    background-color: #5a4a3a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.vintage-submit:hover {
+    background-color: #7a634d;
+}
+
+/* ===== 8. TABS SYSTEM (FOR SEARCH OPTIONS) ===== */
+.tab-input { display: none; }
+.tab-content { display: none; }
+
+.tabs-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #dcd0b9;
+}
+
+.tabs-container label {
+    padding: 10px 20px;
+    background: #e8dfd0;
+    border: 1px solid #c5b8a5;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px 4px 0 0;
+    transition: 0.3s;
+}
+
+/* Tab Switching Logic */
+#tab-advanced:checked ~ .tabs-container label[for="tab-advanced"],
+#tab-fulltext:checked ~ .tabs-container label[for="tab-fulltext"],
+#tab-categories:checked ~ .tabs-container label[for="tab-categories"] {
+    background: #5a4a3a;
+    color: white;
+}
+
+#tab-advanced:checked ~ #advanced-search-content,
+#tab-fulltext:checked ~ #fulltext-search-content,
+#tab-categories:checked ~ #categories-search-content {
+    display: block;
+}
+
+/* ===== 9. THEMES & SPECIAL EFFECTS ===== */
+
+/* Dark Mode Support */
+.dark-mode {
+    background-color: #1a1a1a !important;
+    color: #e8dfd0 !important;
+}
+
+.dark-mode .site-header, 
+.dark-mode .info-box,
+.dark-mode .category-soft-box {
+    background-color: #2c2c2c !important;
+    border-color: #444 !important;
+    color: #e8dfd0 !important;
+}
+
+.dark-mode .vintage-input {
+    background-color: #333 !important;
+    color: #eee !important;
+}
+
+/* Film Grain Overlay */
+.film-grain::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png'); 
+    opacity: 0.07;
+    pointer-events: none; 
+    z-index: 9999;
+}
+
+/* ===== 10. FOOTER ===== */
+.site-footer {
+    background-color: #2c3e50; 
+    border-radius: 8px;
+    color: white;
+    margin-top: 40px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* ===== 11. RESPONSIVENESS ===== */
 @media (max-width: 768px) {
     body { flex-direction: column; }
-    .site-header { width: 100%; height: auto; position: relative; border-right: none; }
+    
+    .site-header { 
+        width: 100%; 
+        height: auto; 
+        position: relative; 
+        border-right: none; 
+        border-bottom: 2px solid #dcd0b9;
+    }
+    
+    .page-layout { 
+        margin-left: 0; 
+        padding: 20px;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
 }
