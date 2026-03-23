@@ -78,6 +78,19 @@ body {
     transform: translateY(-2px); 
 }
 
+/* Toggle buttons container */
+.mode-toggles {
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mode-toggles button {
+    font-size: 0.8rem;
+}
+
 /* ===== 4. TYPOGRAPHY & LINKS ===== */
 h1, .section-title {
     color: #4a3b2b;
@@ -139,6 +152,14 @@ h1, .section-title {
     color: white;
 }
 
+/* Container for bookshelves links */
+.bookshelves-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
 /* ===== 6. TABLES & LISTS ===== */
 .vintage-table {
     background-color: #ffffff;
@@ -166,6 +187,19 @@ h1, .section-title {
 
 .vintage-list li {
     margin-bottom: 8px;
+}
+
+.table-header-flex {
+    text-align: left;
+}
+
+/* Special styles for the bibliographic record table */
+.biblio-table {
+    margin-bottom: 0;
+}
+
+.biblio-table th {
+    width: 25%;
 }
 
 /* ===== 7. FORMS & INPUTS ===== */
@@ -201,7 +235,7 @@ h1, .section-title {
     background-color: #7a634d;
 }
 
-/* ===== 8. TABS SYSTEM (FOR SEARCH OPTIONS) ===== */
+/* ===== 8. TABS SYSTEM (SEARCH OPTIONS PAGE) ===== */
 .tab-input { display: none; }
 .tab-content { display: none; }
 
@@ -236,7 +270,90 @@ h1, .section-title {
     display: block;
 }
 
-/* ===== 9. THEMES & SPECIAL EFFECTS ===== */
+/* ===== 9. INDIVIDUAL BOOK PAGE ELEMENTS ===== */
+.breadcrumbs {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #5a4a3a;
+    font-size: 0.9rem;
+}
+
+.author-subtitle {
+    font-size: 1.2rem;
+}
+
+.book-details-grid {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/* Left column: Cover and sharing */
+.book-cover-section {
+    flex: 0 0 250px;
+    text-align: center;
+}
+
+.book-cover-img {
+    width: 100%;
+    border: 2px solid #dcd0b9;
+    border-radius: 4px;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.read-now-btn {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.social-share-section {
+    border-top: 1px dashed #dcd0b9;
+    padding-top: 15px;
+}
+
+.social-title {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    font-size: 0.85rem;
+}
+
+/* Right column: Summary */
+.book-summary-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.summary-title {
+    text-align: left;
+}
+
+.summary-text {
+    line-height: 1.8;
+}
+
+.help-link {
+    font-size: 0.9rem;
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+.more-files-text {
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* ===== 10. THEMES & SPECIAL EFFECTS ===== */
 
 /* Dark Mode Support */
 .dark-mode {
@@ -268,7 +385,7 @@ h1, .section-title {
     z-index: 9999;
 }
 
-/* ===== 10. FOOTER ===== */
+/* ===== 11. FOOTER ===== */
 .site-footer {
     background-color: #2c3e50; 
     border-radius: 8px;
@@ -285,7 +402,11 @@ h1, .section-title {
     font-size: 0.9rem;
 }
 
-/* ===== 11. RESPONSIVENESS ===== */
+/* ===== 12. RESPONSIVENESS & UTILITIES ===== */
+.text-center { text-align: center !important; }
+.mt-0 { margin-top: 0 !important; }
+.border-none { border-bottom: none !important; }
+
 @media (max-width: 768px) {
     body { flex-direction: column; }
     
@@ -304,5 +425,16 @@ h1, .section-title {
 
     .categories-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .book-details-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .book-cover-section {
+        flex: none;
+        width: 100%;
+        max-width: 300px;
     }
 }
