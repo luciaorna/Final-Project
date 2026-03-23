@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. FOOLPROOF DARK MODE & VINTAGE MODE
-    // This looks for the buttons by ID, but falls back to looking at the text if IDs are missing
     const links = document.querySelectorAll('a');
     
     links.forEach(link => {
@@ -30,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 2. HIGHLIGHT ACTIVE PAGE IN SIDEBAR
     const currentPage = window.location.pathname.split("/").pop();
     const navLinks = document.querySelectorAll(".nav-list a");
     
