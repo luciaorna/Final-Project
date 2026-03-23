@@ -1,4 +1,4 @@
-/* ==========================================================================
+//* ==========================================================================
    PROJECT GUTENBERG - VINTAGE TYPEWRITER REDESIGN
    ========================================================================== */
 
@@ -18,8 +18,8 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ===== 2. GLOBAL LAYOUT & WRAPPERS ===== */
-main, .page_content {
+/* ===== 2. GLOBAL LAYOUT ===== */
+main, .page-layout {
     display: flex;
     flex-direction: column;
     flex: 1;                  
@@ -28,17 +28,11 @@ main, .page_content {
     padding: 40px;
 }
 
-.page-layout {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
 .content-wrapper {
     flex: 1; /* Pushes footer to bottom */
 }
 
-/* ===== 3. SIDEBAR HEADER & NAVIGATION ===== */
+/* ===== 3. SIDEBAR & NAVIGATION ===== */
 .site-header {
     background-color: #e8dfd0; 
     border-right: 2px solid #dcd0b9;
@@ -69,19 +63,16 @@ main, .page_content {
 .nav-list {
     display: flex;
     flex-direction: column;   
-    gap: 20px;                
+    gap: 15px;                
     list-style: none;         
-    padding: 0;
 }
 
 .nav-list a {
     background-color: #f4ece1; 
     border: 1px solid #c5b8a5; 
     border-radius: 6px;        
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
     color: #4a3b2b;           
     display: block;           
-    font-size: 1.1rem;
     font-weight: bold;
     padding: 12px 15px;        
     text-decoration: none;
@@ -90,76 +81,24 @@ main, .page_content {
 
 .nav-list a:hover {
     background-color: #5a4a3a; 
-    border-color: #5a4a3a;     
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15); 
     color: #ffffff;            
     transform: translateY(-2px); 
 }
 
-/* ===== 4. FORMS & INPUTS ===== */
-.search-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: auto;         
-}
-
-.vintage-input, .engine-input {
-    background-color: #fff9f0;
-    border: 1px solid #c5b8a5;
-    border-radius: 4px;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 10px;
-}
-
-.vintage-submit, .search-form button {
-    background-color: #5a4a3a;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;          
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    padding: 12px 20px;
-    text-transform: uppercase;
-    transition: background 0.3s;
-}
-
-.vintage-submit:hover, .search-form button:hover {
-    background-color: #7a634d;
-}
-
-/* ===== 5. REUSABLE VINTAGE COMPONENTS ===== */
+/* ===== 4. VINTAGE COMPONENTS ===== */
 h1, .section-title {
     color: #4a3b2b;
     margin-bottom: 20px;
-    padding-bottom: 10px;
     text-align: center;
-}
-
-h1 {
     border-bottom: 1px solid #dcd0b9;
-}
-
-.section-title {
-    border-bottom: 1px solid #dcd0b9;
-    margin-top: 40px;
+    padding-bottom: 10px;
 }
 
 .intro-text {
     color: #5a4a3a;
     font-size: 1.1rem;
     line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.info-box {
-    background: #ffffff;
-    border: 1px solid #dcd0b9;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
-    margin-bottom: 40px;
-    padding: 25px;
+    margin-bottom: 30px;
 }
 
 .vintage-link {
@@ -173,37 +112,82 @@ h1 {
     text-decoration: underline;
 }
 
-.vintage-list {
-    color: #5a4a3a;
-    line-height: 1.8;
-    margin-bottom: 40px;
-}
-
-/* Vintage Tables */
+/* Tables */
 .vintage-table {
     background-color: #ffffff;
     border-collapse: collapse; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    margin-bottom: 40px;
     width: 100%;
-}
-
-.vintage-table th, .vintage-table td {
-    border-bottom: 1px solid #dcd0b9;
-    padding: 15px;
-    text-align: left;
+    margin-bottom: 40px;
 }
 
 .vintage-table th {
     background-color: #e8dfd0; 
     color: #4a3b2b;
-    font-weight: bold;
+    padding: 15px;
+    text-align: left;
 }
 
-/* ===== 6. PAGE SPECIFIC STYLES ===== */
+.vintage-table td {
+    border-bottom: 1px solid #dcd0b9;
+    padding: 15px;
+}
 
-/* Homepage & Grids */
-.categories-grid, .homepage-category-grid {
+/* ===== 5. INTERACTIVE ELEMENTS ===== */
+
+/* Back to Top */
+#backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none; 
+    background-color: #5a4a3a;
+    color: #f4ece1;
+    padding: 12px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+/* Typewriter Cursor */
+#cursor {
+    font-weight: bold;
+    color: #a67c52;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.blink-animation {
+    animation: blink 1s step-end infinite;
+}
+
+/* Forms */
+.vintage-input {
+    background-color: #fff9f0;
+    border: 1px solid #c5b8a5;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: inherit;
+}
+
+.vintage-submit {
+    background-color: #5a4a3a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* ===== 6. CARDS & GRIDS ===== */
+.categories-grid {
     display: grid;
     gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -214,128 +198,30 @@ h1 {
     background: #faf6f0; 
     border: 1px solid #e8dfd0; 
     border-radius: 8px; 
-    box-shadow: 0 4px 12px rgba(90, 74, 58, 0.04); 
-    display: flex;
-    flex-direction: column; 
-    height: 100%; 
     padding: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    word-wrap: break-word;
+    height: 100%;
     overflow-wrap: break-word;
+    transition: transform 0.3s ease;
 }
 
 .category-soft-box:hover {
-    box-shadow: 0 8px 20px rgba(90, 74, 58, 0.08);
-    transform: translateY(-3px);
+    transform: translateY(-5px);
 }
 
 .category-soft-box h2 {
-    border-bottom: 1px solid #e8dfd0; 
     color: #4a3b2b;
     font-size: 1.4rem;
-    margin-bottom: 15px;
-    margin-top: 0;
-    padding-bottom: 10px;
     text-align: center;
+    border-bottom: 1px solid #e8dfd0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .category-soft-box ul {
-    flex-grow: 1; 
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
-/* About & Individual Book */
-.about-paper {
-    background-color: #fcf9f2;
-    border: 1px solid #c5b8a5;
-    border-radius: 4px;
-    box-shadow: 2px 4px 10px rgba(0,0,0,0.05);
-    margin-bottom: 40px;
-    padding: 50px;
-}
-
-.book-details-intro {
-    align-items: flex-start;  
-    display: flex;            
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.main-book-cover {
-    border-radius: 4px;
-    box-shadow: 2px 4px 10px rgba(0,0,0,0.15);
-    max-width: 250px;
-}
-
-/* ===== 7. FLOATING UI & INTERACTIVITY ===== */
-
-/* Settings Menu */
-#settings-trigger {
-    background: #5a4a3a;
-    border: none;
-    border-radius: 50%;
-    bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    color: white;
-    cursor: pointer;
-    font-size: 1.5rem;
-    height: 50px;
-    left: 20px; 
-    position: fixed;
-    transition: transform 0.3s ease;
-    width: 50px;
-    z-index: 1001;
-}
-
-#settings-trigger:hover {
-    transform: rotate(90deg);
-}
-
-#settings-panel {
-    background: #f4ece1;
-    border: 2px solid #dcd0b9;
-    border-radius: 8px;
-    bottom: 80px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    display: none; /* Toggle via JS with .active */
-    flex-direction: column;
-    gap: 10px;
-    left: 20px;
-    padding: 20px;
-    position: fixed;
-    width: 250px;
-    z-index: 1001;
-}
-
-#settings-panel.active {
-    display: flex !important;
-}
-
-#settings-panel h3 {
-    border-bottom: 1px solid #dcd0b9;
-    color: #4a3b2b;
-    font-size: 1rem;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-/* Back to Top */
-#backToTop {
-    background: #5a4a3a;
-    border-radius: 4px;
-    bottom: 20px;
-    color: white;
-    cursor: pointer;
-    display: none; 
-    padding: 10px 15px;
-    position: fixed;
-    right: 20px;
-    z-index: 1000;
-}
-
-/* ===== 8. THEMES & FILTERS ===== */
+/* ===== 7. THEMES & FILTERS ===== */
 
 /* Dark Mode */
 .dark-mode {
@@ -343,10 +229,9 @@ h1 {
     color: #e8dfd0 !important;
 }
 
-.dark-mode .info-box, 
-.dark-mode .category-soft-box,
-.dark-mode .about-paper,
-.dark-mode #settings-panel {
+.dark-mode .site-header, 
+.dark-mode .category-soft-box, 
+.dark-mode .info-box {
     background-color: #2c2c2c !important;
     border-color: #444 !important;
     color: #e8dfd0 !important;
@@ -356,26 +241,22 @@ h1 {
     color: #dcd0b9 !important;
 }
 
-/* Vintage Projector Mode */
+/* Vintage Projector */
 .sepia-filter {
     filter: sepia(0.8) contrast(1.1);
-    transition: filter 0.5s ease;
 }
 
 .film-grain::after {
-    background: url('https://www.transparenttextures.com/patterns/stardust.png'); 
     content: "";
-    height: 100%;
-    left: 0; 
-    opacity: 0.1;
-    pointer-events: none; 
     position: fixed;
-    top: 0; 
-    width: 100%; 
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png'); 
+    opacity: 0.07;
+    pointer-events: none; 
     z-index: 9999;
 }
 
-/* ===== 9. FOOTER ===== */
+/* ===== 8. FOOTER ===== */
 .site-footer {
     background-color: #2c3e50; 
     border-radius: 8px;
@@ -391,47 +272,29 @@ h1 {
     text-decoration: none;
 }
 
-.footer-nav a:hover {
-    text-decoration: underline;
-}
-
-/* ===== 10. UTILITY CLASSES ===== */
+/* ===== 9. UTILITIES & RESPONSIVENESS ===== */
 .text-center { text-align: center !important; }
-.border-none { border-bottom: none !important; }
 .mt-0 { margin-top: 0 !important; }
-.bold-link { font-weight: bold; color: #5a4a3a; }
-
-.tag-cloud {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 50px;
-}
+.border-none { border-bottom: none !important; }
 
 .archive-tag {
     background: #e8dfd0;
     border-left: 3px solid #5a4a3a;
-    border-radius: 0 4px 4px 0;
     color: #5a4a3a;
     display: inline-block;
-    font-size: 0.95rem;
-    font-weight: bold;
-    margin: 5px;
     padding: 8px 15px;
+    margin: 5px;
+    font-weight: bold;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .archive-tag:hover {
     background: #5a4a3a;
-    color: #ffffff;
-    transform: translateX(3px); 
+    color: white;
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
     body { flex-direction: column; }
-    .site-header { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 2px solid #dcd0b9; }
-    .book-details-intro { flex-direction: column; align-items: center; }
+    .site-header { width: 100%; height: auto; position: relative; border-right: none; }
 }

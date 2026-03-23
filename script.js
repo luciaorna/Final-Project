@@ -1,104 +1,80 @@
 <script>
     /* ==========================================================================
-       PROJECT GUTENBERG - VINTAGE REDESIGN INTERACTIVITY
+       PROJECT GUTENBERG - SIMPLE INTERACTIVITY SCRIPT
        ========================================================================== */
 
-    // 1. GLOBAL FUNCTIONS (Must be outside for HTML onclick events to work)
+    // 1. VINTAGE MODE TOGGLE (Global function for onclick events)
     let isVintageModeOn = false;
 
     function toggleVintageMode() {
         const body = document.body;
         const btn = document.getElementById('vintageToggle');
-        if (!btn) return;
+        
+        if (!btn) return; // Exit if button doesn't exist
 
         isVintageModeOn = !isVintageModeOn;
         if (isVintageModeOn) {
             body.classList.add('film-grain', 'sepia-filter');
-            btn.innerText = "📽️ Turn Off Old Projector Mode";
+            btn.innerText = "📽️ Turn Off Projector Mode";
         } else {
             body.classList.remove('film-grain', 'sepia-filter');
             btn.innerText = "📽️ Turn On Old Projector Mode";
         }
     }
 
-    // 2. INITIALIZATION (Runs after the HTML document is fully loaded)
+    // 2. MAIN INITIALIZATION (Runs when page is ready)
     document.addEventListener('DOMContentLoaded', () => {
 
-        // --- Settings Menu Toggle ---
-        const settingsTrigger = document.getElementById('settings-trigger');
-        const settingsPanel = document.getElementById('settings-panel');
-
-        if (settingsTrigger && settingsPanel) {
-            settingsTrigger.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevents the click from instantly closing the menu
-                settingsPanel.classList.toggle('active');
-            });
-
-            // Close settings menu if clicking anywhere outside of it
-            window.addEventListener('click', (event) => {
-                if (!settingsPanel.contains(event.target) && event.target !== settingsTrigger) {
-                    settingsPanel.classList.remove('active');
-                }
-            });
-        }
-
-        // --- Dark Mode Toggle ---
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        if (darkModeToggle) {
-            darkModeToggle.addEventListener('click', () => {
+        // --- Dark Mode ---
+        const darkModeBtn = document.getElementById('darkModeToggle');
+        if (darkModeBtn) {
+            darkModeBtn.addEventListener('click', () => {
                 document.body.classList.toggle('dark-mode');
             });
         }
 
         // --- Typewriter Effect ---
-        const typeWriterElement = document.getElementById('typewriter-text');
+        const textElement = document.getElementById('typewriter-text');
         const cursorElement = document.getElementById('cursor');
 
-        if (typeWriterElement && cursorElement) {
+        if (textElement && cursorElement) {
             const textToType = "Project Gutenberg is a library of over 75,000 free eBooks.";
-            let index = 0;
-            const typingSpeed = 50;
+            let i = 0;
 
-            function typeWriter() {
-                if (index < textToType.length) {
-                    typeWriterElement.textContent += textToType.charAt(index);
-                    index++;
-                    let randomDelay = Math.random() * 50;
-                    setTimeout(typeWriter, typingSpeed + randomDelay);
+            function type() {
+                if (i < textToType.length) {
+                    textElement.textContent += textToType.charAt(i);
+                    i++;
+                    setTimeout(type, 50 + Math.random() * 50);
                 } else {
                     cursorElement.style.animation = "blink 1s step-end infinite";
                 }
             }
-            setTimeout(typeWriter, 500); // Small initial delay
+            setTimeout(type, 500);
         }
 
-        // --- Live Search Filtering ---
+        // --- Live Search ---
         const searchInput = document.getElementById('searchInput');
         const bookList = document.getElementById('bookList');
 
         if (searchInput && bookList) {
             const books = bookList.getElementsByClassName('book-item');
-            searchInput.addEventListener('keyup', function() {
+            searchInput.addEventListener('keyup', () => {
                 const query = searchInput.value.toLowerCase();
-                for (let i = 0; i < books.length; i++) {
-                    const text = books[i].textContent.toLowerCase();
-                    books[i].style.display = text.includes(query) ? "flex" : "none";
+                for (let book of books) {
+                    const title = book.textContent.toLowerCase();
+                    book.style.display = title.includes(query) ? "flex" : "none";
                 }
             });
         }
 
-        // --- Back to Top Button ---
-        const backToTopBtn = document.getElementById("backToTop");
-        if (backToTopBtn) {
+        // --- Back to Top ---
+        const topBtn = document.getElementById("backToTop");
+        if (topBtn) {
             window.addEventListener('scroll', () => {
-                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                    backToTopBtn.style.display = "block";
-                } else {
-                    backToTopBtn.style.display = "none";
-                }
+                topBtn.style.display = window.scrollY > 300 ? "block" : "none";
             });
-
-            backToTopBtn.addEventListener('click', () => {
+            topBtn.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
