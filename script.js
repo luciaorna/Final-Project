@@ -1,7 +1,3 @@
-// 1. This popup will tell you if the file is connected properly!
-// (You can delete this line once you see the popup)
-alert("JavaScript is connected and running!");
-
 document.addEventListener("DOMContentLoaded", () => {
     
     // 2. FOOLPROOF BUTTON FINDER (No IDs required in your HTML)
