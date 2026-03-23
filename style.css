@@ -56,23 +56,34 @@ body {
 .nav-list {
     display: flex;
     flex-direction: column;   
-    gap: 15px;                /* Creates perfect, even spacing between the links */
-    list-style: none;         /* Hides the ugly default bullet points */
+    gap: 20px;                /* Increased spacing between buttons (was 15px) */
+    list-style: none;         
     padding: 0;
 }
 
 .nav-list a {
     text-decoration: none;
-    color: #5a4a3a;
+    color: #4a3b2b;           /* Dark text for good readability */
     font-weight: bold;
     font-size: 1.1rem;
-    display: block;           /* Makes the entire row clickable, not just the text */
-    transition: 0.3s ease;    /* Makes the hover effect smooth instead of instant */
+    display: block;           
+    
+    /* NEW! Giving it a well-defined button shape */
+    background-color: #f4ece1; /* Vintage paper background color */
+    border: 1px solid #c5b8a5; /* Subtle border to frame it */
+    border-radius: 6px;        /* Slightly rounded corners */
+    padding: 12px 15px;        /* Inner spacing (top/bottom and sides) */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Very soft shadow */
+    
+    transition: all 0.3s ease; /* Smooth transition for color and movement */
 }
 
 .nav-list a:hover {
-    color: #a67c52;
-    padding-left: 10px;       /* When hovered, the link gently slides to the right */
+    background-color: #5a4a3a; /* Turns dark brown on hover */
+    color: #ffffff;            /* Text turns white for contrast */
+    border-color: #5a4a3a;     /* Border darkens to match */
+    transform: translateY(-2px); /* The button "jumps" up slightly */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Shadow gets slightly stronger */
 }
 
 /* ===== 4. SEARCH FORM ===== */
@@ -112,13 +123,10 @@ body {
 
 /* ===== 5. MAIN CONTENT AREA ===== */
 main, .page_content {
-    /* 'flex: 1' tells the main area to grow and take up all the remaining 
-       space on the right side of the screen. */
-    flex: 1;                  
+    flex: 1;                  /* Takes up ALL the remaining horizontal space */
     padding: 40px;
-    max-width: 1000px;        /* Prevents text lines from getting too wide and hard to read */
-    line-height: 1.6;         /* Gives the text breathing room */
-    display: block;           /* Ensures elements inside stack normally from top to bottom */
+    max-width: 100%;          
+    display: block;
 }
 
 h1 {
