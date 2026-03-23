@@ -5,6 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Options | Project Gutenberg</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .tab-input { display: none; }
+        .tab-content { display: none; }
+        
+        #tab-advanced:checked ~ .tabs-container label[for="tab-advanced"],
+        #tab-fulltext:checked ~ .tabs-container label[for="tab-fulltext"],
+        #tab-categories:checked ~ .tabs-container label[for="tab-categories"] {
+            background: #5a4a3a;
+            color: white;
+            border-color: #5a4a3a;
+        }
+
+        #tab-advanced:checked ~ #advanced-search-content,
+        #tab-fulltext:checked ~ #fulltext-search-content,
+        #tab-categories:checked ~ #categories-search-content {
+            display: block;
+        }
+
+        .tabs-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #dcd0b9;
+            padding-bottom: 10px;
+        }
+
+        .tabs-container label {
+            padding: 10px 20px;
+            background: #e8dfd0;
+            border: 1px solid #c5b8a5;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 4px 4px 0 0;
+            transition: 0.3s;
+        }
+
+        .info-modal-toggle { display: none; }
+        .info-modal {
+            display: none;
+            background: #fdfaf6;
+            border: 1px solid #c5b8a5;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        #info-toggle:checked ~ .info-modal { display: block; }
+
+        .catalog-links { line-height: 2.2; text-align: center; }
+        .catalog-links a { margin: 0 5px; white-space: nowrap; }
+    </style>
 </head>
 <body>
 
@@ -40,98 +89,257 @@
             
             <div class="page-header">
                 <h1 class="text-center">Search Options</h1>
-                <p class="intro-text text-center">Use the tools below to find exactly what you are looking for in our library of 75,000+ eBooks.</p>
             </div>
 
-            <div class="info-box">
-                <h2 class="section-title mt-0 border-none">Advanced Search</h2>
-                <form class="advanced-search-form" method="get" action="https://www.gutenberg.org/ebooks/search/">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                        <div class="form-group">
-                            <label>Author Name:</label>
-                            <input type="text" name="author" class="vintage-input" placeholder="e.g. Jane Austen">
-                        </div>
-                        <div class="form-group">
-                            <label>Book Title:</label>
-                            <input type="text" name="title" class="vintage-input" placeholder="e.g. Pride and Prejudice">
-                        </div>
-                        <div class="form-group">
-                            <label>Subject:</label>
-                            <input type="text" name="subject" class="vintage-input" placeholder="e.g. Fiction">
-                        </div>
-                        <div class="form-group">
-                            <label>Language:</label>
-                            <select name="lang" class="vintage-input">
-                                <option value="en">English</option>
-                                <option value="es">Spanish</option>
-                                <option value="fr">French</option>
-                                <option value="de">German</option>
-                            </select>
-                        </div>
+            <div class="categories-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 30px;">
+                <a href="https://www.gutenberg.org/ebooks/search/?sort_order=downloads" class="category-soft-box text-center vintage-link">
+                    <span style="font-size: 2rem;">📈</span><br>Most Popular
+                </a>
+                <a href="https://www.gutenberg.org/ebooks/search/?sort_order=release_date" class="category-soft-box text-center vintage-link">
+                    <span style="font-size: 2rem;">🆕</span><br>New Releases
+                </a>
+                <a href="https://www.gutenberg.org/ebooks/search/?sort_order=random" class="category-soft-box text-center vintage-link">
+                    <span style="font-size: 2rem;">🎲</span><br>Random Suggestions
+                </a>
+            </div>
+
+            <input type="radio" name="ebook-tabs" id="tab-advanced" class="tab-input" checked>
+            <input type="radio" name="ebook-tabs" id="tab-fulltext" class="tab-input">
+            <input type="radio" name="ebook-tabs" id="tab-categories" class="tab-input">
+
+            <div class="tabs-container">
+                <label for="tab-advanced">Advanced Search</label>
+                <label for="tab-fulltext">Full Text Search</label>
+                <label for="tab-categories">Languages & Catalogs</label>
+            </div>
+
+            <div id="advanced-search-content" class="tab-content">
+                <div class="info-box">
+                    <input type="checkbox" id="info-toggle" class="info-modal-toggle">
+                    <label for="info-toggle" class="vintage-submit" style="display: inline-block; padding: 5px 15px; margin-bottom: 20px; cursor: pointer;">ⓘ Search Information</label>
+                    
+                    <div class="info-modal">
+                        <h2>Information</h2>
+                        <p> - Advanced Search is case insensitive. </p>
+                        <p> - Fill in as many fields you like. </p>
+                        <p> - Enter one or more space separated words in each field. Avoid punctuation characters. </p>
+                        <p> - The result will match all of the words you entered in all of the fields. </p>
+                        <p> - Select Language: English only if you explicitly want to exclude works in other languages. </p>
                     </div>
-                    <button type="submit" class="vintage-submit" style="width: 100%; margin-top: 20px;">Search Catalog</button>
-                </form>
+
+                    <form method="post" action="https://www.gutenberg.org/ebooks/results/" enctype="multipart/form-data">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label>Author</label>
+                                <input type="text" name="author" class="vintage-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Title</label>
+                                <input type="text" name="title" class="vintage-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Subject</label>
+                                <input type="text" name="subject" class="vintage-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Subject Areas (LOCC)</label>
+                                <select name="locc" class="vintage-input">
+                                    <option selected value="">Any</option>
+                                    <option value="AC">AC General Works: Collections, Series, Collected works, Pamphlets</option>
+                                    <option value="AE">AE General Works: Encyclopedias</option>
+                                    <option value="AG">AG General Works: Dictionaries and other general reference books</option>
+                                    <option value="AM">AM General Works: Museums, Collectors and collecting</option>
+                                    <option value="AP">AP General Works: Periodicals</option>
+                                    <option value="AS">AS General Works: Academies and International Associations, Congresses</option>
+                                    <option value="AY">AY General Works: Yearbooks, Almanacs, Directories</option>
+                                    <option value="AZ">AZ General Works: History of scholarship and learning, The humanities</option>
+                                    <option value="B">B Philosophy, Psychology, Religion</option>
+                                    <option value="BC">BC Philosophy, Psychology, Religion: Logic</option>
+                                    <option value="BD">BD Philosophy, Psychology, Religion: Speculative Philosophy, General Philosophical works</option>
+                                    <option value="BF">BF Philosophy, Psychology, Religion: Psychology, Philosophy, Psychoanalysis</option>
+                                    <option value="BH">BH Philosophy, Psychology, Religion: Aesthetics</option>
+                                    <option value="BJ">BJ Philosophy, Psychology, Religion: Ethics, Social usages, Etiquette, Religion</option>
+                                    <option value="BL">BL Philosophy, Psychology, Religion: Religion: General, Miscellaneous and Atheism</option>
+                                    <option value="BM">BM Philosophy, Psychology, Religion: Judaism</option>
+                                    <option value="BP">BP Philosophy, Psychology, Religion: Islam, Bahaism, Theosophy, Other and new beliefs</option>
+                                    <option value="BQ">BQ Philosophy, Psychology, Religion: Buddhism</option>
+                                    <option value="BR">BR Philosophy, Psychology, Religion: Christianity</option>
+                                    <option value="BS">BS Philosophy, Psychology, Religion: Christianity: The Bible, Old and New Testament</option>
+                                    <option value="BT">BT Philosophy, Psychology, Religion: Christianity: Doctrinal theology, God, Christology</option>
+                                    <option value="BV">BV Philosophy, Psychology, Religion: Christianity: Practical theology, Worship</option>
+                                    <option value="BX">BX Philosophy, Psychology, Religion: Christianity: Churches, Church movements</option>
+                                    <option value="CB">CB History: History of civilization</option>
+                                    <option value="CC">CC History: Archaeology</option>
+                                    <option value="CE">CE History: Technical Chronology, Calendar</option>
+                                    <option value="CJ">CJ History: Numismatics</option>
+                                    <option value="CN">CN History: Inscriptions, Epigraphy</option>
+                                    <option value="CR">CR History: Heraldry</option>
+                                    <option value="CS">CS History: Genealogy</option>
+                                    <option value="CT">CT History: Biography</option>
+                                    <option value="D">D History: General and Eastern Hemisphere</option>
+                                    <option value="D501">D501 History: General and Eastern Hemisphere: World War I</option>
+                                    <option value="D731">D731 History: General and Eastern Hemisphere: World War II</option>
+                                    <option value="DA">DA History: General and Eastern Hemisphere: Great Britain, Ireland, Central Europe</option>
+                                    <option value="DB">DB History: General and Eastern Hemisphere: Austria, Hungary, Czech Republic, Slovakia</option>
+                                    <option value="DC">DC History: General and Eastern Hemisphere: France, Andorra, Monaco</option>
+                                    <option value="DD">DD History: General and Eastern Hemisphere: Germany</option>
+                                    <option value="DE">DE History: General and Eastern Hemisphere: The Mediterranean Region, The Greco-Roman World</option>
+                                    <option value="DF">DF History: General and Eastern Hemisphere: Greece</option>
+                                    <option value="DG">DG History: General and Eastern Hemisphere: Italy, Vatican City, Malta</option>
+                                    <option value="DH">DH History: General and Eastern Hemisphere: Netherlands, Belgium, Luxemburg</option>
+                                    <option value="DJ">DJ History: General and Eastern Hemisphere: Netherlands</option>
+                                    <option value="DJK">DJK History: General and Eastern Hemisphere: Eastern Europe</option>
+                                    <option value="DK">DK History: General and Eastern Hemisphere: Russia, Former Soviet Republics, Poland</option>
+                                    <option value="DL">DL History: General and Eastern Hemisphere: Northern Europe, Scandinavia</option>
+                                    <option value="DP">DP History: General and Eastern Hemisphere: Spain, Portugal</option>
+                                    <option value="DQ">DQ History: General and Eastern Hemisphere: Switzerland</option>
+                                    <option value="DR">DR History: General and Eastern Hemisphere: Balkan Peninsula, Turkey</option>
+                                    <option value="DS">DS History: General and Eastern Hemisphere: Asia</option>
+                                    <option value="DT">DT History: General and Eastern Hemisphere: Africa</option>
+                                    <option value="DU">DU History: General and Eastern Hemisphere: History of Oceania (South Seas)</option>
+                                    <option value="DX">DX History: General and Eastern Hemisphere: History of Romanies</option>
+                                    <option value="E011">E011 History: America: America</option>
+                                    <option value="E151">E151 History: America: United States</option>
+                                    <option value="F001">F001 United States local history: New England</option>
+                                    <option value="F1001">F1001 North America local history: Canada</option>
+                                    <option value="G">G Geography, Anthropology, Recreation</option>
+                                    <option value="H">H Social sciences</option>
+                                    <option value="J">J Political science</option>
+                                    <option value="K">K Law in general</option>
+                                    <option value="L">L Education</option>
+                                    <option value="M">M Music</option>
+                                    <option value="N">N Fine Arts</option>
+                                    <option value="P">P Language and Literatures</option>
+                                    <option value="Q">Q Science</option>
+                                    <option value="R">R Medicine</option>
+                                    <option value="S">S Agriculture</option>
+                                    <option value="T">T Technology</option>
+                                    <option value="U">U Military science</option>
+                                    <option value="V">V Naval science</option>
+                                    <option value="Z">Z Bibliography, Library science</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Language</label>
+                                <select name="lang" class="vintage-input">
+                                    <option selected value="">Any</option>
+                                    <option value="af">Afrikaans</option>
+                                    <option value="ar">Arabic</option>
+                                    <option value="zh">Chinese</option>
+                                    <option value="cs">Czech</option>
+                                    <option value="da">Danish</option>
+                                    <option value="nl">Dutch</option>
+                                    <option value="en">English</option>
+                                    <option value="eo">Esperanto</option>
+                                    <option value="fi">Finnish</option>
+                                    <option value="fr">French</option>
+                                    <option value="de">German</option>
+                                    <option value="el">Greek</option>
+                                    <option value="he">Hebrew</option>
+                                    <option value="hu">Hungarian</option>
+                                    <option value="it">Italian</option>
+                                    <option value="ja">Japanese</option>
+                                    <option value="la">Latin</option>
+                                    <option value="pt">Portuguese</option>
+                                    <option value="ru">Russian</option>
+                                    <option value="es">Spanish</option>
+                                    <option value="sv">Swedish</option>
+                                    <option value="tl">Tagalog</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Datatype</label>
+                                <select name="category" class="vintage-input">
+                                    <option selected value="">Any</option>
+                                    <option value="1">Audio Book, human-read</option>
+                                    <option value="2">Audio Book, computer-generated</option>
+                                    <option value="3">Music, recorded</option>
+                                    <option value="4">Music, Sheet</option>
+                                    <option value="5">Pictures, still</option>
+                                    <option value="8">Data</option>
+                                    <option value="9">Compilations</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Filetype</label>
+                                <select name="filetype" class="vintage-input">
+                                    <option selected value="">Any</option>
+                                    <option value="html">HTML</option>
+                                    <option value="epub.images">EPUB (with images)</option>
+                                    <option value="epub.noimages">EPUB (no images)</option>
+                                    <option value="kindle.images">Kindle (with images)</option>
+                                    <option value="pdf">PDF</option>
+                                    <option value="txt.utf-8">Plain Text UTF-8</option>
+                                    <option value="mp3">MP3 Audio</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="vintage-submit" style="width: 100%; margin-top: 30px;">Search Catalog</button>
+                    </form>
+                    <div class="text-center" style="margin-top: 20px;">
+                        <a href="https://www.gutenberg.org/help/bibliographic_record.html" class="vintage-link">Formats and Bibliographic Record Information</a>
+                    </div>
+                </div>
             </div>
 
-            <h2 class="section-title">Alternative Search Engines</h2>
-            <div class="categories-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-                <div class="category-soft-box text-center">
-                    <h3>Google Search</h3>
-                    <p style="margin-bottom: 15px; font-size: 0.9rem;">Search Gutenberg using Google's engine.</p>
-                    <form method="get" action="https://www.google.com/search" style="display: flex; justify-content: center;">
-                        <input type="hidden" name="as_sitesearch" value="gutenberg.org">
-                        <input type="text" name="q" class="vintage-input" style="width: 70%; border-radius: 4px 0 0 4px;" placeholder="Search...">
-                        <button type="submit" class="vintage-submit" style="border-radius: 0 4px 4px 0; padding: 10px 15px;">Go</button>
+            <div id="fulltext-search-content" class="tab-content">
+                <div class="info-box">
+                    <h2 class="section-title mt-0 border-none">Full Text Search</h2>
+                    <p>Search through the contents of all Project Gutenberg pages.</p>
+                    
+                    <form method="get" action="https://duckduckgo.com/" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <input type="hidden" name="sites" value="https://www.gutenberg.org">
+                        <input type="text" name="q" class="vintage-input" placeholder="Search with DuckDuckGo">
+                        <button type="submit" class="vintage-submit">Go</button>
+                    </form>
+
+                    <form method="get" action="https://www.google.com/search" style="display: flex; gap: 10px;">
+                        <input type="hidden" name="domains" value="gutenberg.org">
+                        <input type="hidden" name="sitesearch" value="gutenberg.org">
+                        <input type="text" name="q" class="vintage-input" placeholder="Search with Google">
+                        <button type="submit" class="vintage-submit">Go</button>
                     </form>
                 </div>
+            </div>
 
-                <div class="category-soft-box text-center">
-                    <h3>Bing Search</h3>
-                    <p style="margin-bottom: 15px; font-size: 0.9rem;">Search Gutenberg using Bing's engine.</p>
-                    <form method="get" action="https://www.bing.com/search" style="display: flex; justify-content: center;">
-                        <input type="hidden" name="q1" value="site:gutenberg.org">
-                        <input type="text" name="q" class="vintage-input" style="width: 70%; border-radius: 4px 0 0 4px;" placeholder="Search...">
-                        <button type="submit" class="vintage-submit" style="border-radius: 0 4px 4px 0; padding: 10px 15px;">Go</button>
-                    </form>
+            <div id="categories-search-content" class="tab-content">
+                <div class="info-box">
+                    <h2 class="section-title mt-0 border-none">Languages & Catalogs</h2>
+                    
+                    <h3>Common Languages</h3>
+                    <div class="catalog-links">
+                        <a href="https://www.gutenberg.org/ebooks/search/?query=l.ca" class="vintage-link">Catalan</a> | <a href="https://www.gutenberg.org/ebooks/search/?query=l.zh" class="vintage-link">Chinese</a> | <a href="https://www.gutenberg.org/ebooks/search/?query=l.da" class="vintage-link">Danish</a> | <a href="https://www.gutenberg.org/ebooks/search/?query=l.nl" class="vintage-link">Dutch</a> | <a href="https://www.gutenberg.org/ebooks/search/?query=l.en" class="vintage-link">English</a> | <a href="https://www.gutenberg.org/ebooks/search/?query=l.eo" class="vintage-link">Esperanto</a> | <a href="https://www.gutenberg.org/ebooks/search/?query=l.fi" class="vintage-link">Finnish</a> | <a href="https://www.gutenberg.org/ebooks/search/?query=l.fr" class="vintage-link">French</a> | <a href="https://www.gutenberg.org/ebooks/search/?query=l.de" class="vintage-link">German</a> | <a href="https://www.gutenberg.org/ebooks/search/?query=l.el" class="vintage-link">Greek</a> | <a href="https://www.gutenberg.org/ebooks/search/?query=l.hu" class="vintage-link">Hungarian</a> | <a href="https://www.gutenberg.org/ebooks/search/?query=l.it" class="vintage-link">Italian</a> | <a href="https://www.gutenberg.org/ebooks/search/?query=l.la" class="vintage-link">Latin</a> | <a href="https://www.gutenberg.org/ebooks/search/?query=l.pt" class="vintage-link">Portuguese</a> | <a href="https://www.gutenberg.org/ebooks/search/?query=l.es" class="vintage-link">Spanish</a> | <a href="https://www.gutenberg.org/ebooks/search/?query=l.sv" class="vintage-link">Swedish</a> | <a href="https://www.gutenberg.org/ebooks/search/?query=l.tl" class="vintage-link">Tagalog</a>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">Authors Catalog</h3>
+                    <div class="catalog-links" style="font-size: 1.1rem; letter-spacing: 5px;">
+                        <a href="https://www.gutenberg.org/browse/authors/a" class="vintage-link">A</a> <a href="https://www.gutenberg.org/browse/authors/b" class="vintage-link">B</a> <a href="https://www.gutenberg.org/browse/authors/c" class="vintage-link">C</a> <a href="https://www.gutenberg.org/browse/authors/d" class="vintage-link">D</a> <a href="https://www.gutenberg.org/browse/authors/e" class="vintage-link">E</a> <a href="https://www.gutenberg.org/browse/authors/f" class="vintage-link">F</a> <a href="https://www.gutenberg.org/browse/authors/g" class="vintage-link">G</a> <a href="https://www.gutenberg.org/browse/authors/h" class="vintage-link">H</a> <a href="https://www.gutenberg.org/browse/authors/i" class="vintage-link">I</a> <a href="https://www.gutenberg.org/browse/authors/j" class="vintage-link">J</a> <a href="https://www.gutenberg.org/browse/authors/k" class="vintage-link">K</a> <a href="https://www.gutenberg.org/browse/authors/l" class="vintage-link">L</a> <a href="https://www.gutenberg.org/browse/authors/m" class="vintage-link">M</a> <a href="https://www.gutenberg.org/browse/authors/n" class="vintage-link">N</a> <a href="https://www.gutenberg.org/browse/authors/o" class="vintage-link">O</a> <a href="https://www.gutenberg.org/browse/authors/p" class="vintage-link">P</a> <a href="https://www.gutenberg.org/browse/authors/q" class="vintage-link">Q</a> <a href="https://www.gutenberg.org/browse/authors/r" class="vintage-link">R</a> <a href="https://www.gutenberg.org/browse/authors/s" class="vintage-link">S</a> <a href="https://www.gutenberg.org/browse/authors/t" class="vintage-link">T</a> <a href="https://www.gutenberg.org/browse/authors/u" class="vintage-link">U</a> <a href="https://www.gutenberg.org/browse/authors/v" class="vintage-link">V</a> <a href="https://www.gutenberg.org/browse/authors/w" class="vintage-link">W</a> <a href="https://www.gutenberg.org/browse/authors/x" class="vintage-link">X</a> <a href="https://www.gutenberg.org/browse/authors/y" class="vintage-link">Y</a> <a href="https://www.gutenberg.org/browse/authors/z" class="vintage-link">Z</a> <a href="https://www.gutenberg.org/browse/authors/other" class="vintage-link">other</a>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">Titles Catalog</h3>
+                    <div class="catalog-links" style="font-size: 1.1rem; letter-spacing: 5px;">
+                        <a href="https://www.gutenberg.org/browse/titles/a" class="vintage-link">A</a> <a href="https://www.gutenberg.org/browse/titles/b" class="vintage-link">B</a> <a href="https://www.gutenberg.org/browse/titles/c" class="vintage-link">C</a> <a href="https://www.gutenberg.org/browse/titles/d" class="vintage-link">D</a> <a href="https://www.gutenberg.org/browse/titles/e" class="vintage-link">E</a> <a href="https://www.gutenberg.org/browse/titles/f" class="vintage-link">F</a> <a href="https://www.gutenberg.org/browse/titles/g" class="vintage-link">G</a> <a href="https://www.gutenberg.org/browse/titles/h" class="vintage-link">H</a> <a href="https://www.gutenberg.org/browse/titles/i" class="vintage-link">I</a> <a href="https://www.gutenberg.org/browse/titles/j" class="vintage-link">J</a> <a href="https://www.gutenberg.org/browse/titles/k" class="vintage-link">K</a> <a href="https://www.gutenberg.org/browse/titles/l" class="vintage-link">L</a> <a href="https://www.gutenberg.org/browse/titles/m" class="vintage-link">M</a> <a href="https://www.gutenberg.org/browse/titles/n" class="vintage-link">N</a> <a href="https://www.gutenberg.org/browse/titles/o" class="vintage-link">O</a> <a href="https://www.gutenberg.org/browse/titles/p" class="vintage-link">P</a> <a href="https://www.gutenberg.org/browse/titles/q" class="vintage-link">Q</a> <a href="https://www.gutenberg.org/browse/titles/r" class="vintage-link">R</a> <a href="https://www.gutenberg.org/browse/titles/s" class="vintage-link">S</a> <a href="https://www.gutenberg.org/browse/titles/t" class="vintage-link">T</a> <a href="https://www.gutenberg.org/browse/titles/u" class="vintage-link">U</a> <a href="https://www.gutenberg.org/browse/titles/v" class="vintage-link">V</a> <a href="https://www.gutenberg.org/browse/titles/w" class="vintage-link">W</a> <a href="https://www.gutenberg.org/browse/titles/x" class="vintage-link">X</a> <a href="https://www.gutenberg.org/browse/titles/y" class="vintage-link">Y</a> <a href="https://www.gutenberg.org/browse/titles/z" class="vintage-link">Z</a> <a href="https://www.gutenberg.org/browse/titles/other" class="vintage-link">other</a>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">Non-text Collections</h3>
+                    <div class="catalog-links">
+                        <a href="https://www.gutenberg.org/browse/categories/2" class="vintage-link">Audio Books (Computer)</a> |
+                        <a href="https://www.gutenberg.org/browse/categories/1" class="vintage-link">Audio Books (Human)</a> |
+                        <a href="https://www.gutenberg.org/browse/categories/9" class="vintage-link">Compilations</a> |
+                        <a href="https://www.gutenberg.org/browse/categories/8" class="vintage-link">Data</a> |
+                        <a href="https://www.gutenberg.org/browse/categories/3" class="vintage-link">Music</a> |
+                        <a href="https://www.gutenberg.org/browse/categories/4" class="vintage-link">Sheet Music</a> |
+                        <a href="https://www.gutenberg.org/browse/categories/5" class="vintage-link">Pictures</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="info-box text-center">
-                <h2 class="section-title mt-0 border-none">Browse Catalog by Letter</h2>
-                <div class="catalog-letters" style="font-size: 1.2rem; letter-spacing: 4px; line-height: 2.5;">
-                    <a href="https://www.gutenberg.org/browse/authors/a" class="vintage-link">A</a>
-                    <a href="https://www.gutenberg.org/browse/authors/b" class="vintage-link">B</a>
-                    <a href="https://www.gutenberg.org/browse/authors/c" class="vintage-link">C</a>
-                    <a href="https://www.gutenberg.org/browse/authors/d" class="vintage-link">D</a>
-                    <a href="https://www.gutenberg.org/browse/authors/e" class="vintage-link">E</a>
-                    <a href="https://www.gutenberg.org/browse/authors/f" class="vintage-link">F</a>
-                    <a href="https://www.gutenberg.org/browse/authors/g" class="vintage-link">G</a>
-                    <a href="https://www.gutenberg.org/browse/authors/h" class="vintage-link">H</a>
-                    <a href="https://www.gutenberg.org/browse/authors/i" class="vintage-link">I</a>
-                    <a href="https://www.gutenberg.org/browse/authors/j" class="vintage-link">J</a>
-                    <a href="https://www.gutenberg.org/browse/authors/k" class="vintage-link">K</a>
-                    <a href="https://www.gutenberg.org/browse/authors/l" class="vintage-link">L</a>
-                    <a href="https://www.gutenberg.org/browse/authors/m" class="vintage-link">M</a>
-                    <a href="https://www.gutenberg.org/browse/authors/n" class="vintage-link">N</a>
-                    <a href="https://www.gutenberg.org/browse/authors/o" class="vintage-link">O</a>
-                    <a href="https://www.gutenberg.org/browse/authors/p" class="vintage-link">P</a>
-                    <a href="https://www.gutenberg.org/browse/authors/q" class="vintage-link">Q</a>
-                    <a href="https://www.gutenberg.org/browse/authors/r" class="vintage-link">R</a>
-                    <a href="https://www.gutenberg.org/browse/authors/s" class="vintage-link">S</a>
-                    <a href="https://www.gutenberg.org/browse/authors/t" class="vintage-link">T</a>
-                    <a href="https://www.gutenberg.org/browse/authors/u" class="vintage-link">U</a>
-                    <a href="https://www.gutenberg.org/browse/authors/v" class="vintage-link">V</a>
-                    <a href="https://www.gutenberg.org/browse/authors/w" class="vintage-link">W</a>
-                    <a href="https://www.gutenberg.org/browse/authors/x" class="vintage-link">X</a>
-                    <a href="https://www.gutenberg.org/browse/authors/y" class="vintage-link">Y</a>
-                    <a href="https://www.gutenberg.org/browse/authors/z" class="vintage-link">Z</a>
-                </div>
-            </div>
+        </div>
 
-        </div> <footer class="site-footer">
+        <footer class="site-footer">
             <nav class="footer-nav">
                 <a href="about.html">About</a> |
-                <a href="https://www.gutenberg.org/policy/privacy_policy.html">Privacy policy</a> |
+                <a href="https://www.gutenberg.org/policy/privacy_policy.html">Privacy Policy</a> |
                 <a href="https://www.gutenberg.org/policy/permission.html">Permissions</a> |
                 <a href="https://www.gutenberg.org/policy/terms_of_use.html">Terms of Use</a> |
                 <a href="https://www.gutenberg.org/about/contact_information.html">Contact Us</a>
