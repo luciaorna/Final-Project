@@ -6,74 +6,21 @@
     <title>Project Gutenberg Interactive</title>
     <style>
 
-        body {
-            font-family: 'Georgia', serif;
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            transition: background-color 0.3s, color 0.3s;
-        }
+        body { font-family: 'Georgia', serif; padding: 20px; max-width: 800px; margin: 0 auto; transition: background-color 0.3s, color 0.3s; }
 
-        body.dark-mode {
-            background-color: #1a1a1a;
-            color: #f4f4f4;
-        }
+        body.dark-mode { background-color: #1a1a1a; color: #f4f4f4; }
 
-        body.sepia-filter {
-            background-color: #f4ecd8;
-            color: #43302e;
-        }
-        body.film-grain {
-            position: relative;
-        }
-        body.film-grain::after {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png');
-            opacity: 0.15;
-            pointer-events: none;
-            z-index: 9999;
-        }
+        body.sepia-filter { background-color: #f4ecd8; color: #43302e; }
+        body.film-grain { position: relative; }
+        body.film-grain::after { content: ""; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png'); opacity: 0.15; pointer-events: none; z-index: 9999 }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-        button {
-            padding: 10px 15px;
-            margin: 5px;
-            cursor: pointer;
-            border: 1px solid #ccc;
-            background: #eee;
-            border-radius: 4px;
-        }
-        .dark-mode button {
-            background: #333;
-            color: white;
-            border-color: #555;
-        }
-        #searchInput {
-            width: 100%;
-            padding: 10px;
-            margin: 20px 0;
-            font-size: 16px;
-        }
-        .book-item {
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-            display: flex;
-        }
-        #backToTop {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
-            background: #007bff;
-            color: white;
-            border: none;
-        }
+        button { padding: 10px 15px; margin: 5px; cursor: pointer; border: 1px solid #ccc; background: #eee; border-radius: 4px; }
+        .dark-mode button { background: #333; color: white; border-color: #555; }
+        #searchInput { width: 100%; padding: 10px; margin: 20px 0; font-size: 16px; }
+        .book-item { padding: 10px; border-bottom: 1px solid #ccc; display: flex; }
+        #backToTop { position: fixed; bottom: 20px; right: 20px; display: none; background: #007bff; color: white; border: none; }
     </style>
 </head>
 <body>
