@@ -75,12 +75,9 @@
                 <li><a href="readinglists.html">Reading Lists</a></li>
                 <li><a href="searchoptions.html">Search Options</a></li>
                 <li><a href="individualbook.html">Individual Book</a></li>
+                <li><a href="#" id="darkModeBtn">🌙 Dark Mode</a></li>
+                <li><a href="#" id="vintageModeBtn">📽️ Vintage</a></li>
             </ul>
-
-            <div style="margin-top: 30px; text-align: center; display: flex; flex-direction: column; gap: 10px;">
-                <button id="darkModeToggle" class="vintage-submit" style="font-size: 0.8rem;">🌙 Dark Mode</button>
-                <button id="vintageToggle" class="vintage-submit" onclick="toggleVintageMode()" style="font-size: 0.8rem;">📽️ Vintage</button>
-            </div>
         </nav>
     </header>
 
@@ -103,14 +100,32 @@
                 </a>
             </div>
 
-            <input type="radio" name="ebook-tabs" id="tab-advanced" class="tab-input" checked>
-            <input type="radio" name="ebook-tabs" id="tab-fulltext" class="tab-input">
-            <input type="radio" name="ebook-tabs" id="tab-categories" class="tab-input">
+            <input type="radio" id="tab-advanced" name="search-tabs" class="tab-input" checked>
+            <input type="radio" id="tab-fulltext" name="search-tabs" class="tab-input">
+            <input type="radio" id="tab-categories" name="search-tabs" class="tab-input">
 
             <div class="tabs-container">
                 <label for="tab-advanced">Advanced Search</label>
                 <label for="tab-fulltext">Full Text Search</label>
                 <label for="tab-categories">Languages & Catalogs</label>
+            </div>
+
+            <div id="advanced-search-content" class="tab-content">
+                <form class="search-form">
+                 <input type="text" class="vintage-input" placeholder="Author, Title, Subject...">
+                 <button type="submit" class="vintage-submit">Search</button>
+                </form>
+            </div>
+
+            <div id="fulltext-search-content" class="tab-content">
+                <form class="search-form">
+                 <input type="text" class="vintage-input" placeholder="Search entire book contents...">
+                 <button type="submit" class="vintage-submit">Go</button>
+                </form>
+            </div>
+
+            <div id="categories-search-content" class="tab-content">
+                <p>Select a language catalog: English, French, German, etc.</p>
             </div>
 
             <div id="advanced-search-content" class="tab-content">
