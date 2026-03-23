@@ -24,64 +24,77 @@
     </style>
 </head>
 <body>
-
-    <button id="vintageToggle" onclick="toggleVintageMode()">📽️ Turn On Old Projector Mode</button>
-    <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
-
-    <h2>
-        <span id="typewriter-text"></span><span id="cursor">|</span>
-    </h2>
         
-    <input type="text" id="searchInput" placeholder="Search for a book...">
-    <div id="bookList">
-        <div class="book-item">Pride and Prejudice by Jane Austen</div>
-        <div class="book-item">Frankenstein by Mary Shelley</div>
-        <div class="book-item">Alice's Adventures in Wonderland by Lewis Carroll</div>
-        <div class="book-item">Moby Dick by Herman Melville</div>
-        <div class="book-item">The Great Gatsby by F. Scott Fitzgerald</div>
-    </div>
-        
-    <div style="height: 1000px;"></div>
-    <button id="backToTop">⬆ Back to Top</button>
+<script>
+   document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- 1. BACK TO TOP BUTTON LOGIC ---
+    const backToTopBtn = document.getElementById("backToTop");
 
-    <script>
+    if (backToTopBtn) {
+        // Show or hide the button based on scroll position
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
 
-        // 1. VINTAGE MODE TOGGLE (Global function for onclick events)
-        let isVintageModeOn = false;
+        // Scroll to top when clicked
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
 
-        function toggleVintageMode() { const body = document.body; const btn = document.getElementById('vintageToggle'); if (!btn) return; // Exit if button doesn't exist 
-                                      isVintageModeOn = !isVintageModeOn; 
-                                      if (isVintageModeOn) { body.classList.add('film-grain', 'sepia-filter'); btn.innerText = "📽️ Turn Off Projector Mode"; } 
-                                      else { body.classList.remove('film-grain', 'sepia-filter'); btn.innerText = "📽️ Turn On Old Projector Mode" } }
+        // Add a hover effect to the button
+        backToTopBtn.addEventListener("mouseenter", () => {
+            backToTopBtn.style.backgroundColor = "#8a6541";
+        });
+        backToTopBtn.addEventListener("mouseleave", () => {
+            backToTopBtn.style.backgroundColor = "#a67c52";
+        });
+    }
 
-        // 2. MAIN INITIALIZATION
-        document.addEventListener('DOMContentLoaded', () => {
+    // --- 2. DRAGGABLE CAROUSEL LOGIC ---
+    const carousels = document.querySelectorAll('.carousel-track');
 
-            // --- Dark Mode ---
-            const darkModeBtn = document.getElementById('darkModeToggle');
-            if (darkModeBtn) { darkModeBtn.addEventListener('click', () => { document.body.classList.toggle('dark-mode'); }); }
+    carousels.forEach(carousel => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
 
-            // --- Typewriter Effect ---
-            const textElement = document.getElementById('typewriter-text');
-            const cursorElement = document.getElementById('cursor');
+        carousel.addEventListener('mousedown', (e) => {
+            isDown = true;
+            carousel.style.cursor = 'grabbing';
+            startX = e.pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
+        });
 
-            if (textElement && cursorElement) {
-                const textToType = "Project Gutenberg is a library of over 75,000 free eBooks.";
-                let i = 0; function type() { if (i < textToType.length) { textElement.textContent += textToType.charAt(i); i++; setTimeout(type, 50 + Math.random() * 50); } 
-                else { cursorElement.style.animation = "blink 1s step-end infinite"; } } setTimeout(type, 500); }
+        carousel.addEventListener('mouseleave', () => {
+            isDown = false;
+            carousel.style.cursor = 'grab';
+        });
 
-            // --- Live Search ---
-            const searchInput = document.getElementById('searchInput');
-            const bookList = document.getElementById('bookList');
+        carousel.addEventListener('mouseup', () => {
+            isDown = false;
+            carousel.style.cursor = 'grab';
+        });
 
-            if (searchInput && bookList) { const books = bookList.getElementsByClassName('book-item');
-                searchInput.addEventListener('keyup', () => { const query = searchInput.value.toLowerCase();
-                    for (let book of books) { const title = book.textContent.toLowerCase(); book.style.display = title.includes(query) ? "flex" : "none"; } }); }
+        carousel.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll-fast multiplier
+            carousel.scrollLeft = scrollLeft - walk;
+        });
+    });
 
-            // --- Back to Top ---
-            const topBtn = document.getElementById("backToTop");
-            if (topBtn) { window.addEventListener('scroll', () => { topBtn.style.display = window.scrollY > 300 ? "block" : "none"; });
-                topBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); }); } });
-    </script>
+});
+
+</script>
+
 </body>
 </html>
