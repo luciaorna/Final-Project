@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Gutenberg - Free eBooks</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Gutenberg - Free eBooks</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header class="site-header">
     <nav class="nav container">
-      <a href="index.html" class="logo">
-          <img src="images/projectgutenberg logo.png" alt="Project Gutenberg Logo" class="logo-img">
-      </a>
+      <a href="index.html" class="logo"><img src="images/projectgutenberg logo.png" alt="Project Gutenberg Logo" class="logo-img"></a>
       
-      <form class="search-form" method="get" action="https://www.gutenberg.org/ebooks/search/">
-        <input type="search" name="query" placeholder="Quick search" class="vintage-input">
-        <button type="submit" class="vintage-submit">Go!</button>
+      <form class="search-form">
+        <input type="search" placeholder="Quick search">
+        <button type="submit">Go!</button>
       </form>
       
       <ul class="nav-list">
@@ -28,147 +25,293 @@
         <li><a href="searchoptions.html">Search Options</a></li>
         <li><a href="individualbook.html">Individual Book</a></li>
       </ul>
+     <div style="padding: 10px; text-align: center;">
+    <button id="darkModeToggle" class="vintage-submit">🌙 Dark Mode</button>
+    <button id="vintageToggle" class="vintage-submit" onclick="toggleVintageMode()">📽️ Vintage Mode</button>
+</div>
 
-      <div style="padding: 10px; text-align: center;">
-          <button id="darkModeToggle" class="vintage-submit">🌙 Dark Mode</button>
-          <button id="vintageToggle" class="vintage-submit" onclick="toggleVintageMode()">📽️ Vintage Mode</button>
-      </div>
+<div id="backToTop">↑ Top</div>
     </nav>
   </header>
   
-  <main class="page-layout">
-    <div class="content-wrapper">
-        
-        <section class="hero info-box">
-          <div class="container">
-            <h1 id="typewriter-text">Project Gutenberg is a library of over 75,000 free eBooks</h1>
-            <p class="intro-text">Choose among free epub and Kindle eBooks, download them or read them online. You will find the world's great literature here, with focus on older works for which U.S. copyright has expired. Thousands of volunteers digitized and diligently proofread the eBooks, for you to enjoy.</p>
-          </div>
-        </section>
+  <main>
+      
+    <section class="hero" style="background: #e8dfd0; padding: 40px; border-radius: 8px; margin-bottom: 40px; text-align: center; border: 1px solid #dcd0b9;">
+      <div class="container">
+        <h1 style="color: #4a3b2b; margin-bottom: 15px;">Project Gutenberg is a library of over 75,000 free eBooks</h1>
+        <p style="font-size: 1.1rem; line-height: 1.6; color: #5a4a3a;">Choose among free epub and Kindle eBooks, download them or read them online. You will find the world's great literature here, with focus on older works for which U.S. copyright has expired. Thousands of volunteers digitized and diligently proofread the eBooks, for you to enjoy.</p>
+      </div>
+    </section>
 
-        <section class="releases-section">
-            <div class="releases-header">
-                <h2 class="section-title mt-0" style="border:none;">Newest Releases</h2>
-                <a href="https://www.gutenberg.org/ebooks/search/?sort_order=release_date" class="vintage-link">find more »</a>
-            </div>
-            <div class="carousel-track">
-                <a href="https://www.gutenberg.org/ebooks/78263" class="book-card">
-                    <img src="https://www.gutenberg.org/cache/epub/78263/pg78263.cover.medium.jpg" alt="Slang" class="book-cover">
-                    <p class="book-title">Slang and its analogues</p>
-                </a>
-                <a href="https://www.gutenberg.org/ebooks/78262" class="book-card">
-                    <img src="https://www.gutenberg.org/cache/epub/78262/pg78262.cover.medium.jpg" alt="Agatha Christie" class="book-cover">
-                    <p class="book-title">Giants' bread by Agatha Christie</p>
-                </a>
-                <a href="https://www.gutenberg.org/ebooks/78261" class="book-card">
-                    <img src="https://www.gutenberg.org/cache/epub/78261/pg78261.cover.medium.jpg" alt="Milk Supply" class="book-cover">
-                    <p class="book-title">A city milk and cream contest</p>
-                </a>
-                <a href="https://www.gutenberg.org/ebooks/78260" class="book-card">
-                    <img src="https://www.gutenberg.org/cache/epub/78260/pg78260.cover.medium.jpg" alt="Big Jack" class="book-cover">
-                    <p class="book-title">Big Jack: stories of horses</p>
-                </a>
-                <a href="https://www.gutenberg.org/ebooks/78259" class="book-card">
-                    <img src="https://www.gutenberg.org/cache/epub/78259/pg78259.cover.medium.jpg" alt="John Milton" class="book-cover">
-                    <p class="book-title">On the morning of Christ's nativity</p>
-                </a>
-            </div>
-        </section>
-
-        <div class="info-container">
-            <div class="info-card info-box">
-                <h2 class="section-title mt-0" style="border:none; text-align:left;">Find Free eBooks</h2>
-                <p><a href="https://www.gutenberg.org/browse/scores/top" class="vintage-link">Frequently Downloaded</a>: Top 100, or ranked by <a href="https://www.gutenberg.org/ebooks/search/?sort_order=downloads" class="vintage-link">popularity</a>.</p>
-                <p><a href="maincat.html" class="vintage-link">Main Categories</a>: Physical bookstore categories.</p>
-                <p><a href="readinglists.html" class="vintage-link">Reading Lists</a>: Hand-curated by volunteers.</p>
-                <p><a href="searchoptions.html" class="vintage-link">Search Options</a>: Author, title, subject, language.</p>
-                <p>Visit <a href="https://self.gutenberg.org" class="vintage-link">self.gutenberg.org</a> for self-published eBooks.</p>
-            </div>
-       
-            <div class="info-card info-box">
-                <h2 class="section-title mt-0" style="border:none; text-align:left;">How to Help</h2>
-                <p><a href="https://www.pgdp.net" class="vintage-link">Distributed Proofreaders</a>: Join the volunteers.</p>
-                <p><a href="https://www.gutenberg.org/help/errata.html" class="vintage-link">Fix and improve</a>: Report errors or bugs.</p>
-                <p>Record audiobooks with <a href="https://librivox.org" class="vintage-link">LibriVox</a>.</p>
-                <p>Help us digitize more: <a href="https://www.gutenberg.org/donate/" class="vintage-link">Donate</a></p>
-            </div>
+    <section class="releases-section" style="margin-bottom: 40px;">
+        <div class="releases-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #dcd0b9; padding-bottom: 10px; margin-bottom: 20px;">
+            <h2 style="color: #4a3b2b; margin: 0;">Newest Releases</h2>
+            <a href="#" class="btn-find-more" style="color: #a67c52; text-decoration: none; font-weight: bold;">find more »</a>
         </div>
+        <div class="carousel-track" style="display: flex; gap: 20px; overflow-x: auto; padding-bottom: 15px;">
 
-        <section class="releases-section">
-            <div class="releases-header">
-                <h2 class="section-title mt-0" style="border:none;">Most Popular</h2>
-                <a href="https://www.gutenberg.org/ebooks/search/?sort_order=downloads" class="vintage-link">find more »</a>
-            </div>
-            <div class="carousel-track">
-                <a href="https://www.gutenberg.org/ebooks/84" class="book-card">
-                    <img src="https://www.gutenberg.org/cache/epub/84/pg84.cover.medium.jpg" alt="Frankenstein" class="book-cover">
-                    <p class="book-title">Frankenstein by Mary Shelley</p>
-                </a>
-                <a href="https://www.gutenberg.org/ebooks/1342" class="book-card">
-                    <img src="https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg" alt="Pride and Prejudice" class="book-cover">
-                    <p class="book-title">Pride and Prejudice by Jane Austen</p>
-                </a>
-                <a href="https://www.gutenberg.org/ebooks/11" class="book-card">
-                    <img src="https://www.gutenberg.org/cache/epub/11/pg11.cover.medium.jpg" alt="Alice" class="book-cover">
-                    <p class="book-title">Alice in Wonderland by Lewis Carroll</p>
-                </a>
-                <a href="https://www.gutenberg.org/ebooks/64317" class="book-card">
-                    <img src="https://www.gutenberg.org/cache/epub/64317/pg64317.cover.medium.jpg" alt="Great Gatsby" class="book-cover">
-                    <p class="book-title">The Great Gatsby by Fitzgerald</p>
-                </a>
-                <a href="https://www.gutenberg.org/ebooks/2701" class="book-card">
-                    <img src="https://www.gutenberg.org/cache/epub/2701/pg2701.cover.medium.jpg" alt="Moby Dick" class="book-cover">
-                    <p class="book-title">Moby Dick by Herman Melville</p>
-                </a>
-            </div>
-        </section>
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/78263/pg78263.cover.medium.jpg" alt="Slang and its analogues" class="book-cover" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">Slang and its analogues past and present</p>
+            </a>
 
-        <div class="category-grid">
-            <a href="https://www.gutenberg.org/ebooks/categories.html#history" class="category-card">
-                <span class="category-icon">🏛️</span><span class="category-text">History</span>
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/78262/pg78262.cover.medium.jpg" alt="Giants' bread" class="book-cover" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">Giants' bread by Agatha Christie</p>
             </a>
-            <a href="https://www.gutenberg.org/ebooks/categories.html#literature" class="category-card">
-                <span class="category-icon">📜</span><span class="category-text">Literature</span>
-            </a>
-            <a href="https://www.gutenberg.org/ebooks/categories.html#science-technology" class="category-card">
-                <span class="category-icon">🔭</span><span class="category-text">Science</span>
-            </a>
-            <a href="https://www.gutenberg.org/ebooks/categories.html#arts-culture" class="category-card">
-                <span class="category-icon">🎨</span><span class="category-text">Arts</span>
-            </a>
-        </div>
 
-        <div class="info-container">
-            <div class="info-card info-box">
-                <h2 class="section-title mt-0" style="border:none; text-align:left;">Audio Books</h2>
-                <p>- <a href="https://www.gutenberg.org/browse/categories/1" class="vintage-link">Gutenberg Human-read (662 titles)</a></p>
-                <p>- <a href="https://librivox.org" class="vintage-link">LibriVox Community</a></p>
-                <p>- <a href="https://www.gutenberg.org/browse/categories/2" class="vintage-link">Computer-generated (2003)</a></p>
-            </div>
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/78261/pg78261.cover.medium.jpg" alt="A city milk and cream contest" class="book-cover" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">A city milk and cream contest as a practical method of improving the milk supply by Clarence Bronson Lane and Ivan C. Weld</p>
+            </a>
+          
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/78260/pg78260.cover.medium.jpg" alt="Big Jack" class="book-cover" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">Big Jack, and other true stories of horses by Gabrielle E. Jackson</p>
+            </a>
+          
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/78259/pg78259.cover.medium.jpg" alt="On the morning of Christ's nativity" class="book-cover" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">On the morning of Christ's nativity: an ode by John Milton</p>
+            </a>
+
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/78258/pg78258.cover.medium.jpg" alt="Leila" class="book-cover" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">Leila by Antonio Fogazzaro</p>
+            </a>
             
-            <div class="info-card info-box">
-                <h2 class="section-title mt-0" style="border:none; text-align:left;">Social Media</h2>
-                <div class="tag-cloud">
-                    <a href="https://www.facebook.com/project.gutenberg" class="archive-tag"><i class="fab fa-facebook"></i> Facebook</a>
-                    <a href="https://mastodon.social/@gutenberg_org" class="archive-tag"><i class="fab fa-mastodon"></i> Mastodon</a>
-                    <a href="https://bsky.app/profile/gutenberg.org" class="archive-tag"><i class="fas fa-square-rss"></i> Bluesky</a>
-                </div>
-            </div>
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/78257/pg78257.cover.medium.jpg" alt="Jeanne" class="book-cover" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">Jeanne (French) by George Sand</p>
+            </a>
+          
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/78256/pg78256.cover.medium.jpg" alt="history of libraries" class="book-cover" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">A brief outline of the history of libraries by Justus Lipsius</p>
+            </a>
+
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/78255/pg78255.cover.medium.jpg" alt="mathematica" class="book-cover" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">Principia mathematica, vol. 2 (of 3) by Bertrand Russell and Alfred North Whitehead</p>
+            </a>
+            
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/78254/pg78254.cover.medium.jpg" alt="Silent guests" class="book-cover" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">Silent guests by A. E. Forrest</p>
+            </a>
+
+        </div>
+    </section>
+
+    <div class="info-container" style="display: flex; gap: 30px; margin-bottom: 40px; flex-wrap: wrap;">
+        <div class="info-card" style="flex: 1; min-width: 300px; background: #ffffff; padding: 25px; border: 1px solid #dcd0b9; border-radius: 5px;">
+            <h2 style="color: #4a3b2b; border-bottom: 1px solid #eee; padding-bottom: 10px;">Find Free eBooks</h2>
+            <p style="margin-top: 10px;"><a href="#" style="color: #a67c52; font-weight: bold;">Frequently Downloaded</a>: Top 100, or ranked by popularity.</p>
+            <p><a href="maincat.html" style="color: #a67c52; font-weight: bold;">Main Categories</a>. The ones you'd find in any large bookstore.</p>
+            <p><a href="#" style="color: #a67c52; font-weight: bold;">Reading Lists</a>. Hand-curated by volunteers.</p>
+            <p><a href="#" style="color: #a67c52; font-weight: bold;">Search Options</a>. By author, title, subject, language, type, popularity.</p>
+            <p>Visit <a href="#" style="color: #a67c52; font-weight: bold;">self.gutenberg.org</a> for self-published eBooks.</p>
+        </div>
+   
+        <div class="info-card" style="flex: 1; min-width: 300px; background: #ffffff; padding: 25px; border: 1px solid #dcd0b9; border-radius: 5px;">
+            <h2 style="color: #4a3b2b; border-bottom: 1px solid #eee; padding-bottom: 10px;">Project Gutenberg</h2>
+            <p style="margin-top: 10px;">✓ <strong>100% Free</strong> - No fees, no registration, completely free</p>
+            <p>✓ <strong>No Apps Required</strong> - only regular Web browsers needed</p>
+            <p>✓ <strong>50+ Years</strong> - Pioneering free eBooks since 1971</p>
+            <p>✓ <strong>Volunteer-based</strong> - hundreds of volunteers have contributed</p>
+            <p>Consider a small donation to help us digitize more books: <a href="#" style="color: #a67c52; font-weight: bold;">donate</a></p>
+        </div>
+    </div>
+
+    <section class="releases-section" style="margin-bottom: 40px;">
+        <div class="releases-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #dcd0b9; padding-bottom: 10px; margin-bottom: 20px;">
+            <h2 style="color: #4a3b2b; margin: 0;">Most Popular</h2>
+            <a href="https://www.gutenberg.org/ebooks/search/?sort_order=downloads" class="btn-find-more" style="color: #a67c52; text-decoration: none; font-weight: bold;">find more »</a>
+        </div>
+        <div class="carousel-track" style="display: flex; gap: 20px; overflow-x: auto; padding-bottom: 15px;">
+          
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/84/pg84.cover.medium.jpg" alt="Frankenstein" class="book-cover" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">Frankenstein; or, the modern prometheus by Mary Shelley</p>
+            </a>
+            
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/45304/pg45304.cover.medium.jpg" alt="City of God" class="book-cover" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">The City of God, Volume I by Saint of Hippo Augustine</p>
+            </a>
+          
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/2701/pg2701.cover.medium.jpg" alt="Moby Dick" class="book-cover" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">Moby Dick; Or, The Whale by Herman Melville</p>
+            </a>
+
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg" alt="Pride and Prejudice" class="book-cover" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">Pride and Prejudice by Jane Austen</p>
+            </a>
+
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/768/pg768.cover.medium.jpg" class="Wuthering Heights" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">Wuthering Heights by Emily Brontë</p>
+            </a>
+          
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/1513/pg1513.cover.medium.jpg" alt="Romeo and Juliet" class="book-cover" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">Romeo and Juliet by William Shakespeare</p>
+            </a>
+          
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/11/pg11.cover.medium.jpg" class="Alice's Adventrues" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">Alice's Adventures in Wonderland by Lewis Carroll</p>
+            </a>
+
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/100/pg100.cover.medium.jpg" class="Complete Works of William" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">The Complete Works of William Shakespeare by William Shakespeare</p>
+            </a>
+
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/64317/pg64317.cover.medium.jpg" class="Great Gatsby" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">The Great Gatsby by F. Scott Fitzgerald</p>
+            </a>
+
+            <a href="#" class="book-card" style="flex: 0 0 150px; text-decoration: none;">
+                <img src="https://www.gutenberg.org/cache/epub/2641/pg2641.cover.medium.jpg" class="Room with a view" style="width: 100%; border-radius: 4px; box-shadow: 2px 4px 8px rgba(0,0,0,0.1);">
+                <p class="book-title" style="color: #5a4a3a; font-size: 0.9rem; margin-top: 10px; line-height: 1.3;">A Room with a view by E. M. Forster</p>
+            </a>
+        </div>
+    </section>
+
+    <div class="category-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px;">
+        
+        <a href="history.html" class="category-card" style="background: #ffffff; padding: 20px; border: 1px solid #dcd0b9; border-radius: 5px; text-align: center; text-decoration: none; color: #4a3b2b;">
+            <span class="category-icon" style="font-size: 2rem; display: block; margin-bottom: 10px;">🏛️</span>
+            <span class="category-text" style="font-weight: bold;">History</span>
+        </a>
+
+        <a href="literature.html" class="category-card" style="background: #ffffff; padding: 20px; border: 1px solid #dcd0b9; border-radius: 5px; text-align: center; text-decoration: none; color: #4a3b2b;">
+            <span class="category-icon" style="font-size: 2rem; display: block; margin-bottom: 10px;">📜</span>
+            <span class="category-text" style="font-weight: bold;">Literature</span>
+        </a>
+
+        <a href="science.html" class="category-card" style="background: #ffffff; padding: 20px; border: 1px solid #dcd0b9; border-radius: 5px; text-align: center; text-decoration: none; color: #4a3b2b;">
+            <span class="category-icon" style="font-size: 2rem; display: block; margin-bottom: 10px;">🔭</span>
+            <span class="category-text" style="font-weight: bold;">Science & Technology</span>
+        </a>
+
+        <a href="social-sciences.html" class="category-card" style="background: #ffffff; padding: 20px; border: 1px solid #dcd0b9; border-radius: 5px; text-align: center; text-decoration: none; color: #4a3b2b;">
+            <span class="category-icon" style="font-size: 2rem; display: block; margin-bottom: 10px;">🧑‍🤝‍🧑</span>
+            <span class="category-text" style="font-weight: bold;">Social Sciences & Society</span>
+        </a>
+
+        <a href="arts.html" class="category-card" style="background: #ffffff; padding: 20px; border: 1px solid #dcd0b9; border-radius: 5px; text-align: center; text-decoration: none; color: #4a3b2b;">
+            <span class="category-icon" style="font-size: 2rem; display: block; margin-bottom: 10px;">🎨</span>
+            <span class="category-text" style="font-weight: bold;">Arts & Culture</span>
+        </a>
+
+        <a href="religion.html" class="category-card" style="background: #ffffff; padding: 20px; border: 1px solid #dcd0b9; border-radius: 5px; text-align: center; text-decoration: none; color: #4a3b2b;">
+            <span class="category-icon" style="font-size: 2rem; display: block; margin-bottom: 10px;">☯️</span>
+            <span class="category-text" style="font-weight: bold;">Religion & Philosophy</span>
+        </a>
+
+        <a href="lifestyle.html" class="category-card" style="background: #ffffff; padding: 20px; border: 1px solid #dcd0b9; border-radius: 5px; text-align: center; text-decoration: none; color: #4a3b2b;">
+            <span class="category-icon" style="font-size: 2rem; display: block; margin-bottom: 10px;">🎯</span>
+            <span class="category-text" style="font-weight: bold;">Lifestyle & Hobbies</span>
+        </a>
+
+        <a href="health.html" class="category-card" style="background: #ffffff; padding: 20px; border: 1px solid #dcd0b9; border-radius: 5px; text-align: center; text-decoration: none; color: #4a3b2b;">
+            <span class="category-icon" style="font-size: 2rem; display: block; margin-bottom: 10px;">🌿</span>
+            <span class="category-text" style="font-weight: bold;">Health & Medicine</span>
+        </a>
+      
+        <a href="education.html" class="category-card" style="background: #ffffff; padding: 20px; border: 1px solid #dcd0b9; border-radius: 5px; text-align: center; text-decoration: none; color: #4a3b2b;">
+            <span class="category-icon" style="font-size: 2rem; display: block; margin-bottom: 10px;">🎓</span>
+            <span class="category-text" style="font-weight: bold;">Education & Reference</span>
+        </a>
+
+
+    </div>
+
+    <div class="info-container" style="display: flex; gap: 30px; margin-bottom: 40px; flex-wrap: wrap;">
+        
+        <div class="info-card" style="flex: 1; min-width: 300px; background: #ffffff; padding: 25px; border: 1px solid #dcd0b9; border-radius: 5px;">
+            <h2 style="color: #4a3b2b; border-bottom: 1px solid #eee; padding-bottom: 10px;">Get Help</h2>
+            <p style="margin-top: 10px;"><a href="#" style="color: #a67c52; font-weight: bold;">Reading Options & Kindle</a>: How to read and enjoy our ebooks.</p>
+            <p><a href="#" style="color: #a67c52; font-weight: bold;">Frequently Asked Questions</a> about Project Gutenberg</p>
+            <p><a href="#" style="color: #a67c52; font-weight: bold;">Help, How-To and FAQs</a>: In depth information about many topics.</p>
+
+            <h2 style="color: #4a3b2b; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 20px;">How to Help</h2>
+            <p style="margin-top: 10px;"><a href="#" style="color: #a67c52; font-weight: bold;">Distributed Proofreaders</a> welcomes new volunteers. This is the main source of new Project Gutenberg eBooks. Getting started is easy, and just a page a day will help!</p>
+            <p style="margin-top: 10px;"><a href="#" style="color: #a67c52; font-weight: bold;">Fix and improve</a> Project Gutenberg by reporting errors, bugs, typos, and suggesting changes.</p>
+            <p style="margin-top: 10px;">Record audiobooks with our friends at <a href="#" style="color: #a67c52; font-weight: bold;">LibriVox</a>.</p>
+        </div>
+      
+        <div class="info-card" style="flex: 1; min-width: 300px; background: #ffffff; padding: 25px; border: 1px solid #dcd0b9; border-radius: 5px;">
+            <h2 style="color: #4a3b2b; border-bottom: 1px solid #eee; padding-bottom: 10px;">Special Areas</h2>
+            <p style="margin-top: 10px;"><a href="#" style="color: #a67c52; font-weight: bold;">About Project Gutenberg</a>.</p>
+            <p><a href="#" style="color: #a67c52; font-weight: bold;">Donating to Project Gutenberg</a>.</p>
+            <p><a href="#" style="color: #a67c52; font-weight: bold;">Feeds</a> of new eBooks.</p>
+            <p><a href="#" style="color: #a67c52; font-weight: bold;">Linking to Project Gutenberg</a> and <a href="#" style="color: #a67c52; font-weight: bold;">roboting or crawling</a> the site.</p>
+            <p><a href="#" style="color: #a67c52; font-weight: bold;">Partners and affiliates</a></p>
+            <p><a href="#" style="color: #a67c52; font-weight: bold;">Permissions, copyright, licensing, and trademark information</a>.</p>
+            <p>What does <a href="#" style="color: #a67c52; font-weight: bold;">free eBooks</a> (No Cost or Freedom?) mean?</p>
         </div>
 
-    </div> <footer class="site-footer">
-        <nav class="footer-nav">
-            <a href="about.html">About</a> |
-            <a href="https://www.gutenberg.org/policy/privacy_policy.html">Privacy Policy</a> |
-            <a href="https://www.gutenberg.org/policy/terms_of_use.html">Terms of Use</a> |
-            <a href="https://www.gutenberg.org/about/contact_information.html">Contact Us</a>
-        </nav>
-        <p>&copy; 2026 Project Gutenberg - Redesigned by Authentic AI Collaborator</p>
-    </footer>
 
-    <div id="backToTop">↑ Top</div>
+        <div class="info-card" style="flex: 1; min-width: 300px; background: #ffffff; padding: 25px; border: 1px solid #dcd0b9; border-radius: 5px;">
+            <h2 style="color: #4a3b2b; border-bottom: 1px solid #eee; padding-bottom: 10px;">Audio Books</h2>
+            <p style="margin-top: 10px;">Audio books are a great way to enjoy literature. We recommend the following sources. All of them are digitizations of Project Gutenberg texts. They are freely available and in the public domain in the US.</p>
+            <p>- <a href="#" style="color: #a67c52; font-weight: bold;">Project Gutenberg's 662 titles read by people</a></p>
+            <p>- <a href="#" style="color: #a67c52; font-weight: bold;">Human-read audio books from LibriVox</a>. LibriVox is a volunteer community that produces high-quality performances.</p>
+            <p>- <a href="#" style="color: #a67c52; font-weight: bold;">The Project Gutenberg Open Audiobook Collection</a>. Almost 5,000 computer-generated titles from 2023 via a Project Gutenberg collaboration with Microsoft and MIT.</p>]
+            <p>- <a href="#" style="color: #a67c52; font-weight: bold;">Project Gutenberg's audio books from 2003</a>. They are computer-generated and listenable but relatively low quality compared to today’s technology.</p>
+        </div>
+
+        <div class="info-card" style="flex: 1; min-width: 300px; background: #ffffff; padding: 25px; border: 1px solid #dcd0b9; border-radius: 5px;">
+            <h2 style="color: #4a3b2b; border-bottom: 1px solid #eee; padding-bottom: 10px;">Our Social Media</h2>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/project.gutenberg" class="social-icon" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://mastodon.social/@gutenberg_org" class="social-icon" aria-label="Mastodon">
+                    <i class="fa-brands fa-mastodon"></i>
+                </a>
+                <a href="https://bsky.app/profile/gutenberg.org" class="social-icon" aria-label="Bluesky">
+                    <i class="fa-brands fa-bluesky"></i>
+                </a>
+            </div>
+
+            <h2 style="color: #4a3b2b; border-bottom: 1px solid #eee; padding-bottom: 10px;">New Feeds of new eBooks</h2>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/gutenberg.new" class="social-icon news-icon" aria-label="Facebook News">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <span class="icon-text">News</span>
+                </a>
+                <a href="https://mastodon.social/@gutenberg_new" class="social-icon news-icon" aria-label="Mastodon News">
+                    <i class="fa-brands fa-mastodon"></i>
+                    <span class="icon-text" style="color: #2b90d9;">News</span>
+                </a>
+                <a href="https://bsky.app/profile/new.gutenberg.org" class="social-icon news-icon" aria-label="Bluesky News">
+                    <i class="fa-brands fa-bluesky"></i>
+                    <span class="icon-text" style="color: #0085ff;">NEWS</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" style="background: #2c3e50; padding: 2rem 0; margin-top: 40px; border-radius: 8px;">
+        <nav class="footer-nav" style="margin-bottom: 1.5rem; text-align: center;">
+            <a href="#" style="color: white; margin: 0 0.5rem; text-decoration: none;">About Project Gutenberg</a> |
+            <a href="#" style="color: white; margin: 0 0.5rem; text-decoration: none;">Privacy Policy</a> |
+            <a href="#" style="color: white; margin: 0 0.5rem; text-decoration: none;">Terms of Use</a> |
+            <a href="#" style="color: white; margin: 0 0.5rem; text-decoration: none;">Contact Us</a>
+        </nav>
+        <p style="color: white; text-align: center; margin: 0;">&copy; 2026 Project Gutenberg</p>
+    </footer>
+<div id="backToTop">↑ Top</div>
   </main>
 
   <script src="script.js"></script>
 </body>
 </html>
+| 
