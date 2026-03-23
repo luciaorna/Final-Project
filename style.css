@@ -2,7 +2,10 @@
    PROJECT GUTENBERG - VINTAGE TYPEWRITER REDESIGN (COMPLETE)
    ========================================================================== */
 
-/* ===== 1. RESET & BASE STYLES ===== */
+/* ===== 1. RESET & BASE STYLES ===== 
+   This section removes default browser margins and sets the foundational look. 
+   It establishes the vintage paper background, typewriter font, and ensures the page 
+   doesn't break horizontally. */
 * { 
     margin: 0; 
     padding: 0; 
@@ -10,16 +13,18 @@
 }
 
 body {
-    background-color: #f4ece1; /* Classic aged paper color */
+    background-color: #f4ece1; 
     color: #333;               
     display: flex;             
     font-family: 'Courier New', Courier, monospace; 
     min-height: 100vh;
     transition: background-color 0.3s ease, color 0.3s ease;
-    overflow-x: hidden; /* FIX: Prevents the whole page from scrolling horizontally */
+    overflow-x: hidden; /* Prevents the whole page from scrolling horizontally */
 }
 
-/* ===== 2. GLOBAL LAYOUT ===== */
+/* ===== 2. GLOBAL LAYOUT ===== 
+   This controls the main content area. It centers the text and restricts 
+   how wide it can get on large screens, giving it breathing room (padding). */
 .page-layout {
     display: flex;
     flex-direction: column;
@@ -32,10 +37,12 @@ body {
 
 .content-wrapper {
     flex: 1; /* Ensures footer stays at the bottom */
-    max-width: 100%; /* FIX: Keeps content within the layout limits */
+    max-width: 100%; /* Keeps content within the layout limits */
 }
 
-/* ===== 3. SIDEBAR & NAVIGATION ===== */
+/* ===== 3. SIDEBAR & NAVIGATION ===== 
+   Styles for the fixed menu on the left. It handles the background, 
+   logo size, and how the navigation links look when hovered over. */
 .site-header {
     background-color: #e8dfd0; 
     border-right: 2px solid #dcd0b9;
@@ -81,6 +88,7 @@ body {
     transform: translateY(-2px); 
 }
 
+/* Dark Mode and Vintage Mode toggle buttons */
 .mode-toggles {
     margin-top: 30px;
     text-align: center;
@@ -93,7 +101,8 @@ body {
     font-size: 0.8rem;
 }
 
-/* ===== 4. TYPOGRAPHY & LINKS ===== */
+/* ===== 4. TYPOGRAPHY & LINKS ===== 
+   Defines the appearance of the main titles and standard links to fit the vintage theme. */
 h1, .section-title {
     color: #4a3b2b;
     margin-bottom: 20px;
@@ -120,7 +129,9 @@ h1, .section-title {
     text-decoration: underline;
 }
 
-/* ===== 5. COMPONENTS & BOXES ===== */
+/* ===== 5. COMPONENTS & BOXES ===== 
+   This styles the main visual building blocks: the content boxes (info-box), 
+   the grid layouts for categories, and the small tags. */
 .info-box {
     background: #fffdfa;
     border: 1px solid #dcd0b9;
@@ -184,7 +195,8 @@ h1, .section-title {
     gap: 10px;
 }
 
-/* ===== 6. TABLES & LISTS ===== */
+/* ===== 6. TABLES & LISTS ===== 
+   Styles for data tables (like the downloads stats) and ordered lists. */
 .vintage-table {
     background-color: #ffffff;
     border-collapse: collapse; 
@@ -225,7 +237,8 @@ h1, .section-title {
     width: 25%;
 }
 
-/* ===== 7. FORMS & INPUTS ===== */
+/* ===== 7. FORMS & INPUTS ===== 
+   Styles for the search bars and submit buttons to make them look like old interfaces. */
 .search-form {
     display: flex;
     flex-direction: column;
@@ -258,7 +271,8 @@ h1, .section-title {
     background-color: #7a634d;
 }
 
-/* ===== 8. TABS SYSTEM (SEARCH OPTIONS PAGE) ===== */
+/* ===== 8. TABS SYSTEM (SEARCH OPTIONS PAGE) ===== 
+   A CSS-only solution (no JavaScript needed) to switch between search options. */
 .tab-input { display: none; }
 .tab-content { display: none; }
 
@@ -279,6 +293,7 @@ h1, .section-title {
     transition: 0.3s;
 }
 
+/* Colors the active tab using the :checked state of the hidden radio buttons */
 #tab-advanced:checked ~ .tabs-container label[for="tab-advanced"],
 #tab-fulltext:checked ~ .tabs-container label[for="tab-fulltext"],
 #tab-categories:checked ~ .tabs-container label[for="tab-categories"] {
@@ -286,13 +301,15 @@ h1, .section-title {
     color: white;
 }
 
+/* Shows the specific content block related to the checked tab */
 #tab-advanced:checked ~ #advanced-search-content,
 #tab-fulltext:checked ~ #fulltext-search-content,
 #tab-categories:checked ~ #categories-search-content {
     display: block;
 }
 
-/* ===== 9. INDIVIDUAL BOOK PAGE ELEMENTS ===== */
+/* ===== 9. INDIVIDUAL BOOK PAGE ELEMENTS ===== 
+   Specific layouts used when displaying a single book's details, cover, and summary. */
 .breadcrumbs {
     margin-bottom: 20px;
     font-weight: bold;
@@ -373,14 +390,15 @@ h1, .section-title {
     text-align: center;
 }
 
-/* ===== 10. VINTAGE CAROUSEL (INDEX PAGE) ===== */
+/* ===== 10. VINTAGE CAROUSEL (INDEX PAGE) ===== 
+   Creates a horizontally scrolling gallery for featured books. */
 .vintage-carousel {
     display: flex;
     gap: 20px;
-    overflow-x: auto; /* Allows horizontal scroll */
+    overflow-x: auto; /* Enables side-to-side scrolling */
     padding-bottom: 20px; 
-    scroll-snap-type: x mandatory;
-    width: 100%; /* Keeps the carousel inside its container */
+    scroll-snap-type: x mandatory; /* Makes it snap smoothly to each book */
+    width: 100%; 
 }
 
 .vintage-carousel::-webkit-scrollbar {
@@ -429,7 +447,8 @@ h1, .section-title {
     font-style: italic;
 }
 
-/* ===== 11. THEMES & SPECIAL EFFECTS ===== */
+/* ===== 11. THEMES & SPECIAL EFFECTS ===== 
+   Contains the Dark Mode colors and the optional film-grain visual effect. */
 .dark-mode {
     background-color: #1a1a1a !important;
     color: #e8dfd0 !important;
@@ -463,7 +482,8 @@ h1, .section-title {
     z-index: 9999;
 }
 
-/* ===== 12. UTILITY CLASSES (Replaces inline CSS) ===== */
+/* ===== 12. UTILITY CLASSES ===== 
+   Reusable helper classes to avoid putting CSS directly into the HTML (inline styles). */
 .grid-2-col { grid-template-columns: 1fr 1fr; }
 .grid-3-col { grid-template-columns: repeat(3, 1fr); }
 .list-unstyled { list-style: none; }
@@ -536,12 +556,13 @@ h1, .section-title {
     font-size: 0.9rem;
 }
 
-/* ===== 14. RESPONSIVENESS ===== */
+/* ===== 14. RESPONSIVENESS ===== 
+   Instructions for how the layout should adapt on smaller screens (like mobile phones). */
 .text-center { text-align: center !important; }
 .border-none { border-bottom: none !important; }
 
 @media (max-width: 768px) {
-    body { flex-direction: column; }
+    body { flex-direction: column; } /* Stacks sidebar and content vertically */
     
     .site-header { 
         width: 100%; 
@@ -557,7 +578,7 @@ h1, .section-title {
     }
 
     .categories-grid, .grid-2-col, .grid-3-col {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr !important; /* Forces columns into a single stack */
     }
     
     .book-details-grid {
