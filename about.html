@@ -1,99 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frequently Downloaded | Project Gutenberg</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Project Gutenberg</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-   <header class="site-header">
-    <nav class="nav container">
-      <a href="index.html" class="logo">
-          <img src="images/projectgutenberg logo.png" alt="Project Gutenberg Logo" class="logo-img">
-      </a>
-      
-      <form class="search-form" method="get" action="https://www.gutenberg.org/ebooks/search/">
-        <input type="search" name="query" placeholder="Quick search" class="vintage-input">
-        <button type="submit" class="vintage-submit">Go!</button>
-      </form>
-      
-      <ul class="nav-list">
-        <li><a href="about.html">About</a></li>
-        <li><a href="FrequentlyDownloaded.html">Frequently Downloaded</a></li>
-        <li><a href="maincat.html">Main Categories</a></li>
-        <li><a href="readinglists.html">Reading Lists</a></li>
-        <li><a href="searchoptions.html">Search Options</a></li>
-        <li><a href="individualbook.html">Individual Book</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header class="site-header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">
+                <img src="images/projectgutenberg logo.png" alt="Project Gutenberg Logo" class="logo-img">
+            </a>
+            
+            <form class="search-form" method="get" action="https://www.gutenberg.org/ebooks/search/">
+                <input type="search" name="query" placeholder="Quick search" class="vintage-input">
+                <button type="submit" class="vintage-submit">Go!</button>
+            </form>
+            
+            <ul class="nav-list">
+                <li><a href="about.html">About</a></li>
+                <li><a href="FrequentlyDownloaded.html">Frequently Downloaded</a></li>
+                <li><a href="maincat.html">Main Categories</a></li>
+                <li><a href="readinglists.html">Reading Lists</a></li>
+                <li><a href="searchoptions.html">Search Options</a></li>
+                <li><a href="individualbook.html">Individual Book</a></li>
+            </ul>
+
+            <div style="margin-top: 30px; text-align: center; display: flex; flex-direction: column; gap: 10px;">
+                <button id="darkModeToggle" class="vintage-submit" style="font-size: 0.8rem;">🌙 Dark Mode</button>
+                <button id="vintageToggle" class="vintage-submit" onclick="toggleVintageMode()" style="font-size: 0.8rem;">📽️ Vintage</button>
+            </div>
+        </nav>
+    </header>
 
     <main class="page-layout">
         <div class="content-wrapper">
             
-            <h1 class="section-title" style="margin-top: 0;">About Project Gutenberg</h1>
-            <p class="intro-text">To encourage the creation and distribution of eBooks.</p>
-
-            <div class="info-box">
-                <h2 class="section-title" style="margin-top: 0; border: none;">The History of a Library</h2>
-                
-                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">
-                    Project Gutenberg is an online library of more than <b>75,000 free eBooks</b>. Michael Hart, founder of Project Gutenberg, invented eBooks in 1971 and his memory continues to inspire the creation of eBooks and related content today. 
-                </p>
-                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">
-                    Since then, thousands of volunteers have digitized and diligently proofread the world’s literature. The entire Project Gutenberg collection is yours to enjoy.
-                </p>
-                <p style="font-size: 1.1rem; line-height: 1.8; font-weight: bold; color: #4a3b2b;">
-                    All Project Gutenberg eBooks are completely free and always will be.
-                </p>
+            <div class="page-header">
+                <h1 class="text-center">About Project Gutenberg</h1>
             </div>
 
-            <div class="info-box">
-                <h2 class="section-title" style="margin-top: 0; border: none;">Mission Statement</h2>
-                <p style="font-size: 1.2rem; font-style: italic; margin-bottom: 15px; color: #4a3b2b;">
+            <article class="about-paper">
+                <h2 class="decorated-title">Our Mission</h2>
+                <div class="mission-scroll" style="background: #f4ece1; border-left: 5px solid #8b0000; padding: 20px; font-style: italic; margin-bottom: 30px;">
                     "To encourage the creation and distribution of eBooks."
-                </p>
-                <p>
-                    <a href="https://www.gutenberg.org/about/background/mission_statement.html" class="vintage-link">A 2004 essay by Michael Hart</a> 
-                    provides more detail on the mission statement, and some of the beliefs that guide Project Gutenberg’s activities in fulfillment of that mission.
-                </p>
-            </div>
+                </div>
 
-            <h2 class="section-title">More about Project Gutenberg</h2>
+                <p class="intro-text">
+                    Project Gutenberg is a library of over 75,000 free eBooks. Choose among free epub and Kindle eBooks, download them or read them online. You will find the world's great literature here, with focus on older works for which U.S. copyright has expired.
+                </p>
+
+                <h2 class="section-title" style="text-align: left;">History & Philosophy</h2>
+                <p class="intro-text">
+                    Founded in 1971 by Michael S. Hart, Project Gutenberg is the oldest digital library. Hart’s mission was to provide as many eBooks in as many formats as possible for the entire world to read in as many languages as possible.
+                </p>
+                <p><a href="https://www.gutenberg.org/about/background/" class="vintage-link">Read more about our background »</a></p>
+            </article>
+
             <div class="info-container">
-                <div class="info-card info-box">
-                    <h3 style="margin-bottom: 15px; color: #4a3b2b;">Resources & History</h3>
-                    <ul class="vintage-list" style="margin-bottom: 0;">
-                        <li><a href="https://www.gutenberg.org/about/background/index.html">History & Philosophy</a></li>
-                        <li><a href="https://www.gutenberg.org/about/partners_affiliates.html">Partners & Affiliates</a></li>
-                        <li><a href="https://www.gutenberg.org/help/">Help & How-to</a></li>
-                    </ul>
+                <div class="info-box" style="flex: 1;">
+                    <h2 class="section-title mt-0 border-none" style="text-align: left;">Contact Information</h2>
+                    <p>For general inquiries, please visit our <a href="https://www.gutenberg.org/about/contact_information.html" class="vintage-link">Contact Page</a>.</p>
+                    <p><strong>Email:</strong> help@gutenberg.org</p>
                 </div>
 
-                <div class="info-card info-box">
-                    <h3 style="margin-bottom: 15px; color: #4a3b2b;">Get Involved</h3>
-                    <ul class="vintage-list" style="margin-bottom: 0;">
-                        <li><a href="https://www.gutenberg.org/about/pglaf.html">Literary Foundation</a></li>
-                        <li><a href="https://www.gutenberg.org/donate">Ways to Donate</a></li>
-                        <li><a href="https://www.gutenberg.org/about/contact_information.html">Contact Us</a></li>
+                <div class="info-box" style="flex: 1;">
+                    <h2 class="section-title mt-0 border-none" style="text-align: left;">Helpful Links</h2>
+                    <ul class="vintage-list" style="list-style: none; padding: 0;">
+                        <li><a href="https://www.gutenberg.org/help/" class="vintage-link">General Help & FAQ</a></li>
+                        <li><a href="https://www.gutenberg.org/help/reading_options.html" class="vintage-link">Reading Options</a></li>
+                        <li><a href="https://www.gutenberg.org/ebooks/offline_catalogs.html" class="vintage-link">Offline Catalogs</a></li>
                     </ul>
                 </div>
             </div>
 
-       <footer class="site-footer">
+        </div> <footer class="site-footer">
             <nav class="footer-nav">
                 <a href="about.html">About</a> |
                 <a href="https://www.gutenberg.org/policy/privacy_policy.html">Privacy policy</a> |
-                <a href="https://www.gutenberg.org/policy/permission.html">Permissions</a> |
                 <a href="https://www.gutenberg.org/policy/terms_of_use.html">Terms of Use</a> |
                 <a href="https://www.gutenberg.org/about/contact_information.html">Contact Us</a>
             </nav>
             <p>&copy; 2026 Project Gutenberg</p>
         </footer>
-
     </main>
 
+    <div id="backToTop">↑ Top</div>
+    <script src="script.js"></script>
 </body>
 </html>
