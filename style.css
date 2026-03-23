@@ -9,11 +9,8 @@ body {
     /* CHANGED: Vintage typewriter font for an authentic, classic archive feel! */
     font-family: 'Courier New', Courier, monospace; 
     
-    background-color: #f4ece1; /* A nice, vintage paper color */
-    color: #333;               /* Dark grey (like old typewriter ink) instead of harsh pure black */
-    
-    /* This is the magic trick for the layout! Setting the body to 'flex' 
-       forces its two children (the Header and the Main content) to sit side-by-side. */
+    background-color: #f4ece1; 
+    color: #333;               
     display: flex;             
     min-height: 100vh;         /* Ensures the background covers the full screen height */
 }
