@@ -16,6 +16,7 @@ body {
     font-family: 'Courier New', Courier, monospace; 
     min-height: 100vh;
     transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden; /* FIX: Prevents the whole page from scrolling horizontally */
 }
 
 /* ===== 2. GLOBAL LAYOUT ===== */
@@ -31,6 +32,7 @@ body {
 
 .content-wrapper {
     flex: 1; /* Ensures footer stays at the bottom */
+    max-width: 100%; /* FIX: Keeps content within the layout limits */
 }
 
 /* ===== 3. SIDEBAR & NAVIGATION ===== */
@@ -45,6 +47,7 @@ body {
     top: 0;
     width: 260px;             
     z-index: 100;
+    flex-shrink: 0; /* Prevents sidebar from collapsing */
 }
 
 .logo-img {
@@ -78,7 +81,6 @@ body {
     transform: translateY(-2px); 
 }
 
-/* Toggle buttons container */
 .mode-toggles {
     margin-top: 30px;
     text-align: center;
@@ -124,12 +126,13 @@ h1, .section-title {
     border: 1px solid #dcd0b9;
     padding: 30px;
     margin-bottom: 30px;
-    box-shadow: 4px 4px 0px #dcd0b9; /* Hard vintage shadow */
+    box-shadow: 4px 4px 0px #dcd0b9; 
+    max-width: 100%; /* Keeps box inside the wrapper */
 }
 
 .mission-scroll {
     background: #f4ece1;
-    border-left: 5px solid #5a4a3a; /* Accent bar */
+    border-left: 5px solid #5a4a3a; 
     padding: 20px;
     font-style: italic;
     margin-bottom: 20px;
@@ -152,7 +155,28 @@ h1, .section-title {
     color: white;
 }
 
-/* Container for bookshelves links */
+.categories-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-bottom: 40px;
+}
+
+.category-soft-box {
+    background: #faf6f0; 
+    border: 1px solid #e8dfd0; 
+    border-radius: 8px; 
+    padding: 30px;
+    height: 100%;
+    overflow-wrap: break-word;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.category-soft-box:hover {
+    transform: translateY(-5px);
+}
+
 .bookshelves-container {
     display: flex;
     flex-wrap: wrap;
@@ -193,7 +217,6 @@ h1, .section-title {
     text-align: left;
 }
 
-/* Special styles for the bibliographic record table */
 .biblio-table {
     margin-bottom: 0;
 }
@@ -256,7 +279,6 @@ h1, .section-title {
     transition: 0.3s;
 }
 
-/* Tab Switching Logic */
 #tab-advanced:checked ~ .tabs-container label[for="tab-advanced"],
 #tab-fulltext:checked ~ .tabs-container label[for="tab-fulltext"],
 #tab-categories:checked ~ .tabs-container label[for="tab-categories"] {
@@ -289,7 +311,6 @@ h1, .section-title {
     align-items: flex-start;
 }
 
-/* Left column: Cover and sharing */
 .book-cover-section {
     flex: 0 0 250px;
     text-align: center;
@@ -328,7 +349,6 @@ h1, .section-title {
     font-size: 0.85rem;
 }
 
-/* Right column: Summary */
 .book-summary-section {
     flex: 1;
     min-width: 300px;
@@ -353,33 +373,153 @@ h1, .section-title {
     text-align: center;
 }
 
-/* ===== 10. THEMES & SPECIAL EFFECTS ===== */
+/* ===== 10. VINTAGE CAROUSEL (INDEX PAGE) ===== */
+.vintage-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Allows horizontal scroll */
+    padding-bottom: 20px; 
+    scroll-snap-type: x mandatory;
+    width: 100%; /* Keeps the carousel inside its container */
+}
 
-/* --- DARK MODE STYLES --- */
-body.dark-mode {
+.vintage-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.vintage-carousel::-webkit-scrollbar-thumb {
+    background-color: #dcd0b9;
+    border-radius: 4px;
+}
+
+.carousel-card {
+    flex: 0 0 180px; 
+    background: #faf6f0;
+    border: 1px solid #dcd0b9;
+    border-radius: 4px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #4a3b2b;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.carousel-card:hover {
+    transform: translateY(-5px);
+    border-color: #5a4a3a;
+}
+
+.carousel-card img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #c5b8a5;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+
+.carousel-card h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #a67c52;
+}
+
+.carousel-card p {
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+/* ===== 11. THEMES & SPECIAL EFFECTS ===== */
+.dark-mode {
     background-color: #1a1a1a !important;
-    color: #f4f4f4 !important;
+    color: #e8dfd0 !important;
 }
 
-body.dark-mode a {
-    color: #66b2ff !important;
-}
-
-body.dark-mode .sidebar, 
-body.dark-mode .nav-list {
-    background-color: #2a2a2a !important;
+.dark-mode .site-header, 
+.dark-mode .info-box,
+.dark-mode .category-soft-box,
+.dark-mode .carousel-card {
+    background-color: #2c2c2c !important;
     border-color: #444 !important;
+    color: #e8dfd0 !important;
 }
 
-/* --- VINTAGE MODE STYLES --- */
-body.film-grain {
-    background-color: #f4ecd8 !important; /* Old paper color */
-    color: #3e2723 !important; /* Faded brown ink */
-    font-family: "Courier New", Courier, monospace !important;
+.dark-mode .vintage-input {
+    background-color: #333 !important;
+    color: #eee !important;
 }
-   
 
-/* ===== 11. FOOTER ===== */
+.dark-mode .carousel-card h3 {
+    color: #dcd0b9 !important;
+}
+
+.film-grain::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png'); 
+    opacity: 0.07;
+    pointer-events: none; 
+    z-index: 9999;
+}
+
+/* ===== 12. UTILITY CLASSES (Replaces inline CSS) ===== */
+.grid-2-col { grid-template-columns: 1fr 1fr; }
+.grid-3-col { grid-template-columns: repeat(3, 1fr); }
+.list-unstyled { list-style: none; }
+
+.mb-0 { margin-bottom: 0 !important; }
+.mb-5 { margin-bottom: 5px !important; }
+.mb-15 { margin-bottom: 15px !important; }
+.mb-20 { margin-bottom: 20px !important; }
+.mt-15 { margin-top: 15px !important; }
+.mt-20 { margin-top: 20px !important; }
+
+.section-subtitle {
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.inline-block-btn {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.donate-li {
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.donate-btn-small {
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.emoji-icon { font-size: 2rem; }
+
+.social-flex-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-flex-container-news {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon-img {
+    width: 32px;
+    filter: grayscale(100%);
+}
+
+.footer-logo-img {
+    filter: sepia(1) contrast(1.2);
+}
+
+/* ===== 13. FOOTER ===== */
 .site-footer {
     background-color: #2c3e50; 
     border-radius: 8px;
@@ -396,9 +536,8 @@ body.film-grain {
     font-size: 0.9rem;
 }
 
-/* ===== 12. RESPONSIVENESS & UTILITIES ===== */
+/* ===== 14. RESPONSIVENESS ===== */
 .text-center { text-align: center !important; }
-.mt-0 { margin-top: 0 !important; }
 .border-none { border-bottom: none !important; }
 
 @media (max-width: 768px) {
@@ -417,8 +556,8 @@ body.film-grain {
         padding: 20px;
     }
 
-    .categories-grid {
-        grid-template-columns: 1fr;
+    .categories-grid, .grid-2-col, .grid-3-col {
+        grid-template-columns: 1fr !important;
     }
     
     .book-details-grid {
