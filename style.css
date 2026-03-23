@@ -542,7 +542,6 @@ h1 {
    12. PAGE: MAIN CATEGORIES
    ========================================= */
 
-/* Cuadrícula que hace que todas las cajas tengan la misma altura */
 .categories-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -550,7 +549,6 @@ h1 {
     margin-bottom: 40px;
 }
 
-/* La caja "suave" */
 .category-soft-box {
     background: #faf6f0; 
     border: 1px solid #e8dfd0; 
@@ -560,9 +558,11 @@ h1 {
     
     display: flex;
     flex-direction: column; 
-    height: 100%; /* ESTO fuerza a las cajas a medir lo mismo */
+    height: 100%; 
     
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .category-soft-box:hover {
