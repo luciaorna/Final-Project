@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Project Gutenberg</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Project Gutenberg</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <header class="site-header">
+
+   <header class="site-header">
     <nav class="nav container">
-      <a href="index.html" class="logo"><img src="images/projectgutenberg logo.png" alt="Project Gutenberg Logo" class="logo-img"></a>
+      <a href="index.html" class="logo">
+          <img src="images/projectgutenberg logo.png" alt="Project Gutenberg Logo" class="logo-img">
+      </a>
       
-      <form class="search-form">
-        <input type="search" placeholder="Quick search">
+      <form class="search-form" method="get" action="https://www.gutenberg.org/ebooks/search/">
+        <input type="search" name="query" placeholder="Quick search">
         <button type="submit">Go!</button>
       </form>
       
@@ -28,48 +30,62 @@
     </nav>
   </header>
 
-  <main>
-    <div class="page-header" style="margin-bottom: 40px;">
-        <h1 style="color: #4a3b2b; border-bottom: 1px solid #dcd0b9; padding-bottom: 10px;">About Project Gutenberg</h1>
-    </div>
+    <main style="display: flex; flex-direction: column; min-height: 100vh;">
+        <div class="content-wrapper" style="flex: 1;">
+            
+            <h1 class="section-title" style="margin-top: 0;">About Project Gutenberg</h1>
+            <p class="intro-text">To encourage the creation and distribution of eBooks.</p>
 
-    <p class="sentence">Project Gutenberg is an online library of more than 75,000 free eBooks.</p>
-    
-    <p class="sentence">Michael Hart, founder of Project Gutenberg, invented eBooks in 1971 and his memory continues to inspire the creation of eBooks and related content today.</p>
-    
-    <p class="sentence">Since then, thousands of volunteers have digitized and diligently proofread the world’s literature. The entire Project Gutenberg collection is yours to enjoy.</p>
-    
-    <p class="sentence">All Project Gutenberg eBooks are completely free and always will be.</p>
+            <div class="typewriter-document info-box">
+                <h2 style="color: #4a3b2b; text-align: center; border-bottom: 1px dashed #c5b8a5; padding-bottom: 15px; margin-bottom: 30px;">The History of a Library</h2>
+                
+                <p style="font-size: 1.1rem; line-height: 1.8; text-align: justify;">
+                    <span class="drop-cap">P</span>roject Gutenberg was the first provider of free electronic books, or eBooks. Michael Hart, founder of Project Gutenberg, invented eBooks in 1971 and his memory continues to inspire the creation of eBooks and related content today. 
+                </p>
+                <br>
+                <p style="font-size: 1.1rem; line-height: 1.8; text-align: justify;">
+                    Our mission is simple: to encourage the creation and distribution of eBooks. We are fueled by ideas, ideals, and by an idealistic core of volunteers. Project Gutenberg is powered by ideas rather than by financial or political power.
+                </p>
+                <br>
+                <p style="font-size: 1.1rem; line-height: 1.8; text-align: justify;">
+                    Most of the items in our collection are the full texts of public domain books. You can read them here online, or download them for offline reading. No fee or registration is required.
+                </p>
 
-    <h2 style="color: #4a3b2b; margin-top: 30px; margin-bottom: 15px;">Project Gutenberg Mission Statement</h2>
-    <p class="sentence"><em>To encourage the creation and distribution of eBooks.</em></p>
-    
-    <p class="sentence"><a href="#" style="color: #5a4a3a; font-weight: bold;">A 2004 essay</a> by Michael Hart provides more detail on the mission statement, and some of the beliefs that guide Project Gutenberg's activities in fulfillment of that mission.</p>
+                <div style="text-align: right; margin-top: 40px;">
+                    <p style="margin-bottom: 5px;">Founded by</p>
+                    <span class="vintage-signature">Michael S. Hart</span>
+                    <p style="font-size: 0.9rem; color: #7a634d;">(1947 - 2011)</p>
+                </div>
+            </div>
 
-    <h2 style="color: #4a3b2b; margin-top: 30px; margin-bottom: 15px;">More about Project Gutenberg</h2>
-    <p class="sentence">To read more about Project Gutenberg, choose one of these topics:</p>
-    
-    <ul style="margin-top: 1rem; padding-left: 2rem; line-height: 1.8;">
-      <li class="sentence"><a href="#" style="color: #5a4a3a; font-weight: bold;">Background, History, and Philosophy</a> : Various essays and articles.</li>
-      <li class="sentence"><a href="#" style="color: #5a4a3a; font-weight: bold;">Partners and affiliates</a></li>
-      <li class="sentence"><a href="#" style="color: #5a4a3a; font-weight: bold;">Help and how-to</a></li>
-      <li class="sentence">The <a href="#" style="color: #5a4a3a; font-weight: bold;">Project Gutenberg Literary Archive Foundation</a>, which operates Project Gutenberg and accepts donations.</li>
-      <li class="sentence">There are several <a href="#" style="color: #5a4a3a; font-weight: bold;">ways to donate</a> if you'd like to support the project.</li>
-    </ul>
-  
-    <footer class="site-footer" style="background: #2c3e50; padding: 2rem; color: white; text-align: center; border-radius: 8px; margin-top: 40px;">
-        <nav class="footer-nav" style="margin-bottom: 15px;">
-            <a href="about.html" style="color: white; margin: 0 10px; text-decoration: none;">About</a> |
-            <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Privacy policy</a> |
-            <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Permissions</a> |
-            <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Terms of Use</a> |
-            <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Contact Us</a>
-        </nav>
-        <p>&copy; 2026 Project Gutenberg</p>
-    </footer>
+            <div class="facts-grid">
+                
+                <div class="vintage-sticker ticket-yellow">
+                    <h3 style="margin-bottom: 15px; border-bottom: 1px solid #5a4a3a; padding-bottom: 5px;">Contact Us</h3>
+                    <p style="margin-bottom: 10px;">Have questions or found an error?</p>
+                    <a href="https://www.gutenberg.org/about/contact_information.html" class="vintage-link" style="text-decoration: underline;">Reach out to our team</a>
+                </div>
 
-  </main>
-  
-  <script src="script.js"></script>
+                <div class="vintage-sticker ticket-blue">
+                    <h3 style="margin-bottom: 15px; border-bottom: 1px solid #1c3d5a; padding-bottom: 5px;">Help Us Grow</h3>
+                    <p style="margin-bottom: 10px;">Project Gutenberg relies on donations to survive.</p>
+                    <a href="https://www.gutenberg.org/donate/" class="vintage-link" style="color: #1c3d5a; text-decoration: underline;">Make a Donation</a>
+                </div>
+
+            </div>
+
+        </div> <footer class="site-footer">
+            <nav class="footer-nav">
+                <a href="about.html">About</a> |
+                <a href="https://www.gutenberg.org/policy/privacy_policy.html">Privacy policy</a> |
+                <a href="https://www.gutenberg.org/policy/permission.html">Permissions</a> |
+                <a href="https://www.gutenberg.org/policy/terms_of_use.html">Terms of Use</a> |
+                <a href="https://www.gutenberg.org/about/contact_information.html">Contact Us</a>
+            </nav>
+            <p>&copy; 2026 Project Gutenberg</p>
+        </footer>
+
+    </main>
+
 </body>
 </html>
