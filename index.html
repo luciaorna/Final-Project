@@ -25,10 +25,18 @@
         <li><a href="searchoptions.html">Search Options</a></li>
         <li><a href="individualbook.html">Individual Book</a></li>
       </ul>
-      <button id="vintageToggle" onclick="toggleVintageMode()">Turn On Old Projector Mode</button>
-        <button id="darkModeToggle">Toggle Dark Mode</button>
-        <div id="backToTop">↑ Top</div>
-        <span id="typewriter-text"></span><span id="cursor">|</span>
+      <button id="settings-trigger" title="Page Settings">⚙️</button>
+
+    <div id="settings-panel">
+        <h3>Display Options</h3>
+        <button id="darkModeToggle" class="settings-btn">🌙 Dark Mode</button>
+        <button id="vintageToggle" class="settings-btn" onclick="toggleVintageMode()">📽️ Old Projector Mode</button>
+    
+        <hr>
+        <p><small>Project Gutenberg Customizer</small></p>
+    </div>
+
+<div id="backToTop">↑ Top</div>
     </nav>
   </header>
   

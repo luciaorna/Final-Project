@@ -1,12 +1,50 @@
 <script>
-    // Wait for the HTML to load before running scripts
+    // 1. GLOBAL FUNCTIONS (Needed for HTML onclick attributes)
+    let isVintageModeOn = false; 
+    
+    function toggleVintageMode() { 
+        const body = document.body; 
+        const btn = document.getElementById('vintageToggle'); 
+        
+        if (!btn) return;
+
+        isVintageModeOn = !isVintageModeOn; 
+        if (isVintageModeOn) { 
+            body.classList.add('film-grain', 'sepia-filter'); 
+            btn.innerText = "Turn Off Old Projector Mode"; 
+        } else { 
+            body.classList.remove('film-grain', 'sepia-filter'); 
+            btn.innerText = "Turn On Old Projector Mode"; 
+        }
+    }
+
+    // 2. INITIALIZATION (Wait for HTML to load)
     document.addEventListener('DOMContentLoaded', () => {
 
-        // --- 1. Typewriter Effect ---
+        // --- Settings Menu Toggle ---
+        const settingsTrigger = document.getElementById('settings-trigger');
+        const settingsPanel = document.getElementById('settings-panel');
+
+        if (settingsTrigger && settingsPanel) {
+            settingsTrigger.addEventListener('click', (e) => {
+                // Stop the click from immediately bubbling to the window listener
+                e.stopPropagation();
+                const isFlex = settingsPanel.style.display === "flex";
+                settingsPanel.style.display = isFlex ? "none" : "flex";
+            });
+
+            // Close panel if user clicks anywhere outside of it
+            window.addEventListener('click', (event) => {
+                if (!settingsPanel.contains(event.target) && event.target !== settingsTrigger) {
+                    settingsPanel.style.display = "none";
+                }
+            });
+        }
+
+        // --- Typewriter Effect ---
         const typeWriterElement = document.getElementById('typewriter-text'); 
         const cursorElement = document.getElementById('cursor'); 
         
-        // Only run if elements exist on the current page
         if (typeWriterElement && cursorElement) {
             const textToType = "Project Gutenberg is a library of over 75,000 free eBooks."; 
             let index = 0; 
@@ -25,7 +63,7 @@
             setTimeout(typeWriter, 500); 
         }
 
-        // --- 3. Dark Mode Toggle ---
+        // --- Dark Mode Toggle ---
         const darkModeToggle = document.getElementById('darkModeToggle');
         if (darkModeToggle) {
             darkModeToggle.addEventListener('click', () => { 
@@ -33,7 +71,7 @@
             });
         }
 
-        // --- 4. Live Search Filtering ---
+        // --- Live Search Filtering ---
         const searchInput = document.getElementById('searchInput');
         const bookList = document.getElementById('bookList');
         
@@ -52,7 +90,7 @@
             });
         }
 
-        // --- 5. Back to Top Button ---
+        // --- Back to Top Button ---
         const backToTopBtn = document.getElementById("backToTop");
         if (backToTopBtn) {
             window.addEventListener('scroll', () => { 
@@ -68,23 +106,4 @@
             });
         }
     });
-
-    // --- 2. Vintage Mode Toggle ---
-    let isVintageModeOn = false; 
-    
-    function toggleVintageMode() { 
-        const body = document.body; 
-        const btn = document.getElementById('vintageToggle'); 
-        
-        if (!btn) return;
-
-        isVintageModeOn = !isVintageModeOn; 
-        if (isVintageModeOn) { 
-            body.classList.add('film-grain', 'sepia-filter'); 
-            btn.innerText = "Turn Off Old Projector Mode"; 
-        } else { 
-            body.classList.remove('film-grain', 'sepia-filter'); 
-            btn.innerText = "Turn On Old Projector Mode"; 
-        }
-    }
 </script>

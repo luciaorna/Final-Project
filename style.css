@@ -641,7 +641,65 @@ h1 {
     pointer-events: none; /* Allows clicking through the grain */
     z-index: 9999;
 }
+/* --- Settings Menu Styles --- */
+#settings-trigger {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* Opposite side of Back to Top */
+    z-index: 1001;
+    background: #5a4a3a;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
 
+#settings-trigger:hover {
+    transform: rotate(90deg);
+}
+
+#settings-panel {
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    background: #f4ece1;
+    border: 2px solid #dcd0b9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1001;
+    width: 250px;
+}
+
+.settings-btn {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #e8dfd0;
+    border: 1px solid #c5b8a5;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+}
+
+.settings-btn:hover {
+    background-color: #5a4a3a;
+    color: white;
+}
+
+#settings-panel h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #4a3b2b;
+    border-bottom: 1px solid #dcd0b9;
+}
 /* --- Dark Mode Styles --- */
 .dark-mode {
     background-color: #1a1a1a !important;
