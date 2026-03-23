@@ -571,3 +571,25 @@ h1, .section-title {
         max-width: 300px;
     }
 }
+/* --- DARK MODE STYLES --- */
+body.dark-mode {
+    background-color: #1a1a1a !important;
+    color: #f4f4f4 !important;
+}
+
+body.dark-mode a {
+    color: #66b2ff !important;
+}
+
+body.dark-mode .sidebar, 
+body.dark-mode .nav-list {
+    background-color: #2a2a2a !important;
+    border-color: #444 !important;
+}
+
+/* --- VINTAGE MODE STYLES --- */
+body.film-grain {
+    background-color: #f4ecd8 !important; /* Old paper color */
+    color: #3e2723 !important; /* Faded brown ink */
+    font-family: "Courier New", Courier, monospace !important;
+}
