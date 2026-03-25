@@ -1,61 +1,37 @@
+// Wait for the page to fully load before running the code
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. FOOLPROOF BUTTON FINDER (No IDs required in your HTML)
-    const allLinks = document.querySelectorAll("a");
+    // Find all buttons that have the "mode-btn" class
+    const modeButtons = document.querySelectorAll(".mode-btn");
 
-    allLinks.forEach(link => {
-        
-        // --- DARK MODE ---
-        if (link.textContent.includes("Dark Mode")) {
-            link.addEventListener("click", (e) => {
-                e.preventDefault();
+    modeButtons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            
+            // Prevents the page from jumping to the top when clicking the link
+            e.preventDefault(); 
+            
+            const text = btn.textContent;
+
+            // --- DARK MODE ---
+            if (text.includes("Dark Mode")) {
                 document.body.classList.toggle("dark-mode");
-                try {
-                    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode") ? "enabled" : "disabled");
-                } catch(err) {} // Ignore local storage errors
-            });
-        }
+                // Turns off vintage mode if it was on, so they don't mix
+                document.body.classList.remove("film-grain"); 
+            }
 
-        // --- VINTAGE MODE ---
-        if (link.textContent.includes("Vintage")) {
-            link.addEventListener("click", (e) => {
-                e.preventDefault();
+            // --- VINTAGE MODE ---
+            if (text.includes("Vintage")) {
                 document.body.classList.toggle("film-grain");
-                try {
-                    localStorage.setItem("vintageMode", document.body.classList.contains("film-grain") ? "enabled" : "disabled");
-                } catch(err) {}
-            });
-        }
+                // Turns off dark mode if it was on
+                document.body.classList.remove("dark-mode"); 
+            }
 
-        // --- BACK TO TOP ---
-        if (link.textContent.includes("Top")) {
-            link.addEventListener("click", (e) => {
-                e.preventDefault();
+            // --- BACK TO TOP ---
+            if (text.includes("Top")) {
+                // Scrolls smoothly back to the top of the page
                 window.scrollTo({ top: 0, behavior: "smooth" });
-            });
-        }
-    });
-
-    // 2. CHECK SAVED PREFERENCES ON PAGE LOAD
-    try {
-        if (localStorage.getItem("darkMode") === "enabled") {
-            document.body.classList.add("dark-mode");
-        }
-        if (localStorage.getItem("vintageMode") === "enabled") {
-            document.body.classList.add("film-grain");
-        }
-    } catch(err) {}
-
-    // 3. HIGHLIGHT CURRENT PAGE IN SIDEBAR
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
-    const navLinks = document.querySelectorAll(".nav-list a");
-    
-    navLinks.forEach(link => {
-        const linkHref = link.getAttribute("href");
-        if (linkHref && linkHref.includes(currentPage) && currentPage !== "") {
-            link.style.backgroundColor = "#5a4a3a";
-            link.style.color = "#ffffff";
-        }
+            }
+        });
     });
 
 });
