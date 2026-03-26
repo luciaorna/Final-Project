@@ -1,7 +1,6 @@
-// Wait for the page to fully load before running the code
+// JQuery effects, SOURCE: W3Schools
 document.addEventListener("DOMContentLoaded", () => {
     
-    // Find all buttons that have the "mode-btn" class
     const modeButtons = document.querySelectorAll(".mode-btn");
 
     modeButtons.forEach(btn => {
